@@ -10,5 +10,6 @@ dependencies:
 - pyiron_atomistics =0.2.4
 - nglview =2.7.7
 - papermill
+- pip
 - pip:
     - pyace-lite
