@@ -4,6 +4,7 @@ bash binder/postBuild
 
 # exclude notebooks
 rm -rf ./old_notebooks
+rm -rf day_2/ace/  # remove ace as currently the resources are missing
 
 # execute notebooks
 current_dir=$(pwd)
