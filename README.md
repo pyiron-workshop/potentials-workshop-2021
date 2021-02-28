@@ -1,5 +1,6 @@
 # Potentials Workshop
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/pyiron/pyiron_potentialfit/HEAD)
 
 ## Installation guidelines
 
