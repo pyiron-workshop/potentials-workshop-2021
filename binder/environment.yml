@@ -1,0 +1,15 @@
+channels:
+- conda-forge
+dependencies:
+- python
+- pyiron =0.4.0 
+- sphinxdft =2.7.0
+- atomicrex =1.0.1
+- runner =1.2
+- lammps =2021.02.10=*openmpi*_4
+- pyiron_atomistics =0.2.4
+- nglview =2.7.7
+- papermill
+- pip
+- pip:
+    - pyace-lite
