@@ -8,7 +8,7 @@ rm -rf ./old_notebooks
 # execute notebooks
 current_dir=$(pwd)
 i=0;
-for f in $(find . -name *.ipynb -print0 | sort -z); do
+for f in $(find . -name *.ipynb | sort -z); do
     cd $(dirname $f);
     notebook=$(basename $f);
     papermill ${notebook} ${notebook%.*}-out.${notebook##*.} -k "python3" || i=$((i+1));
