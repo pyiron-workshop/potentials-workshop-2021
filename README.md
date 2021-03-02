@@ -4,7 +4,9 @@
 
 ## Installation guidelines
 
-`conda install -c conda-forge -y pyiron pyiron_base pyiron_atomistics pyiron_contrib pyiron_gpl nodejs lammps sphinxdft jupyterlab`
+```
+conda env update --file binder/environment.yml
+```
 
 Configuring the jupyter lab for nglview:
 
