@@ -1,0 +1,95 @@
+### ####################################################################################################################
+### This is the input file for the RuNNer tutorial (POTENTIALS WORKSHOP 2021-03-10) 
+### This input file is intended for release version 1.2
+### RuNNer is hosted at www.gitlab.com. The most recent version can only be found in this repository.
+### For access please contact Prof. Jörg Behler, joerg.behler@uni-goettingen.de
+###
+### ####################################################################################################################
+### General remarks: 
+### - commands can be switched off by using the # character at the BEGINNING of the line
+### - the input file can be structured by blank lines and comment lines
+### - the order of the keywords is arbitrary
+### - if keywords are missing, default values will be used and written to runner.out
+### - if mandatory keywords or keyword options are missing, RuNNer will stop with an error message 
+###
+########################################################################################################################
+########################################################################################################################
+### The following keywords just represent a subset of the keywords offered by RuNNer
+########################################################################################################################
+########################################################################################################################
+
+########################################################################################################################
+### general keywords
+########################################################################################################################
+nn_type_short 1                           # 1=Behler-Parrinello
+runner_mode 3                             # 1=calculate symmetry functions, 2=fitting mode, 3=predicition mode
+number_of_elements 1                      # number of elements
+elements Cu                               # specification of elements
+random_seed 10                            # integer seed for random number generator                         
+random_number_type 6                      # 6 recommended       
+
+########################################################################################################################
+### NN structure of the short-range NN  
+########################################################################################################################
+use_short_nn                              # use NN for short range interactions    
+global_hidden_layers_short 2              # number of hidden layers               
+global_nodes_short 15 15                  # number of nodes in hidden layers     
+global_activation_short t t l             # activation functions  (t = hyperbolic tangent, l = linear)              
+
+########################################################################################################################
+### symmetry function generation ( mode 1): 
+########################################################################################################################
+test_fraction 0.10000                     # threshold for splitting between fitting and test set 
+
+########################################################################################################################
+### symmetry function definitions (all modes): 
+########################################################################################################################
+cutoff_type 1
+symfunction_short Cu  2 Cu     0.000000      0.000000     12.000000
+symfunction_short Cu  2 Cu     0.006000      0.000000     12.000000
+symfunction_short Cu  2 Cu     0.016000      0.000000     12.000000
+symfunction_short Cu  2 Cu     0.040000      0.000000     12.000000
+symfunction_short Cu  2 Cu     0.109000      0.000000     12.000000
+
+symfunction_short Cu  3 Cu Cu     0.00000       1.000000      1.000000     12.000000
+symfunction_short Cu  3 Cu Cu     0.00000       1.000000      2.000000     12.000000
+symfunction_short Cu  3 Cu Cu     0.00000       1.000000      4.000000     12.000000
+symfunction_short Cu  3 Cu Cu     0.00000       1.000000     16.000000     12.000000
+symfunction_short Cu  3 Cu Cu     0.00000      -1.000000      1.000000     12.000000
+symfunction_short Cu  3 Cu Cu     0.00000      -1.000000      2.000000     12.000000
+symfunction_short Cu  3 Cu Cu     0.00000      -1.000000      4.000000     12.000000
+symfunction_short Cu  3 Cu Cu     0.00000      -1.000000     16.000000     12.000000
+
+########################################################################################################################
+### fitting (mode 2):general inputs for short range AND electrostatic part:
+########################################################################################################################
+epochs 20                                 # number of epochs                                     
+fitting_unit eV                           # unit for error output in mode 2 (eV or Ha)
+precondition_weights                      # optional precondition initial weights 
+
+########################################################################################################################
+### fitting options ( mode 2): short range part only:
+########################################################################################################################
+short_energy_error_threshold 0.10000      # threshold of adaptive Kalman filter short E         
+short_force_error_threshold 1.00000       # threshold of adaptive Kalman filter short F        
+kalman_lambda_short 0.98000               # Kalman parameter short E/F, do not change                        
+kalman_nue_short 0.99870                  # Kalman parameter short E/F, do not change                      
+use_short_forces                          # use forces for fitting                         
+repeated_energy_update                    # optional: repeat energy update for each force update   
+mix_all_points                            # do not change                    
+scale_symmetry_functions                  # optional
+center_symmetry_functions                 # optional 
+short_force_fraction 0.01                 #
+force_update_scaling -1.0                 #  
+
+########################################################################################################################
+### output options for mode 2 (fitting):  
+########################################################################################################################
+write_trainpoints                         # write trainpoints.out and testpoints.out files      
+write_trainforces                         # write trainforces.out and testforces.out files    
+
+########################################################################################################################
+### output options for mode 3 (prediction):  
+########################################################################################################################
+calculate_forces                          # calculate forces    
+calculate_stress                          # calculate stress tensor 
