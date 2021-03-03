@@ -7,9 +7,9 @@ dependencies:
 - atomicrex =1.0.1
 - runner =1.2
 - lammps =2021.02.10=*openmpi*_4
-- pyiron_atomistics =0.2.4
-- pyiron_base =0.1.48
-- pyiron_contrib =0.0.3
+- pyiron_atomistics =0.2.5
+- pyiron_base =0.2.2
+- pyiron_contrib =0.0.4
 - pyiron_gpl =0.0.2
 - pyiron-data =0.0.10
 - nglview =2.7.7
