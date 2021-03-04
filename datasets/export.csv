@@ -1,0 +1,4 @@
+,id,status,chemicalformula,job,subjob,project,timestart,timestop,totalcputime,computer,hamilton,hamversion,parentid,masterid
+0,0,finished,,df1_A1_A2_A3_EV_elast_phon,/df1_A1_A2_A3_EV_elast_phon,Cu_training_archive/Cu_database,2021-02-08 10:33:52.341472,,,zora@cmti001#1,TrainingContainer,0.4,,
+1,1,finished,,df3_10k,/df3_10k,Cu_training_archive/Cu_database,2021-02-08 10:33:53.993230,,,zora@cmti001#1,TrainingContainer,0.4,,
+2,2,finished,,df2_1k,/df2_1k,Cu_training_archive/Cu_database,2021-02-08 10:33:54.435308,,,zora@cmti001#1,TrainingContainer,0.4,,
