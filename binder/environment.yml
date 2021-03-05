@@ -2,16 +2,17 @@ channels:
 - conda-forge
 dependencies:
 - python
-- pyiron =0.4.0 
+- pyiron =0.4.1
 - sphinxdft =2.7.0
 - atomicrex =1.0.1
 - runner =1.2
 - lammps =2021.02.10=*openmpi*_4
-- pyiron_atomistics =0.2.5
+- pyiron_atomistics =0.2.6
 - pyiron_base =0.2.2
 - pyiron_contrib =0.0.6
 - pyiron_gpl =0.0.2
 - pyiron-data =0.0.12
+- pymatgen =2021.3.4
 - nglview =2.7.7
 - structdbrest =0.0.1
 - openkim-models =2021.01.28
