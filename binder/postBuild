@@ -1,3 +1,13 @@
+# install dataset
+cp datasets/Cu_training_archive.tar.gz .
+cp datasets/export.csv .
+python << EOF
+from pyiron import Project
+Project("datasets").unpack("Cu_training_archive")
+EOF
+rm Cu_training_archive.tar.gz
+rm export.csv
+
 # ngl view for jupyter
 jupyter nbextension install nglview --py --sys-prefix
 jupyter nbextension enable nglview --py --sys-prefix
