@@ -2,7 +2,7 @@ channels:
 - conda-forge
 dependencies:
 - python
-- pyiron =0.4.1
+- pyiron =0.4.2
 - sphinxdft =2.7.0
 - atomicrex =1.0.1
 - runner =1.2
