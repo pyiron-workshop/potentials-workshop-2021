@@ -13,3 +13,5 @@ python << EOF
 from pyiron import Project
 Project("datasets").unpack("Cu_training_archive")
 EOF
+rm Cu_training_archive.tar.gz
+rm export.csv
