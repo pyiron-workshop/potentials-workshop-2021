@@ -9,7 +9,7 @@ dependencies:
 - lammps =2021.02.10=*openmpi*_4
 - pyiron_atomistics =0.2.6
 - pyiron_base =0.2.2
-- pyiron_contrib =0.0.6
+- pyiron_contrib =0.0.7
 - pyiron_gpl =0.0.2
 - pyiron-data =0.0.12
 - pymatgen =2021.3.4
