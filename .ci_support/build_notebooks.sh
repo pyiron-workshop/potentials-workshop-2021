@@ -4,6 +4,7 @@ bash binder/postBuild
 
 # exclude notebooks
 rm -rf ./old_notebooks
+rm ./datasets/ImportDatabase.ipynb
 
 # execute notebooks
 current_dir=$(pwd)
