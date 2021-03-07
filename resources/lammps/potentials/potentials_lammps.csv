@@ -1,0 +1,3 @@
+,Config,Filename,Model,Name,Species,Citations
+0,"['pair_style pace\n', 'pair_coeff * * df3_cut75_large_body_order.ace Cu\n']",['ace/df3_cut75_large_body_order.ace'],ACE,Cu-ace,['Cu'],{}
+0,"['pair_style nnp dir ""."" showew no showewsum 0 resetew no maxew 100 cflength 1.8897261328 cfenergy 0.0367493254 emap ""1:Cu""\n', 'pair_coeff * * 12\n']","['runner/input.nn', 'runner/weights.029.data', 'runner/scaling.data']",RuNNer,Cu-runner,['Cu'],{}
