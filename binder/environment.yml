@@ -11,7 +11,7 @@ dependencies:
 - pyiron_base =0.2.2
 - pyiron_contrib =0.0.8
 - pyiron_gpl =0.0.2
-- pyiron-data =0.0.12
+- pyiron-data =0.0.13
 - pymatgen =2021.3.4
 - nglview =2.7.7
 - structdbrest =0.0.1
