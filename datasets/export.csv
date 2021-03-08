@@ -1,4 +1,5 @@
 ,id,status,chemicalformula,job,subjob,project,timestart,timestop,totalcputime,computer,hamilton,hamversion,parentid,masterid
-0,0,finished,,df1_A1_A2_A3_EV_elast_phon,/df1_A1_A2_A3_EV_elast_phon,Cu_training_archive/Cu_database,2021-02-08 10:33:52.341472,,,zora@cmti001#1,TrainingContainer,0.4,,
-1,1,finished,,df3_10k,/df3_10k,Cu_training_archive/Cu_database,2021-02-08 10:33:53.993230,,,zora@cmti001#1,TrainingContainer,0.4,,
-2,2,finished,,df2_1k,/df2_1k,Cu_training_archive/Cu_database,2021-02-08 10:33:54.435308,,,zora@cmti001#1,TrainingContainer,0.4,,
+2,0,finished,,df1_A1_A2_A3_EV_elast_phon,/df1_A1_A2_A3_EV_elast_phon,Cu_training_archive/Cu_database,2021-02-18 19:49:53.061360,,,zora@cmti001#1,TrainingContainer,0.4,,
+0,1,finished,,df3_10k,/df3_10k,Cu_training_archive/Cu_database,2021-02-18 19:49:55.496691,,,zora@cmti001#1,TrainingContainer,0.4,,
+3,2,finished,,df2_1k,/df2_1k,Cu_training_archive/Cu_database,2021-02-18 19:49:56.101883,,,zora@cmti001#1,TrainingContainer,0.4,,
+1,3,finished,,df4_2_5eV_25A3_8K,/df4_2_5eV_25A3_8K,Cu_training_archive/Cu_database,2021-02-18 19:49:57.547918,,,zora@cmti001#1,TrainingContainer,0.4,,
