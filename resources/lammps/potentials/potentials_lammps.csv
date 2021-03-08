@@ -1,0 +1,9 @@
+,Config,Filename,Model,Name,Species,Citations
+0,"['pair_style pace\n', 'pair_coeff * * df3_cut75_large_body_order.ace Cu\n']",['ace/df3_cut75_large_body_order.ace'],ACE,Cu-ace,['Cu'],{}
+0,"['pair_style eam/fs\n', 'pair_coeff * * DF1residual0.128179.eam.fs Cu\n']",['atomicrex/DF1residual0.128179.eam.fs'],ACE,Cu-atomicrex-df1-0-13,['Cu'],{}
+0,"['pair_style eam/fs\n', 'pair_coeff * * residual68.2249.eam.fs Cu\n']",['atomicrex/residual68.2249.eam.fs'],ACE,Cu-atomicrex-df1-68-22,['Cu'],{}
+0,"['pair_style eam/fs\n', 'pair_coeff * * residual68.2524.eam.fs Cu\n']",['atomicrex/residual68.2524.eam.fs'],ACE,Cu-atomicrex-df1-68-25,['Cu'],{}
+0,"['pair_style eam/fs\n', 'pair_coeff * * residual107.251.eam.fs Cu\n']",['atomicrex/residual107.251.eam.fs'],ACE,Cu-atomicrex-df1-107-25,['Cu'],{}
+0,"['pair_style nnp dir ""."" showew no showewsum 0 resetew no maxew 100 cflength 1.8897261328 cfenergy 0.0367493254 emap ""1:Cu""\n', 'pair_coeff * * 12\n']","['runner/df1/input.nn', 'runner/df1/weights.029.data', 'runner/df1/scaling.data']",RuNNer,Cu-runner-df1,['Cu'],{}
+0,"['pair_style nnp dir ""."" showew no showewsum 0 resetew no maxew 100 cflength 1.8897261328 cfenergy 0.0367493254 emap ""1:Cu""\n', 'pair_coeff * * 12\n']","['runner/df4/input.nn', 'runner/df4/weights.029.data', 'runner/df4/scaling.data']",RuNNer,Cu-runner-df4,['Cu'],{}
+0,"['pair_style nnp dir ""."" showew no showewsum 0 resetew no maxew 100 cflength 1.8897261328 cfenergy 0.0367493254 emap ""1:Cu""\n', 'pair_coeff * * 12\n']","['runner/df4-lowerRMSE/input.nn', 'runner/df4-lowerRMSE/weights.029.data', 'runner/df4-lowerRMSE/scaling.data']",RuNNer,Cu-runner-df4-lowerRMSE,['Cu'],{}

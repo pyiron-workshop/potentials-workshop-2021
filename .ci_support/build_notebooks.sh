@@ -1,4 +1,7 @@
 #!/bin/bash
+# pyiron config 
+python .ci_support/pyironconfig.py
+
 # install
 bash binder/postBuild
 
