@@ -1,0 +1,344 @@
+ -------------------------------------------------------------
+ ---------------------- Welcome to the -----------------------
+     RuNNer Neural Network Energy Representation - RuNNer     
+ ----------  (c) 2008-2020 Prof. Dr. Joerg Behler   ----------
+ ----------  Georg-August-Universitaet Goettingen   ----------
+ ----------           Theoretische Chemie           ----------
+ ----------              Tammannstr. 6              ----------
+ ----------        37077 Goettingen, Germany        ----------
+ -------------------------------------------------------------
+ -------------------------------------------------------------
+  This program is free software: you can redistribute it and/or modify it
+  under the terms of the GNU General Public License as published by the 
+  Free Software Foundation, either version 3 of the License, or 
+  (at your option) any later version.
+    
+  This program is distributed in the hope that it will be useful, but 
+  WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+  or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License 
+  for more details.
+      
+  You should have received a copy of the GNU General Public License along
+  with this program. If not, see http://www.gnu.org/licenses. 
+ -------------------------------------------------------------
+ -------------------------------------------------------------
+ When using RuNNer, please cite the following papers:
+ J. Behler, Angew. Chem. Int. Ed. 56, 12828 (2017).
+ J. Behler, Int. J. Quant. Chem. 115, 1032 (2015).
+ -------------------------------------------------------------
+ Whenever using high-dimensional NNPs irrespective of the Code please cite:
+ J. Behler and M. Parrinello, Phys. Rev. Lett. 98, 146401 (2007).
+ -------------------------------------------------------------
+ The reference for the atom-centered symmetry functions is:
+ J. Behler, J. Chem. Phys. 134, 074106 (2011).
+ -------------------------------------------------------------
+ For high-dimensional NNs including electrostatics:
+ N. Artrith, T. Morawietz, and J. Behler, Phys. Rev. B 83, 153101 (2011).
+ -------------------------------------------------------------
+ -------------------------------------------------------------
+ RuNNer has been written by Joerg Behler
+  
+ *** with contributions from some friends ***
+  
+ Tobias Morawietz - Nguyen Widrow weights and electrostatic screening
+ Jovan Jose Kochumannil Varghese - Pair symmetry functions and pair NNPs
+ Michael Gastegger and Philipp Marquetand - element decoupled Kalman filter
+ Andreas Singraber - more efficient symmetry function type 3 implementation
+ Sinja Klees and Mariana Rossi - some infrastructure for i-Pi compatibility
+ Emir Kocer - Symmetry function groups
+ Fenfei Wei and Emir Kocer - Hessian, frequencies and normal modes
+ -------------------------------------------------------------
+ -------------------------------------------------------------
+ General job information:
+ -------------------------------------------------------------
+ Executing host    : tc-pc16.uni-pc.gwdg.
+ User name         : mherbold            
+ Starting date     : 28. 2.2021
+ Starting time     : 15 h 19 min 
+ Working directory : /scratch2/tmp/mherbold-onPC16SSD/df4/2                      
+ -------------------------------------------------------------
+ -------------------------------------------------------------
+ Serial run requested
+ -------------------------------------------------------------
+ Reading control parameters from input.nn
+ =============================================================
+ -------------------------------------------------------------
+ =============================================================
+ General input parameters:
+ -------------------------------------------------------------
+ Short range NN is on
+ Electrostatic NN is off
+ vdW corrections switched off
+ -------------------------------------------------------------
+ RuNNer nn_type_short                                   1
+ RuNNer is started in mode for fitting (2)
+ debugging mode is                                        F
+ parallelization mode                                     1
+ enable detailed time measurement                         F
+ using symmetry function groups                           F
+ enable detailed time measurement at epoch level          F
+ silent mode                                              F
+ NN force check                                           F
+ number of elements                                       1
+ elements (sorted):
+ 29 Cu
+ seed for random number generator                        20
+ random number generator type                             6
+ remove free atom reference energies                      F
+ shortest allowed bond in structure                   0.500
+ Cutoff_type for symmetry function is                     1
+ Cutoff_alpha for inner cutoff radius is              0.000
+ -------------------------------------------------------------
+ Short range NN specifications:
+ -------------------------------------------------------------
+ global hidden layers short range NN                      2
+ global nodes hidden layers short NN                15   15
+ global activation functions short                      ttl
+ -------------------------------------------------------------
+ General fitting parameters:
+ -------------------------------------------------------------
+ number of fitting epochs                                10
+ print date and time for each epoch                       F
+ number of data sets in memory                          200
+ Fitting mode 1 (online learning) selected         
+ Randomly mixing all points in training set               T
+ save Kalman filter data                                  F
+ restart from old Kalman filter data                      F
+ rescale symmetry functions                               T
+ min value of scaled short range symmetry functions      0.000
+ max value of scaled short range symmetry functions      1.000
+ remove CMS from symmetry functions                       T
+ calculate symmetry function correlation                  F
+ weight analysis                                          F
+ environment analysis                                     F
+ find contradictions                                      F
+ fix some weights                                         F
+ using growth mode for fitting                            F
+ global fit of short and charge NN (not implemented)      F
+ error unit for fitting                                  eV
+ Reading formatted files 
+ Writing formatted files 
+ Resetting Kalman filter matrices each epoch              F
+ Preconditioning of weights is switched on
+ -------------------------------------------------------------
+ Fitting parameters short range part:
+ -------------------------------------------------------------
+ using forces for fitting                                 T
+ using Kalman filter optimization (1) for short range energy
+ using Kalman filter optimization (1) for short range forces
+ short energy error threshold                    0.10000000
+ short force error threshold                     1.00000000
+ Kalman lambda (short)                           0.98000000
+ Kalman nue (short)                              0.99870000
+ use_noisematrix                                          F
+ Kalman damp (short energy)                      1.00000000
+ Kalman damp (short force)                       1.00000000
+ restart fit with old weights (short)                     F
+ automatic scaling factor for force update selected
+ grouping energies in blocks of                           1
+ fraction of energies used for update                 1.000
+ grouping forces in blocks of                             1
+ fraction of forces used for update                   0.010
+ weights_min                                         -1.000
+ weights_max                                          1.000
+ Using repeated energy updates after each force update
+ max_energy                                       10000.000
+ max force component used for fitting             10000.000 Ha/Bohr
+ noise energy threshold                          0.00000000 Ha/atom
+ noise force threshold                           0.00000000 Ha/Bohr
+ restart fit with old weights (charge)                    F
+ -------------------------------------------------------------
+ Fitting output options:
+ -------------------------------------------------------------
+ write weights in every epoch                             1
+ write temporary weights each epoch                       F
+ write trainpoints.out and testpoints.out                 T
+ write binding energies only                              F
+ write trainforces.out and testforces.out                 T
+ =============================================================
+ Element pairs:   1    , shortest distance (Bohr)
+ pair    1 Cu Cu      2.824
+ =============================================================
+ => short range NN weights type 1                 Cu       466
+ -------------------------------------------------------------
+ -------------------------------------------------
+ Atomic short range NN for element: Cu
+ architecture       13   15   15    1
+ -------------------------------------------------
+   1   G  t  t  l
+   2   G  t  t   
+   3   G  t  t   
+   4   G  t  t   
+   5   G  t  t   
+   6   G  t  t   
+   7   G  t  t   
+   8   G  t  t   
+   9   G  t  t   
+  10   G  t  t   
+  11   G  t  t   
+  12   G  t  t   
+  13   G  t  t   
+  14      t  t   
+  15      t  t   
+ -------------------------------------------------------------
+ -------------------------------------------------------------
+  short range atomic symmetry functions element Cu :
+ -------------------------------------------------------------
+    1 Cu  2  Cu              0.000   0.000  12.000
+    2 Cu  2  Cu              0.006   0.000  12.000
+    3 Cu  2  Cu              0.016   0.000  12.000
+    4 Cu  2  Cu              0.040   0.000  12.000
+    5 Cu  2  Cu              0.109   0.000  12.000
+    6 Cu  3  Cu Cu   0.000  -1.000   1.000  12.000
+    7 Cu  3  Cu Cu   0.000   1.000   1.000  12.000
+    8 Cu  3  Cu Cu   0.000  -1.000   2.000  12.000
+    9 Cu  3  Cu Cu   0.000   1.000   2.000  12.000
+   10 Cu  3  Cu Cu   0.000  -1.000   4.000  12.000
+   11 Cu  3  Cu Cu   0.000   1.000   4.000  12.000
+   12 Cu  3  Cu Cu   0.000  -1.000  16.000  12.000
+   13 Cu  3  Cu Cu   0.000   1.000  16.000  12.000
+ -------------------------------------------------------------
+ =============================================================
+ Short range symmetry function values for element Cu
+ Training set:  min           max       average         range        stddev      range/stddev
+   1     6.72393532   25.25447208   14.00001115   18.53053676    4.02011080    4.60945921
+   2     5.03976308   19.37796546   10.59714429   14.33820238    3.11321693    4.60559053
+   3     3.25577537   13.11073890    6.98744718    9.85496353    2.14525332    4.59384607
+   4     1.25883453    6.21227127    3.05195579    4.95343674    1.07630994    4.60224009
+   5     0.06568766    1.53442885    0.48718005    1.46874120    0.26713619    5.49809898
+   6     2.42989188   42.06637435   12.30898440   39.63648248    7.96564228    4.97593051
+   7     6.59284339  109.34982696   33.28285935  102.75698358   21.03610544    4.88479124
+   8     0.78142670   19.11390444    5.22756080   18.33247774    3.61016236    5.07802030
+   9     5.20079617   86.39735705   26.20143575   81.19656088   16.68008353    4.86787495
+  10     0.15497639    7.72411752    1.91198556    7.56914113    1.46079520    5.18152107
+  11     3.59136462   60.38094318   17.95854981   56.78957856   11.72399989    4.84387403
+  12     0.00059457    1.66933490    0.34750355    1.66874033    0.32743124    5.09646040
+  13     0.52030958   18.24849080    4.70826264   17.72818122    3.59567219    4.93042198
+ -------------------------------------------------------------
+ Energies in training set (Ha/atom):
+                   Emin          Emax          average        stddev          range
+ Eshort         -0.135967      -0.091874      -0.118413       0.012680       0.044093
+ Eelec           0.000000       0.000000       0.000000       0.000000       0.000000
+ Etot           -0.135967      -0.091874      -0.118413       0.012680       0.044093
+ -------------------------------------------------------------
+ Energies in training set (eV/atom):
+                   Emin          Emax          average        stddev          range
+ Eshort         -3.699790      -2.499974      -3.222125       0.345036       1.199816
+ Eelec           0.000000       0.000000       0.000000       0.000000       0.000000
+ Etot           -3.699790      -2.499974      -3.222125       0.345036       1.199816
+ -------------------------------------------------------------
+ Force vectors in training set (Ha/Bohr):
+               Fmin          Fmax          average        stddev          range
+ Cu         0.000000       0.873705       0.011256       0.030995       0.873705
+ -------------------------------------------------------------
+ Force vectors in training set (eV/Bohr):
+               Fmin          Fmax          average        stddev          range
+ Cu         0.000000      23.774389       0.306275       0.843406      23.774389
+ -------------------------------------------------------------
+ Force components in training set (Ha/Bohr):
+               Fmin          Fmax          range
+ Cu         0.000000       0.873705       0.873705
+ -------------------------------------------------------------
+ Force components in training set (eV/Bohr):
+               Fmin          Fmax          range
+ Cu         0.000000      23.774389      23.774389
+ -------------------------------------------------------------
+ number of training points         7259
+ number of training atoms         64729
+ number of training forces       194187
+ number of testing points           814
+ number of testing atoms           7250
+ number of testing forces         21750
+ -------------------------------------------------------------
+ Number of atoms for each element:   
+            training:    testing:   
+  1  Cu        64729        7250
+ =============================================================
+ Weight Preconditioner:
+ Warning: Forces are not used for preconditioning
+ ----------------------
+ -------------------------------------------------------------
+ Final preconditioning of the output values:
+ --------------------------------------------
+ Minimum NN Eshort         -3.346222 Ha/atom
+ Minimum Ref Eshort        -0.135967 Ha/atom
+ Maximum NN Eshort         -2.012861 Ha/atom
+ Maximum Ref Eshort        -0.091874 Ha/atom
+ Average NN Eshort         -2.855668 Ha/atom
+ Average Ref Eshort        -0.118413 Ha/atom
+ Stddev NN Eshort           0.200995 Ha/atom
+ Stddev Ref Eshort          0.012680 Ha/atom
+ Factor for connecting short range weights:       0.063086
+ =============================================================
+ -------------------------------------------------------------
+ initialization time (min):    0.05
+ -------------------------------------------------------------
+ Did you check your output file for warnings? ;-)             
+ -------------------------------------------------------------
+ Short range energies below      10000.000 Ha/atom are used for fitting and Eshort RMSE!
+ => Fitted energy range has width of          0.044 Ha/atom =          1.200 eV/atom
+ => Number of short range training energies below max_energy:       7259
+ Force components below      10000.000 Ha/Bohr are used for fitting and Fshort RMSE!
+ Cu  => Fitted force range has width of          0.874 Ha/Bohr =         23.774 eV/Bohr
+ Cu  => Number of short range training force components below max_force:     194187
+ -------------------------------------------------------------------------------
+ RMSEs (energies: eV/atom, forces: eV/Bohr):
+                      --- E_short: ---    - time -
+                          /atom              min
+        epoch         train         test
+ ENERGY     0      0.486020     0.481254    9.86
+ FORCES     0      0.543702     0.502894
+ -------------------------------------------------------------------------------
+ ENERGY     1      0.039459     0.039840   19.05
+ FORCES     1      0.201312     0.174885
+ INFORMATION USED FOR UPDATE (E,F)     1      1998        45
+ -------------------------------------------------------------------------------
+ ENERGY     2      0.024635     0.026306   19.14
+ FORCES     2      0.132738     0.123616
+ INFORMATION USED FOR UPDATE (E,F)     2      5565       112
+ -------------------------------------------------------------------------------
+ ENERGY     3      0.022316     0.024581   19.13
+ FORCES     3      0.120274     0.111427
+ INFORMATION USED FOR UPDATE (E,F)     3      6033       131
+ -------------------------------------------------------------------------------
+ ENERGY     4      0.021333     0.023145   19.16
+ FORCES     4      0.113496     0.105447
+ INFORMATION USED FOR UPDATE (E,F)     4      6132       142
+ -------------------------------------------------------------------------------
+ ENERGY     5      0.022327     0.023597   19.13
+ FORCES     5      0.113152     0.102596
+ INFORMATION USED FOR UPDATE (E,F)     5      6064       137
+ -------------------------------------------------------------------------------
+ ENERGY     6      0.021007     0.022555   19.15
+ FORCES     6      0.102685     0.094464
+ INFORMATION USED FOR UPDATE (E,F)     6      6094       168
+ -------------------------------------------------------------------------------
+ ENERGY     7      0.021018     0.022213   19.15
+ FORCES     7      0.098023     0.097181
+ INFORMATION USED FOR UPDATE (E,F)     7      6226       158
+ -------------------------------------------------------------------------------
+ ENERGY     8      0.020692     0.022248   19.15
+ FORCES     8      0.095995     0.097202
+ INFORMATION USED FOR UPDATE (E,F)     8      6186       183
+ -------------------------------------------------------------------------------
+ ENERGY     9      0.020880     0.022219   19.16
+ FORCES     9      0.094960     0.095833
+ INFORMATION USED FOR UPDATE (E,F)     9      6122       176
+ -------------------------------------------------------------------------------
+ ENERGY    10      0.021217     0.022457   19.41
+ FORCES    10      0.097554     0.094895
+ INFORMATION USED FOR UPDATE (E,F)    10      6226       203
+ =============================================================
+ Best short range fit has been obtained in epoch     7
+                    --- E_short: ---          --- F_short: ---
+                   train         test        train         test
+ OPTSHORT        0.021018     0.022213     0.098023     0.097181
+ -------------------------------------------------------------
+ max Eshort error in last epoch (train set):       0.281291  eV/atom (structure      788 )
+ max Eshort error in last epoch (test set) :       0.261851  eV/atom (structure      253 )
+ -------------------------------------------------------------
+ Total runtime (s)  :      12095.013
+ Total runtime (min):        201.584
+ Total runtime (h)  :          3.360
+ Normal termination of RuNNer
+ -------------------------------------------------------------
