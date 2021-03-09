@@ -1,0 +1,8 @@
+- file: README.md
+- file: day_1/ex_01_introduction_to_pyiron.ipynb
+- file: day_1/ex_02_creating_structure_databases.ipynb
+- file: day_2/00-IntroductionDay2.ipynb
+- file: day_2/01-atomicrex/WorkshopPotentialEAM.ipynb
+- file: day_2/02-runner/Workflow-RuNNer.ipynb
+- file: day_2/03-ace/pacemaker-fit-tutorial.ipynb
+- file: day_3/ex_01_validation.ipynb

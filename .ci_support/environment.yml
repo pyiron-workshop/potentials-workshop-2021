@@ -1,0 +1,19 @@
+channels:
+  - conda-forge
+dependencies:
+  - cython
+  - libsass
+  - jupytext
+  - sphinx =2.4.4
+  - pybtex
+  - jupyter_sphinx
+  - sphinxcontrib-bibtex
+  - markdown-it-py
+  - myst-parser
+  - nest-asyncio
+  - async_generator
+  - nbclient
+  - nbdime
+  - sphinx-copybutton
+  - pydata-sphinx-theme
+  - matplotlib =3.2.1
