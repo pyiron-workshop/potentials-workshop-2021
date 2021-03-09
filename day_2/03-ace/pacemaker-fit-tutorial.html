@@ -1,0 +1,1565 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Fitting project &#8212; Software Tools from Atomistics to Phase Diagrams</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.37f24b989f4638ff9c27c22dc7559d4f.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Workflows for atomistic simulations" href="../../day_3/ex_01_validation.html" />
+    <link rel="prev" title="Getting started with RuNNer" href="../02-runner/Workflow-RuNNer.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo_dark.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Software Tools from Atomistics to Phase Diagrams</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../README.html">
+   Potentials Workshop
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../day_1/ex_01_introduction_to_pyiron.html">
+   <strong>
+    Workflows for atomistic simulations
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../day_1/ex_02_creating_structure_databases.html">
+   <strong>
+    Workflows for atomistic simulations
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00-IntroductionDay2.html">
+   Day 2 - Parameterization of interatomic potentials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00-IntroductionDay2.html#reference-data">
+   Reference data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-atomicrex/WorkshopPotentialEAM.html">
+   Fitting an EAM potential
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-runner/Workflow-RuNNer.html">
+   Getting started with
+   <strong>
+    RuNNer
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-runner/Workflow-RuNNer.html#about-runner">
+   About RuNNer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-runner/Workflow-RuNNer.html#getting-the-first-data-set">
+   Getting the First Data Set
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-runner/Workflow-RuNNer.html#the-runner-workflow">
+   The RuNNer Workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-runner/Workflow-RuNNer.html#pyiron-runner-fit">
+   Pyiron RuNNer Fit
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Fitting project
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#analyse-the-fitting-results">
+   Analyse the fitting results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#overview-of-the-fitted-potential-internals">
+   Overview of the fitted potential internals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#test-fitted-potential">
+   Test fitted potential
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#advanced-already-trained-potential">
+   Advanced (already trained) potential
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../day_3/ex_01_validation.html">
+   <strong>
+    Workflows for atomistic simulations
+   </strong>
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://pyiron.org">pyiron</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/day_2/03-ace/pacemaker-fit-tutorial.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/pyiron/potentials-workshop-2021/master?urlpath=lab/tree/day_2/03-ace/pacemaker-fit-tutorial.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Fitting project
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fit">
+     Fit
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analyse-the-fitting-results">
+   Analyse the fitting results
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview-of-the-fitted-potential-internals">
+   Overview of the fitted potential internals
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#test-fitted-potential">
+   Test fitted potential
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#optimization">
+     Optimization
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#e-v-curve">
+     E-V curve
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#advanced-already-trained-potential">
+   Advanced (already trained) potential
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pylab</span> inline
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Populating the interactive namespace from numpy and matplotlib
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyiron</span> <span class="kn">import</span> <span class="n">Project</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_pr</span> <span class="o">=</span> <span class="n">Project</span><span class="p">(</span><span class="s2">&quot;../../datasets&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_pr</span><span class="o">.</span><span class="n">job_table</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">data_pr</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s2">&quot;Cu_training_archive&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_pr</span><span class="o">.</span><span class="n">job_table</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>status</th>
+      <th>chemicalformula</th>
+      <th>job</th>
+      <th>subjob</th>
+      <th>projectpath</th>
+      <th>project</th>
+      <th>timestart</th>
+      <th>timestop</th>
+      <th>totalcputime</th>
+      <th>computer</th>
+      <th>hamilton</th>
+      <th>hamversion</th>
+      <th>parentid</th>
+      <th>masterid</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>finished</td>
+      <td>None</td>
+      <td>df1_A1_A2_A3_EV_elast_phon</td>
+      <td>/df1_A1_A2_A3_EV_elast_phon</td>
+      <td>/home/pyiron/</td>
+      <td>datasets/Cu_database/</td>
+      <td>2021-02-18 19:49:53.061360</td>
+      <td>None</td>
+      <td>None</td>
+      <td>zora@cmti001#1</td>
+      <td>TrainingContainer</td>
+      <td>0.4</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>finished</td>
+      <td>None</td>
+      <td>df3_10k</td>
+      <td>/df3_10k</td>
+      <td>/home/pyiron/</td>
+      <td>datasets/Cu_database/</td>
+      <td>2021-02-18 19:49:55.496691</td>
+      <td>None</td>
+      <td>None</td>
+      <td>zora@cmti001#1</td>
+      <td>TrainingContainer</td>
+      <td>0.4</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>finished</td>
+      <td>None</td>
+      <td>df2_1k</td>
+      <td>/df2_1k</td>
+      <td>/home/pyiron/</td>
+      <td>datasets/Cu_database/</td>
+      <td>2021-02-18 19:49:56.101883</td>
+      <td>None</td>
+      <td>None</td>
+      <td>zora@cmti001#1</td>
+      <td>TrainingContainer</td>
+      <td>0.4</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>finished</td>
+      <td>None</td>
+      <td>df4_2_5eV_25A3_8K</td>
+      <td>/df4_2_5eV_25A3_8K</td>
+      <td>/home/pyiron/</td>
+      <td>datasets/Cu_database/</td>
+      <td>2021-02-18 19:49:57.547918</td>
+      <td>None</td>
+      <td>None</td>
+      <td>zora@cmti001#1</td>
+      <td>TrainingContainer</td>
+      <td>0.4</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We will use smalles dataset for fitting, as real dataset took much more time, and go outside of the scope of the workshop</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_job</span> <span class="o">=</span> <span class="n">data_pr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;df1_A1_A2_A3_EV_elast_phon&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_job</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>atoms</th>
+      <th>energy</th>
+      <th>forces</th>
+      <th>number_of_atoms</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>A1:FHI-aims/PBE/tight:elastic:s_e_0</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0))</td>
+      <td>-3.699843</td>
+      <td>[[0.0, 0.0, 0.0]]</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>A1:FHI-aims/PBE/tight:murnaghan:strain_1_0</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0))</td>
+      <td>-3.699841</td>
+      <td>[[0.0, 0.0, 0.0]]</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>A1:FHI-aims/PBE/tight:phonon:supercell_phonon_0</td>
+      <td>(Atom('Cu', [4.3368086899420173e-19, 0.007070999999999999, 0.007070999999999999], index=0), Atom('Cu', [3.3306690738754696e-16, 1.81563, 1.8156300000000005], index=1), Atom('Cu', [7.262518, 10.893...</td>
+      <td>-236.789603</td>
+      <td>[[-1.13852957740976e-06, -0.0464638907314277, -0.0464636807741622], [-3.86335457040412e-06, 0.0124851330231607, 0.0124792943417333], [-1.94300535086066e-06, 6.63943441884098e-05, 6.92790474109119e...</td>
+      <td>64.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>A1:FHI-aims/PBE/tight:murnaghan:strain_1_02</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0))</td>
+      <td>-3.697932</td>
+      <td>[[0.0, 0.0, 0.0]]</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>A1:FHI-aims/PBE/tight:murnaghan:strain_0_98</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0))</td>
+      <td>-3.697559</td>
+      <td>[[0.0, 0.0, 0.0]]</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>A2:FHI-aims/PBE/tight:elastic:s_01_e_0_05000</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0))</td>
+      <td>-3.573436</td>
+      <td>[[0.0, 0.0, 0.0]]</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>A1:FHI-aims/PBE/tight:elastic:s_01_e_m0_05000</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0))</td>
+      <td>-3.546222</td>
+      <td>[[0.0, 0.0, 0.0]]</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>102</th>
+      <td>A3:FHI-aims/PBE/tight:elastic:s_01_e_m0_05000</td>
+      <td>(Atom('Cu', [1.2150849, 0.70152958, 0.9998186400000001], index=0), Atom('Cu', [0.0, 1.40305917, 2.99945593], index=1))</td>
+      <td>-7.079448</td>
+      <td>[[-3.5446112180968e-23, -1.13427558979097e-22, 0.0], [3.5446112180968e-23, 1.13427558979097e-22, 0.0]]</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>103</th>
+      <td>A2:FHI-aims/PBE/tight:elastic:s_01_e_m0_05000</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0))</td>
+      <td>-3.513068</td>
+      <td>[[0.0, 0.0, 0.0]]</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>104</th>
+      <td>A2:FHI-aims/PBE/tight:elastic:s_23_e_m0_05000</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0))</td>
+      <td>-3.494427</td>
+      <td>[[0.0, 0.0, 0.0]]</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>105 rows × 5 columns</p>
+</div></div></div>
+</div>
+<div class="section" id="fitting-project">
+<h1>Fitting project<a class="headerlink" href="#fitting-project" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fit_pr</span> <span class="o">=</span> <span class="n">Project</span><span class="p">(</span><span class="s2">&quot;pacemaker_fit&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">fit_pr</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span><span class="n">job_type</span><span class="o">=</span><span class="n">fit_pr</span><span class="o">.</span><span class="n">job_type</span><span class="o">.</span><span class="n">PaceMakerJob</span><span class="p">,</span> <span class="n">job_name</span><span class="o">=</span><span class="s2">&quot;df1_cut5_pyace&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="fit">
+<h2>Fit<a class="headerlink" href="#fit" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cutoff</span> <span class="o">=</span> <span class="mf">5.0</span> <span class="c1"># potential cutoff</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Potential specification</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;cutoff&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cutoff</span> <span class="c1"># global potential cutoff</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;potential&quot;</span><span class="p">]</span><span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;deltaSplineBins&quot;</span><span class="p">:</span> <span class="mf">0.001</span><span class="p">,</span> <span class="c1"># spline bins, used for fast radial functions evaluations</span>
+    
+    <span class="s2">&quot;element&quot;</span><span class="p">:</span> <span class="s2">&quot;Cu&quot;</span><span class="p">,</span> <span class="c1"># element - copper    </span>
+    
+    <span class="s2">&quot;npot&quot;</span><span class="p">:</span> <span class="s2">&quot;FinnisSinclairShiftedScaled&quot;</span><span class="p">,</span>    <span class="c1"># embedding functions</span>
+    <span class="s2">&quot;ndensity&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="c1"># number of densities: rho_1 and rho_2</span>
+    <span class="s2">&quot;fs_parameters&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span> <span class="c1"># parameters of embedding functions (for two densities)</span>
+    <span class="c1">#this embedding function corresponds to rho_1 + sqrt(abs(rho_2)) , with some modifications</span>
+    
+    <span class="c1"># radial base functions specification</span>
+    <span class="s2">&quot;radbase&quot;</span><span class="p">:</span> <span class="s2">&quot;ChebExpCos&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;radparameters&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">5.25</span><span class="p">],</span>
+    <span class="s2">&quot;rcut&quot;</span><span class="p">:</span> <span class="n">cutoff</span><span class="p">,</span>
+    <span class="s2">&quot;dcut&quot;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span>
+    <span class="s2">&quot;NameOfCutoffFunction&quot;</span><span class="p">:</span> <span class="s2">&quot;cos&quot;</span><span class="p">,</span>
+    
+    <span class="c1"># MOST IMPORTANT: potential &quot;shape&quot; i.e.:</span>
+    <span class="c1"># number of orders (rank), maximum index of radial functions (nradmax) and orbital moments (lmax) for each rank</span>
+    <span class="s2">&quot;rankmax&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s2">&quot;nradmax&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+    <span class="s2">&quot;lmax&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>    
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Fitting settings:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;fit&quot;</span><span class="p">]</span><span class="o">=</span> <span class="p">{</span>    
+    <span class="c1"># loss function specification</span>
+    <span class="s1">&#39;loss&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;kappa&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="c1"># relative weight of forces residuals</span>
+        
+        <span class="c1"># coefficients L1-L2 regularization</span>
+        <span class="s1">&#39;L1_coeffs&#39;</span><span class="p">:</span> <span class="mf">5e-7</span><span class="p">,</span> <span class="c1"># L1-regularization</span>
+        <span class="s1">&#39;L2_coeffs&#39;</span><span class="p">:</span> <span class="mf">5e-7</span><span class="p">,</span> <span class="c1"># L2-regularization</span>
+        <span class="s1">&#39;w1_coeffs&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s1">&#39;w2_coeffs&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        
+        <span class="c1">#radial smoothness regularization</span>
+        <span class="s1">&#39;w0_rad&#39;</span><span class="p">:</span> <span class="mf">1e-4</span><span class="p">,</span>     <span class="c1"># for radial functions values</span>
+        <span class="s1">&#39;w1_rad&#39;</span><span class="p">:</span> <span class="mf">1e-4</span><span class="p">,</span>     <span class="c1"># for radial functions first derivatives</span>
+        <span class="s1">&#39;w2_rad&#39;</span><span class="p">:</span> <span class="mf">1e-4</span><span class="p">,</span>     <span class="c1"># for radial functions second derivatives</span>
+    <span class="p">},</span>
+    
+    <span class="c1"># minimization setup:</span>
+    <span class="s1">&#39;optimizer&#39;</span><span class="p">:</span> <span class="s1">&#39;BFGS&#39;</span><span class="p">,</span>  <span class="c1"># scipy BFGS algorithm</span>
+    <span class="s1">&#39;maxiter&#39;</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>       <span class="c1"># max number of iterations    </span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Assign the dataset to fit on</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span><span class="o">.</span><span class="n">structure_data</span><span class="o">=</span><span class="n">data_job</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Run fitting job</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">job</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-03-09 09:13:42,018 - root - INFO - structure_data is TrainingContainer
+2021-03-09 09:13:42,021 - root - INFO - Saving training structures dataframe into /home/pyiron/day_2/03-ace/pacemaker_fit/df1_cut5_pyace_hdf5/df1_cut5_pyace/df_fit.pckl.gzip with pickle protocol = 4, compression = gzip
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job df1_cut5_pyace was saved and received the ID: 76
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fit_pr</span><span class="o">.</span><span class="n">job_table</span><span class="p">(</span><span class="n">full_table</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>status</th>
+      <th>chemicalformula</th>
+      <th>job</th>
+      <th>subjob</th>
+      <th>projectpath</th>
+      <th>project</th>
+      <th>timestart</th>
+      <th>timestop</th>
+      <th>totalcputime</th>
+      <th>computer</th>
+      <th>hamilton</th>
+      <th>hamversion</th>
+      <th>parentid</th>
+      <th>masterid</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>76</td>
+      <td>finished</td>
+      <td>None</td>
+      <td>df1_cut5_pyace</td>
+      <td>/df1_cut5_pyace</td>
+      <td>/home/pyiron/</td>
+      <td>day_2/03-ace/pacemaker_fit/</td>
+      <td>2021-03-09 09:13:42.059294</td>
+      <td>2021-03-09 09:18:39.142853</td>
+      <td>297.0</td>
+      <td>pyiron@jupyter-janssen#1</td>
+      <td>PaceMakerJob</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="analyse-the-fitting-results">
+<h1>Analyse the fitting results<a class="headerlink" href="#analyse-the-fitting-results" title="Permalink to this headline">¶</a></h1>
+<p>loss function</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">job</span><span class="p">[</span><span class="s2">&quot;output/log/loss&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;# iter&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Loss&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/pacemaker-fit-tutorial_27_0.png" src="../../_images/pacemaker-fit-tutorial_27_0.png" />
+</div>
+</div>
+<p>RMSE of energies per atoms</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">job</span><span class="p">[</span><span class="s2">&quot;output/log/rmse_energy&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;# iter&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Energy RMSE, meV/atom&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/pacemaker-fit-tutorial_29_0.png" src="../../_images/pacemaker-fit-tutorial_29_0.png" />
+</div>
+</div>
+<p>RMSE of forces norm</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">job</span><span class="p">[</span><span class="s2">&quot;output/log/rmse_forces&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;# iter&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Forces RMSE, meV/Ang/structure&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/pacemaker-fit-tutorial_31_0.png" src="../../_images/pacemaker-fit-tutorial_31_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="overview-of-the-fitted-potential-internals">
+<h1>Overview of the fitted potential internals<a class="headerlink" href="#overview-of-the-fitted-potential-internals" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyace</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">final_potential</span> <span class="o">=</span> <span class="n">job</span><span class="o">.</span><span class="n">get_final_potential</span><span class="p">()</span>
+<span class="n">final_basis_set</span> <span class="o">=</span> <span class="n">ACEBBasisSet</span><span class="p">(</span><span class="n">final_potential</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For single-species potential there is only one <strong>species block</strong> for <em>Cu</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">final_potential</span><span class="o">.</span><span class="n">funcspecs_blocks</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Cu_block</span> <span class="o">=</span> <span class="n">final_potential</span><span class="o">.</span><span class="n">funcspecs_blocks</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Basic definitions and notations:</p>
+<ul class="simple">
+<li><p>Radial functions: <span class="math notranslate nohighlight">\(R_{nl}(r) = \sum_k c_{nlk} g_k(r)\)</span></p></li>
+<li><p>Spherical harmonics:  <span class="math notranslate nohighlight">\(  Y_{lm}(\hat{\pmb{r}}_{ji}) \)</span></p></li>
+<li><p>Basis function: <span class="math notranslate nohighlight">\(\phi_{\mu_j \mu_i nlm}(\pmb{r}_{ji}) = R_{nl}^{\mu_j \mu_i}(r_{ji}) Y_{lm}(\hat{\pmb{r}}_{ji}) \)</span></p></li>
+<li><p>Atomic base (A-functions): <span class="math notranslate nohighlight">\( A_{i \mu n l m} = \sum_j \delta_{\mu \mu_j} \phi_{\mu_j\mu_i nlm}(\pmb{r}_{ji})  \)</span></p></li>
+<li><p>Product of atomic base: <span class="math notranslate nohighlight">\( \pmb{A}_{i\pmb{\mu n l m}} =  \prod_{t = 1}^{\nu} A_{i \mu_t n_t l_t m_t}  \)</span></p></li>
+<li><p>Equivariant basis (B-functions):  <span class="math notranslate nohighlight">\(  {B}_{i\pmb{\mu n l L}}  = \sum_{\pmb{m}}   \left(
+\begin{array}{c} 
+\pmb{l m} \\
+\pmb{L M}
+\end{array}
+L_R
+\right)  \pmb{A}_{i\pmb{\mu n l m}}  \)</span> ,</p></li>
+</ul>
+<p>where <span class="math notranslate nohighlight">\( \left(\begin{array}{c} \pmb{l m} \\ \pmb{L M}\end{array} L_R\right) \)</span> is <em>generalized Clebsh-Gordan coefficients</em></p>
+<ul class="simple">
+<li><p>Atomic property (densities) <span class="math notranslate nohighlight">\( \rho_i^{(p)} = \sum_{\pmb{\mu n l L}} {c}^{(p)}_{\mu_i\pmb{\mu n l L}} {B}_{i\pmb{\mu n l L}}  \)</span></p></li>
+<li><p>Atomic energy: <span class="math notranslate nohighlight">\( E_i = F(\rho_i^{(1)}, \dots,\rho_i^{(P)} )  \)</span>, where <span class="math notranslate nohighlight">\(F\)</span> is embedding function</p></li>
+</ul>
+<p>radial coefficients <span class="math notranslate nohighlight">\(c_{nlk}\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">Cu_block</span><span class="o">.</span><span class="n">radcoefficients</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, 3, 7)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Visualize the radial basis functions (<span class="math notranslate nohighlight">\(g_k\)</span>) and radial functions (<span class="math notranslate nohighlight">\(R_{nl}\)</span>) and their derivatives:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">RadialFunctionsVisualization</span><span class="p">(</span><span class="n">final_basis_set</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/pacemaker-fit-tutorial_44_0.png" src="../../_images/pacemaker-fit-tutorial_44_0.png" />
+</div>
+</div>
+<p>Total number of basis functions</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">Cu_block</span><span class="o">.</span><span class="n">funcspecs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18
+</pre></div>
+</div>
+</div>
+</div>
+<p>List of B-basis functions <span class="math notranslate nohighlight">\( {B}_{i\pmb{\mu n l L}}\)</span>: <span class="math notranslate nohighlight">\(\pmb{\mu} = \)</span> <code class="docutils literal notranslate"><span class="pre">elements</span></code>, <span class="math notranslate nohighlight">\(\pmb{n} = \)</span> <code class="docutils literal notranslate"><span class="pre">ns</span></code>, <span class="math notranslate nohighlight">\(\pmb{l} = \)</span> <code class="docutils literal notranslate"><span class="pre">ls</span></code>, <span class="math notranslate nohighlight">\(\pmb{L} = \)</span> <code class="docutils literal notranslate"><span class="pre">LS</span></code>)  and corresponding coefficients <span class="math notranslate nohighlight">\( {c}^{(p)}_{\mu_i\pmb{\mu n l L}} =\)</span> <code class="docutils literal notranslate"><span class="pre">coeffs</span></code> for two densities</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Cu_block</span><span class="o">.</span><span class="n">funcspecs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[BBasisFunctionSpecification(elements=[Cu,Cu],  ns=[1],  ls=[0],  coeffs=[-0.95121,-0.202222]),
+ BBasisFunctionSpecification(elements=[Cu,Cu],  ns=[2],  ls=[0],  coeffs=[0.14178,0.0409501]),
+ BBasisFunctionSpecification(elements=[Cu,Cu],  ns=[3],  ls=[0],  coeffs=[0.436094,0.14006]),
+ BBasisFunctionSpecification(elements=[Cu,Cu],  ns=[4],  ls=[0],  coeffs=[0.526956,0.183426]),
+ BBasisFunctionSpecification(elements=[Cu,Cu],  ns=[5],  ls=[0],  coeffs=[0.173617,0.0969896]),
+ BBasisFunctionSpecification(elements=[Cu,Cu],  ns=[6],  ls=[0],  coeffs=[-0.450901,-0.0592275]),
+ BBasisFunctionSpecification(elements=[Cu,Cu],  ns=[7],  ls=[0],  coeffs=[-0.712825,-0.117959]),
+ BBasisFunctionSpecification(elements=[Cu,Cu,Cu],  ns=[1,1],  ls=[0,0],  coeffs=[0.160119,0.116377]),
+ BBasisFunctionSpecification(elements=[Cu,Cu,Cu],  ns=[1,1],  ls=[1,1],  coeffs=[0.0465253,0.0096226]),
+ BBasisFunctionSpecification(elements=[Cu,Cu,Cu],  ns=[1,1],  ls=[2,2],  coeffs=[0.399933,0.110766]),
+ BBasisFunctionSpecification(elements=[Cu,Cu,Cu],  ns=[2,1],  ls=[0,0],  coeffs=[1.12538,0.30352]),
+ BBasisFunctionSpecification(elements=[Cu,Cu,Cu],  ns=[2,1],  ls=[1,1],  coeffs=[-0.0014862,-0.000472396]),
+ BBasisFunctionSpecification(elements=[Cu,Cu,Cu],  ns=[2,1],  ls=[2,2],  coeffs=[0.0715307,0.0150598]),
+ BBasisFunctionSpecification(elements=[Cu,Cu,Cu],  ns=[2,2],  ls=[0,0],  coeffs=[0.174111,0.043949]),
+ BBasisFunctionSpecification(elements=[Cu,Cu,Cu],  ns=[2,2],  ls=[1,1],  coeffs=[0.00779379,-0.000127733]),
+ BBasisFunctionSpecification(elements=[Cu,Cu,Cu],  ns=[2,2],  ls=[2,2],  coeffs=[0.00818897,-0.000672408]),
+ BBasisFunctionSpecification(elements=[Cu,Cu,Cu,Cu],  ns=[1,1,1],  ls=[0,0,0],  LS=[0],  coeffs=[-0.0093474,-0.0203294]),
+ BBasisFunctionSpecification(elements=[Cu,Cu,Cu,Cu],  ns=[1,1,1],  ls=[1,1,0],  LS=[0],  coeffs=[0.423325,0.126696])]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Compare to potential “shape” i.e.:</p>
+<ul class="simple">
+<li><p>“rankmax”: 3</p></li>
+<li><p>“nradmax”: [7,2,1]</p></li>
+<li><p>“lmax”: [0,2,1]</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Trainable parameters number&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B-functions coefficients: &quot;</span><span class="p">,</span><span class="n">Cu_block</span><span class="o">.</span><span class="n">ndensityi</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">Cu_block</span><span class="o">.</span><span class="n">funcspecs</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Radial functions coefficients: &quot;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Cu_block</span><span class="o">.</span><span class="n">radcoefficients</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total number of trainable parameters: &quot;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">final_potential</span><span class="o">.</span><span class="n">get_all_coeffs</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Trainable parameters number
+
+B-functions coefficients:  36
+Radial functions coefficients:  42
+----------------------------------------
+Total number of trainable parameters:  78
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="test-fitted-potential">
+<h1>Test fitted potential<a class="headerlink" href="#test-fitted-potential" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_pr</span> <span class="o">=</span> <span class="n">Project</span><span class="p">(</span><span class="s2">&quot;test_ace_potential&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_pr</span><span class="o">.</span><span class="n">remove_jobs_silently</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_pr</span><span class="o">.</span><span class="n">job_table</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cu_ace_potential</span> <span class="o">=</span> <span class="n">job</span><span class="o">.</span><span class="n">get_lammps_potential</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cu_ace_potential</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Config</th>
+      <th>Filename</th>
+      <th>Model</th>
+      <th>Name</th>
+      <th>Species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>[pair_style pace\n, pair_coeff  * * /home/pyiron/day_2/03-ace/pacemaker_fit/df1_cut5_pyace_hdf5/df1_cut5_pyace/df1_cut5_pyace.ace Cu\n]</td>
+      <td></td>
+      <td>ACE</td>
+      <td>df1_cut5_pyace</td>
+      <td>[Cu]</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="optimization">
+<h2>Optimization<a class="headerlink" href="#optimization" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lammps_job</span> <span class="o">=</span> <span class="n">test_pr</span><span class="o">.</span><span class="n">create</span><span class="o">.</span><span class="n">job</span><span class="o">.</span><span class="n">Lammps</span><span class="p">(</span><span class="s2">&quot;opt_lammps&quot;</span><span class="p">,</span> <span class="n">delete_existing_job</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lammps_job</span><span class="o">.</span><span class="n">potential</span> <span class="o">=</span> <span class="n">cu_ace_potential</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lammps_job</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">test_pr</span><span class="o">.</span><span class="n">create</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">ase_bulk</span><span class="p">(</span><span class="s2">&quot;Cu&quot;</span><span class="p">,</span><span class="s2">&quot;fcc&quot;</span><span class="p">,</span><span class="n">cubic</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-35-d2e1f8892ec0&gt;:1: DeprecationWarning: pyiron_atomistics.atomistics.structure.factory.ase_bulk is deprecated: Please use .bulk or .ase.bulk. It is not guaranteed to be in service in vers. 0.2.2
+  lammps_job.structure = test_pr.create.structure.ase_bulk(&quot;Cu&quot;,&quot;fcc&quot;,cubic=True)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lammps_job</span><span class="o">.</span><span class="n">calc_minimize</span><span class="p">(</span><span class="n">pressure</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lammps_job</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job opt_lammps was saved and received the ID: 77
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_pr</span><span class="o">.</span><span class="n">job_table</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>status</th>
+      <th>chemicalformula</th>
+      <th>job</th>
+      <th>subjob</th>
+      <th>projectpath</th>
+      <th>project</th>
+      <th>timestart</th>
+      <th>timestop</th>
+      <th>totalcputime</th>
+      <th>computer</th>
+      <th>hamilton</th>
+      <th>hamversion</th>
+      <th>parentid</th>
+      <th>masterid</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>77</td>
+      <td>finished</td>
+      <td>Cu4</td>
+      <td>opt_lammps</td>
+      <td>/opt_lammps</td>
+      <td>/home/pyiron/</td>
+      <td>day_2/03-ace/test_ace_potential/</td>
+      <td>2021-03-09 09:18:42.055287</td>
+      <td>2021-03-09 09:18:42.413620</td>
+      <td>0.0</td>
+      <td>pyiron@jupyter-janssen#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="e-v-curve">
+<h2>E-V curve<a class="headerlink" href="#e-v-curve" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ev_job</span> <span class="o">=</span> <span class="n">test_pr</span><span class="o">.</span><span class="n">create</span><span class="o">.</span><span class="n">job</span><span class="o">.</span><span class="n">Murnaghan</span><span class="p">(</span><span class="s2">&quot;murn&quot;</span><span class="p">,</span> <span class="n">delete_existing_job</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ref_job</span> <span class="o">=</span> <span class="n">test_pr</span><span class="o">.</span><span class="n">create</span><span class="o">.</span><span class="n">job</span><span class="o">.</span><span class="n">Lammps</span><span class="p">(</span><span class="s2">&quot;ref_job&quot;</span><span class="p">,</span> <span class="n">delete_existing_job</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ref_job</span><span class="o">.</span><span class="n">potential</span> <span class="o">=</span> <span class="n">cu_ace_potential</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ref_job</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">lammps_job</span><span class="o">.</span><span class="n">get_structure</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ev_job</span><span class="o">.</span><span class="n">ref_job</span> <span class="o">=</span> <span class="n">ref_job</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ev_job</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job murn was saved and received the ID: 78
+The job strain_0_9 was saved and received the ID: 79
+The job strain_0_92 was saved and received the ID: 80
+The job strain_0_94 was saved and received the ID: 81
+The job strain_0_96 was saved and received the ID: 82
+The job strain_0_98 was saved and received the ID: 83
+The job strain_1_0 was saved and received the ID: 84
+The job strain_1_02 was saved and received the ID: 85
+The job strain_1_04 was saved and received the ID: 86
+The job strain_1_06 was saved and received the ID: 87
+The job strain_1_08 was saved and received the ID: 88
+The job strain_1_1 was saved and received the ID: 89
+job_id:  79 finished
+job_id:  80 finished
+job_id:  81 finished
+job_id:  82 finished
+job_id:  83 finished
+job_id:  84 finished
+job_id:  85 finished
+job_id:  86 finished
+job_id:  87 finished
+job_id:  88 finished
+job_id:  89 finished
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ev_job</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/pacemaker-fit-tutorial_71_0.png" src="../../_images/pacemaker-fit-tutorial_71_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ev_job</span><span class="p">[</span><span class="s2">&quot;output/equilibrium_bulk_modulus&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>157.26478378968022
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ev_job</span><span class="p">[</span><span class="s2">&quot;output/equilibrium_b_prime&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.871581007824487
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ev_job</span><span class="p">[</span><span class="s2">&quot;output/equilibrium_energy&quot;</span><span class="p">]</span><span class="o">/</span><span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-3.6992805045165476
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ev_job</span><span class="p">[</span><span class="s2">&quot;output/equilibrium_volume&quot;</span><span class="p">]</span><span class="o">/</span><span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11.966449592242205
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="advanced-already-trained-potential">
+<h1>Advanced (already trained) potential<a class="headerlink" href="#advanced-already-trained-potential" title="Permalink to this headline">¶</a></h1>
+<p>More advanced Cu potential trained on <code class="docutils literal notranslate"><span class="pre">df3</span></code> and longer range (<code class="docutils literal notranslate"><span class="pre">cutoff=7.5</span></code>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">advanced_potential</span> <span class="o">=</span> <span class="n">BBasisConfiguration</span><span class="p">(</span><span class="s2">&quot;good_potentials/df3_cut75_large_body_order.yaml&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">advanced_basis_set</span> <span class="o">=</span> <span class="n">ACEBBasisSet</span><span class="p">(</span><span class="n">advanced_potential</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For single-species potential there is only one <strong>species block</strong> for <em>Cu</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">advanced_potential</span><span class="o">.</span><span class="n">funcspecs_blocks</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Cu_block</span> <span class="o">=</span> <span class="n">advanced_potential</span><span class="o">.</span><span class="n">funcspecs_blocks</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>radial coefficients <span class="math notranslate nohighlight">\(c_{nlk}\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">Cu_block</span><span class="o">.</span><span class="n">radcoefficients</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4, 5, 15)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cutoff: &quot;</span><span class="p">,</span><span class="n">Cu_block</span><span class="o">.</span><span class="n">rcutij</span><span class="p">,</span> <span class="s2">&quot; Ang&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cutoff:  7.5  Ang
+</pre></div>
+</div>
+</div>
+</div>
+<p>Visualize the radial basis functions (<span class="math notranslate nohighlight">\(g_k\)</span>) and radial functions (<span class="math notranslate nohighlight">\(R_{nl}\)</span>) and their derivatives:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">RadialFunctionsVisualization</span><span class="p">(</span><span class="n">advanced_basis_set</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/pacemaker-fit-tutorial_88_0.png" src="../../_images/pacemaker-fit-tutorial_88_0.png" />
+</div>
+</div>
+<p>Total number of basis functions</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">Cu_block</span><span class="o">.</span><span class="n">funcspecs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>208
+</pre></div>
+</div>
+</div>
+</div>
+<p>List of B-basis functions <span class="math notranslate nohighlight">\( {B}_{i\pmb{\mu n l L}}\)</span>: <span class="math notranslate nohighlight">\(\pmb{\mu} = \)</span> <code class="docutils literal notranslate"><span class="pre">elements</span></code>, <span class="math notranslate nohighlight">\(\pmb{n} = \)</span> <code class="docutils literal notranslate"><span class="pre">ns</span></code>, <span class="math notranslate nohighlight">\(\pmb{l} = \)</span> <code class="docutils literal notranslate"><span class="pre">ls</span></code>, <span class="math notranslate nohighlight">\(\pmb{L} = \)</span> <code class="docutils literal notranslate"><span class="pre">LS</span></code>)  and corresponding coefficients <span class="math notranslate nohighlight">\( {c}^{(p)}_{\mu_i\pmb{\mu n l L}} =\)</span> <code class="docutils literal notranslate"><span class="pre">coeffs</span></code> for two densities</p>
+<p>first 20 B-functions</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Cu_block</span><span class="o">.</span><span class="n">funcspecs</span><span class="p">[:</span><span class="mi">20</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[BBasisFunctionSpecification(elements=[Al,Al],  ns=[1],  ls=[0],  coeffs=[0.778052,-0.641316]),
+ BBasisFunctionSpecification(elements=[Al,Al],  ns=[2],  ls=[0],  coeffs=[2.23777,0.156201]),
+ BBasisFunctionSpecification(elements=[Al,Al],  ns=[3],  ls=[0],  coeffs=[4.43693,-0.13343]),
+ BBasisFunctionSpecification(elements=[Al,Al],  ns=[4],  ls=[0],  coeffs=[1.47578,-1.28301]),
+ BBasisFunctionSpecification(elements=[Al,Al],  ns=[5],  ls=[0],  coeffs=[-2.59834,-1.53179]),
+ BBasisFunctionSpecification(elements=[Al,Al],  ns=[6],  ls=[0],  coeffs=[-1.69264,0.330513]),
+ BBasisFunctionSpecification(elements=[Al,Al],  ns=[7],  ls=[0],  coeffs=[1.43426,2.03646]),
+ BBasisFunctionSpecification(elements=[Al,Al],  ns=[8],  ls=[0],  coeffs=[0.770394,0.734637]),
+ BBasisFunctionSpecification(elements=[Al,Al],  ns=[9],  ls=[0],  coeffs=[-1.5626,-1.94086]),
+ BBasisFunctionSpecification(elements=[Al,Al],  ns=[10],  ls=[0],  coeffs=[-0.302523,-1.69641]),
+ BBasisFunctionSpecification(elements=[Al,Al],  ns=[11],  ls=[0],  coeffs=[1.56285,1.38751]),
+ BBasisFunctionSpecification(elements=[Al,Al],  ns=[12],  ls=[0],  coeffs=[-0.55265,2.25767]),
+ BBasisFunctionSpecification(elements=[Al,Al],  ns=[13],  ls=[0],  coeffs=[-1.30788,-0.708937]),
+ BBasisFunctionSpecification(elements=[Al,Al],  ns=[14],  ls=[0],  coeffs=[1.63759,-2.00429]),
+ BBasisFunctionSpecification(elements=[Al,Al],  ns=[15],  ls=[0],  coeffs=[-0.703138,1.26224]),
+ BBasisFunctionSpecification(elements=[Al,Al,Al],  ns=[1,1],  ls=[0,0],  coeffs=[-0.0151471,0.0245058]),
+ BBasisFunctionSpecification(elements=[Al,Al,Al],  ns=[1,1],  ls=[1,1],  coeffs=[0.00809464,0.133587]),
+ BBasisFunctionSpecification(elements=[Al,Al,Al],  ns=[1,1],  ls=[2,2],  coeffs=[-0.00675808,-0.00741527]),
+ BBasisFunctionSpecification(elements=[Al,Al,Al],  ns=[1,1],  ls=[3,3],  coeffs=[0.000552032,-0.0112879]),
+ BBasisFunctionSpecification(elements=[Al,Al,Al],  ns=[1,1],  ls=[4,4],  coeffs=[-0.000231509,-0.00476812])]
+</pre></div>
+</div>
+</div>
+</div>
+<p>last 20 B-functions</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Cu_block</span><span class="o">.</span><span class="n">funcspecs</span><span class="p">[</span><span class="o">-</span><span class="mi">20</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[BBasisFunctionSpecification(elements=[Al,Al,Al,Al],  ns=[3,3,2],  ls=[2,1,1],  LS=[1],  coeffs=[-0.0108445,0.0344024]),
+ BBasisFunctionSpecification(elements=[Al,Al,Al,Al],  ns=[3,3,2],  ls=[2,2,0],  LS=[0],  coeffs=[0.00323158,0.229271]),
+ BBasisFunctionSpecification(elements=[Al,Al,Al,Al],  ns=[3,3,2],  ls=[2,2,2],  LS=[2],  coeffs=[-0.000115442,0.0766528]),
+ BBasisFunctionSpecification(elements=[Al,Al,Al,Al],  ns=[3,3,2],  ls=[3,2,1],  LS=[1],  coeffs=[0.00202504,-0.0988705]),
+ BBasisFunctionSpecification(elements=[Al,Al,Al,Al],  ns=[3,3,2],  ls=[3,3,0],  LS=[0],  coeffs=[-0.00468792,0.125821]),
+ BBasisFunctionSpecification(elements=[Al,Al,Al,Al],  ns=[3,3,2],  ls=[3,3,2],  LS=[2],  coeffs=[0.00633233,-0.0604226]),
+ BBasisFunctionSpecification(elements=[Al,Al,Al,Al],  ns=[3,3,3],  ls=[0,0,0],  LS=[0],  coeffs=[-0.00257037,0.0733903]),
+ BBasisFunctionSpecification(elements=[Al,Al,Al,Al],  ns=[3,3,3],  ls=[1,1,0],  LS=[0],  coeffs=[0.0269804,0.496832]),
+ BBasisFunctionSpecification(elements=[Al,Al,Al,Al],  ns=[3,3,3],  ls=[2,1,1],  LS=[1],  coeffs=[-0.0389079,0.344705]),
+ BBasisFunctionSpecification(elements=[Al,Al,Al,Al],  ns=[3,3,3],  ls=[2,2,0],  LS=[0],  coeffs=[-0.01581,0.418819]),
+ BBasisFunctionSpecification(elements=[Al,Al,Al,Al],  ns=[3,3,3],  ls=[2,2,2],  LS=[2],  coeffs=[-0.00142522,-0.0231997]),
+ BBasisFunctionSpecification(elements=[Al,Al,Al,Al],  ns=[3,3,3],  ls=[3,2,1],  LS=[1],  coeffs=[-0.0292446,0.0184941]),
+ BBasisFunctionSpecification(elements=[Al,Al,Al,Al],  ns=[3,3,3],  ls=[3,3,0],  LS=[0],  coeffs=[-0.0162695,-0.0196287]),
+ BBasisFunctionSpecification(elements=[Al,Al,Al,Al],  ns=[3,3,3],  ls=[3,3,2],  LS=[2],  coeffs=[0.0182932,-0.65958]),
+ BBasisFunctionSpecification(elements=[Al,Al,Al,Al,Al],  ns=[1,1,1,1],  ls=[0,0,0,0],  LS=[0,0],  coeffs=[6.43545e-07,4.05521e-05]),
+ BBasisFunctionSpecification(elements=[Al,Al,Al,Al,Al],  ns=[1,1,1,1],  ls=[1,1,0,0],  LS=[0,0],  coeffs=[5.19403e-06,9.87758e-05]),
+ BBasisFunctionSpecification(elements=[Al,Al,Al,Al,Al],  ns=[1,1,1,1],  ls=[1,1,1,1],  LS=[0,0],  coeffs=[2.15772e-06,-0.000101061]),
+ BBasisFunctionSpecification(elements=[Al,Al,Al,Al,Al,Al],  ns=[1,1,1,1,1],  ls=[0,0,0,0,0],  LS=[0,0,0],  coeffs=[-1.66834e-09,-6.00712e-07]),
+ BBasisFunctionSpecification(elements=[Al,Al,Al,Al,Al,Al],  ns=[1,1,1,1,1],  ls=[1,1,0,0,0],  LS=[0,0,0],  coeffs=[-2.1876e-08,-3.14206e-06]),
+ BBasisFunctionSpecification(elements=[Al,Al,Al,Al,Al,Al],  ns=[1,1,1,1,1],  ls=[1,1,1,1,0],  LS=[0,0,0],  coeffs=[3.28251e-08,-4.23939e-06])]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Trainable parameters number&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B-functions coefficients: &quot;</span><span class="p">,</span><span class="n">Cu_block</span><span class="o">.</span><span class="n">ndensityi</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">Cu_block</span><span class="o">.</span><span class="n">funcspecs</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Radial functions coefficients: &quot;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Cu_block</span><span class="o">.</span><span class="n">radcoefficients</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total number of trainable parameters: &quot;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">advanced_potential</span><span class="o">.</span><span class="n">get_all_coeffs</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Trainable parameters number
+
+B-functions coefficients:  416
+Radial functions coefficients:  300
+----------------------------------------
+Total number of trainable parameters:  716
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./day_2/03-ace"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../02-runner/Workflow-RuNNer.html" title="previous page">Getting started with <strong>RuNNer</strong></a>
+    <a class='right-next' id="next-link" href="../../day_3/ex_01_validation.html" title="next page"><strong>Workflows for atomistic simulations</strong></a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Jan Janssen<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

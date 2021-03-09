@@ -1,0 +1,1218 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Getting started with RuNNer &#8212; Software Tools from Atomistics to Phase Diagrams</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.37f24b989f4638ff9c27c22dc7559d4f.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Fitting project" href="../03-ace/pacemaker-fit-tutorial.html" />
+    <link rel="prev" title="Fitting an EAM potential" href="../01-atomicrex/WorkshopPotentialEAM.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo_dark.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Software Tools from Atomistics to Phase Diagrams</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../README.html">
+   Potentials Workshop
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../day_1/ex_01_introduction_to_pyiron.html">
+   <strong>
+    Workflows for atomistic simulations
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../day_1/ex_02_creating_structure_databases.html">
+   <strong>
+    Workflows for atomistic simulations
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00-IntroductionDay2.html">
+   Day 2 - Parameterization of interatomic potentials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00-IntroductionDay2.html#reference-data">
+   Reference data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-atomicrex/WorkshopPotentialEAM.html">
+   Fitting an EAM potential
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Getting started with
+   <strong>
+    RuNNer
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#about-runner">
+   About RuNNer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#getting-the-first-data-set">
+   Getting the First Data Set
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#the-runner-workflow">
+   The RuNNer Workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#pyiron-runner-fit">
+   Pyiron RuNNer Fit
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-ace/pacemaker-fit-tutorial.html">
+   Fitting project
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-ace/pacemaker-fit-tutorial.html#analyse-the-fitting-results">
+   Analyse the fitting results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-ace/pacemaker-fit-tutorial.html#overview-of-the-fitted-potential-internals">
+   Overview of the fitted potential internals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-ace/pacemaker-fit-tutorial.html#test-fitted-potential">
+   Test fitted potential
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-ace/pacemaker-fit-tutorial.html#advanced-already-trained-potential">
+   Advanced (already trained) potential
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../day_3/ex_01_validation.html">
+   <strong>
+    Workflows for atomistic simulations
+   </strong>
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://pyiron.org">pyiron</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/day_2/02-runner/Workflow-RuNNer.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/pyiron/potentials-workshop-2021/master?urlpath=lab/tree/day_2/02-runner/Workflow-RuNNer.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Getting started with
+   <strong>
+    RuNNer
+   </strong>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#constructing-a-hdnnp-for-bulk-copper">
+     Constructing a HDNNP for Bulk Copper
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#about-runner">
+   About RuNNer
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-the-first-data-set">
+   Getting the First Data Set
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-runner-workflow">
+   The RuNNer Workflow
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pyiron-runner-fit">
+   Pyiron RuNNer Fit
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#runner-mode-1">
+     RuNNer Mode 1
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#definition-of-the-symmetry-functions-sfs">
+       Definition of the Symmetry Functions (SFs)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-cutoff-function">
+       The Cutoff Function
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-radial-symmetry-functions">
+       The Radial Symmetry Functions
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-angular-symmetry-functions">
+       The Angular Symmetry Functions
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#output-mode-1">
+       Output Mode 1
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#short-quick-example-of-sf-calculation">
+       Short quick example of SF calculation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#runner-mode-2">
+     RuNNer Mode 2
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#runner-mode-3">
+     RuNNer Mode 3
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="getting-started-with-runner">
+<h1>Getting started with <strong>RuNNer</strong><a class="headerlink" href="#getting-started-with-runner" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="constructing-a-hdnnp-for-bulk-copper">
+<h2>Constructing a HDNNP for Bulk Copper<a class="headerlink" href="#constructing-a-hdnnp-for-bulk-copper" title="Permalink to this headline">¶</a></h2>
+<p>This Jupyter Notebook is written for the RuNNer tutorial at the workshop “WORKFLOWS FOR ATOMISTIC SIMULATION” from 10-12 March, 2021 by <strong>Marius Herbold</strong> (<a class="reference external" href="mailto:marius&#46;herbold&#37;&#52;&#48;chemie&#46;uni-goettingen&#46;de">marius<span>&#46;</span>herbold<span>&#64;</span>chemie<span>&#46;</span>uni-goettingen<span>&#46;</span>de</a>, Georg-August-Universität Göttingen, Institut für Physikalische Chemie, Theoretische Chemie).</p>
+<p>It is written in text form for an easier understanding, if participants will get back later to this notebook. Anyhow, during the tutorial, we will
+not explicitly go through the text.</p>
+<p>For this tutorial it is intended to use the RuNNer release version 1.2.
+RuNNer is hosted at <a class="reference external" href="http://www.gitlab.com">www.gitlab.com</a>. The most recent version can only be found in this repository.
+For access please contact Prof. Jörg Behler (<a class="reference external" href="mailto:joerg&#46;behler&#37;&#52;&#48;uni-goettingen&#46;de">joerg<span>&#46;</span>behler<span>&#64;</span>uni-goettingen<span>&#46;</span>de</a>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Import python modules</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">ase</span>
+<span class="kn">from</span> <span class="nn">pyiron</span> <span class="kn">import</span> <span class="n">Project</span>
+
+<span class="c1">### Import Marius Class and functions</span>
+<span class="kn">import</span> <span class="nn">functions</span> <span class="k">as</span> <span class="nn">fc</span>
+
+<span class="c1">### Varibales form RuNNer UC</span>
+<span class="n">Bohr2Ang</span> <span class="o">=</span> <span class="mf">0.5291772109030</span>   <span class="c1"># CODATA 2018</span>
+<span class="n">Ang2Bohr</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">Bohr2Ang</span>
+<span class="n">Eh2eV</span>    <span class="o">=</span> <span class="mf">27.211386245988</span>   <span class="c1"># CODATA 2018</span>
+<span class="n">eV2Eh</span>    <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">Eh2eV</span>
+<span class="n">f_conversion</span> <span class="o">=</span> <span class="n">eV2Eh</span><span class="o">/</span><span class="n">Ang2Bohr</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="about-runner">
+<h1>About RuNNer<a class="headerlink" href="#about-runner" title="Permalink to this headline">¶</a></h1>
+<p><strong>RuNNer</strong> is a stand-alone Fortran program for the construction of high-dimensional neural network potentials (HDNNP), written mainly by Jörg Behler. It relates the local environment of an atom to its atomic energy <span class="math notranslate nohighlight">\(E_\mathrm{s}\)</span>, which contributes to the sum of all <span class="math notranslate nohighlight">\(N\)</span> atomic energies, resulting in the total energy of the system <span class="math notranslate nohighlight">\(E_\mathrm{s}\)</span></p>
+<p>\begin{equation}
+E_\mathrm{s} = \sum_{a}^{N}E_\mathrm{a}.
+\end{equation}</p>
+<p>The atomic energy is described by an atomic neural network (NN), which is element specific. This gives the oppurtunity to describe different numbers of atoms with the same NN, which would be not the case, if there is only one NN for the whole system. To feed information to the NN, the local environment up to a certain cutoff radius <span class="math notranslate nohighlight">\(R_\mathrm{c}\)</span> is described by so-called symmetry functions (SF) (more details are shown in a few moments) forming the SF vector <span class="math notranslate nohighlight">\(G\)</span>, which forms the input layer of the NN. In the next layers of the NN - the hidden layers - this information will be processed and in the final layer - the output layer - the atomic NN will provide the atomic energy <span class="math notranslate nohighlight">\(E_\mathrm{a}\)</span>. In each layer, there are a certain number of nodes <span class="math notranslate nohighlight">\(y\)</span> which are connected by the weights <span class="math notranslate nohighlight">\(a\)</span> and can be biased by the biases <span class="math notranslate nohighlight">\(b\)</span>. For the NN training the wheights and biases are optimized to represent best the data in the training data set.</p>
+<p><img alt="test" src="../../_images/NNP1.png" /></p>
+<p>In general <strong>RuNNer</strong> can be separated into three different stages - so-called modes, in which different steps are performed.</p>
+<ul class="simple">
+<li><p>mode 1: SF calculation, data set splitting in training and test set</p></li>
+<li><p>mode 2: training of the NN to construct the NNP</p></li>
+<li><p>mode 3: prediction of energy, forces, stress, charges</p></li>
+</ul>
+<p>All these steps are performed consecutively beginning with mode 1. Needed input files are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">input.nn</span></code>:</p>
+<ul>
+<li><p>main control file needed in all modes</p></li>
+<li><p>contains all control parameters (NN architecture, symmetry functios, …)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">input.data</span></code>:</p>
+<ul>
+<li><p>needed in mode 1 and 3</p></li>
+<li><p>contains structural information (lattice vectors, atomic positions, forces, charges, total energy)</p></li>
+<li><p>output of electronic structure code must be converted to <code class="docutils literal notranslate"><span class="pre">input.data</span></code> format</p></li>
+<li><p>RuNNer repository provides the RuNNerUC (universial converter) to convert from several formats (FHI-aims, VASP, xyz, LAMMPS) to input.data format and vice-versa</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="getting-the-first-data-set">
+<h1>Getting the First Data Set<a class="headerlink" href="#getting-the-first-data-set" title="Permalink to this headline">¶</a></h1>
+<p>Before we are gettinger deeper into <strong>RuNNer</strong>, we will go one step back. At the beginning of each NNP, there is your data set. For sure, the data set does not have to be good/perfect/large, because you can increase your data set step by step and train different generations of your NN, ending up with an accurate potential. For getting your first data set, there are several ways like:</p>
+<ul class="simple">
+<li><p>small random displacements,</p></li>
+<li><p>thermal displacements by a simple potential - like force fields - in MD,</p></li>
+<li><p>experimental structures.</p></li>
+</ul>
+<p>The question “What is a good data set?” is not that simple to answer and it strongly depends on the purpose of your potential. But one important point is for sure the distribution of your data over the configurational space you like to handle with your potential. If some configurations are missing, the NNP will provide inaccurate results, because you make the NNP predict energies and forces for an unknown configuration. In <strong>RuNNer</strong>, this is called an <code class="docutils literal notranslate"><span class="pre">extrapolation</span></code>, that means the NNP is not trained to such a configuration.</p>
+<p>Here in the workshop, we are dealing with bulk-Cu. So, a first application of your NNP could be to predict the equilibrium lattice constant of bulk-Cu and you will calculate the energy of a bulk-Cu unit cell with different lattice constants to give an energy-volume curve, which provides the equilibrium lattice constant at its minimum. Thus, your data set should contain information of different cell volumes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read in workshop&#39;s data set in pandas data frame</span>
+<span class="n">data_pr</span> <span class="o">=</span> <span class="n">Project</span><span class="p">(</span><span class="s2">&quot;../../datasets&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_pr</span><span class="o">.</span><span class="n">job_table</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">data_pr</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s2">&quot;Cu_training_archive&quot;</span><span class="p">)</span>
+<span class="n">data_job</span> <span class="o">=</span> <span class="n">data_pr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;df4_2_5eV_25A3_8K&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data_job</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+<span class="n">fig1</span> <span class="o">=</span> <span class="n">fc</span><span class="o">.</span><span class="n">PlotData</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of points in plot: 8073
+</pre></div>
+</div>
+<img alt="../../_images/Workflow-RuNNer_4_1.png" src="../../_images/Workflow-RuNNer_4_1.png" />
+</div>
+</div>
+<p>As already mentioned, your data needs to be stored in the <code class="docutils literal notranslate"><span class="pre">input.data</span></code> file. This file is used for <code class="docutils literal notranslate"><span class="pre">mode</span> <span class="pre">1</span></code> to generate all the needed files for the NN training in <code class="docutils literal notranslate"><span class="pre">mode</span> <span class="pre">2</span></code>. In this case the <code class="docutils literal notranslate"><span class="pre">input.data</span></code> stores all the information of the electronic structure code like the total energy and charge, the structure (lattice constants, atomic positions), atomic forces and may the atomic charges. If used in <code class="docutils literal notranslate"><span class="pre">mode</span> <span class="pre">3</span></code>, only the structural paramteres are necessary, since <code class="docutils literal notranslate"><span class="pre">mode</span> <span class="pre">3</span></code> is the prediction mode and we may do not know the outcome of an electronic structure calculation.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">input.data</span></code> follows a certain format with certain keywords. Each structure is embedded between the keywords <code class="docutils literal notranslate"><span class="pre">begin</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span></code>, to separate different structures from each other. For periodic structures the three lattice vectors are introduced by the keyword <code class="docutils literal notranslate"><span class="pre">lattice</span></code>, for non-periodic structures this keyword is just missing. Information about the atoms is given line by line, thus each atom in one line, beginning with the <code class="docutils literal notranslate"><span class="pre">atom</span></code> keyword, followed by the Cartesian coordinates (x, y and z), the element, the atomic charge, an unused column and the atomic force components (fx, fy and fz). The <code class="docutils literal notranslate"><span class="pre">energy</span></code> keyword is followed by the total energy of the current structure, equivalent, the overall charge is marked by the <code class="docutils literal notranslate"><span class="pre">charge</span></code> keyword. Comments can also be added with the <code class="docutils literal notranslate"><span class="pre">comment</span></code> keyword. Important aspect: the data is given in special units. A length is given in <code class="docutils literal notranslate"><span class="pre">bohr</span></code>, an energy in <code class="docutils literal notranslate"><span class="pre">Hartree</span></code>, thus forces in <code class="docutils literal notranslate"><span class="pre">Hartree/bohr</span></code> and charges in the elementary charge <code class="docutils literal notranslate"><span class="pre">e</span></code>. In general, periodic and non-periodic structures can be mixed, as well as different numbers of atoms per structure can be combined. Information can be given in a free format (number of digits), but it is recommended to use at least six digits and the order of the keywords is arbitrary in general.</p>
+</div>
+<div class="section" id="the-runner-workflow">
+<h1>The RuNNer Workflow<a class="headerlink" href="#the-runner-workflow" title="Permalink to this headline">¶</a></h1>
+<p>We discussed the <code class="docutils literal notranslate"><span class="pre">input.data</span></code> and will have a look at the next steps. Here, the <code class="docutils literal notranslate"><span class="pre">input.nn</span></code> is explained. Keywords can be given in an arbitrary order, but grouping keywords by the modes is useful for the general structure. The units are the same as for the <code class="docutils literal notranslate"><span class="pre">input.data</span></code>, see above. If a keyword is not specified, <strong>RuNNer</strong> uses default values, if possible. A summary in the output files give more detailed information in the specific case. Most keywords can only be specified ones, to avoid contradictions, otherwise an error will be printed. Also comments can be added to the file, which are indicated by a hash <code class="docutils literal notranslate"><span class="pre">#</span></code>. In principle, it is possible to change the <code class="docutils literal notranslate"><span class="pre">input.nn</span></code> for every mode, however it is highly recommended not to do that. Anyway here, you will not have the opportunity to explicitly change the <code class="docutils literal notranslate"><span class="pre">input.nn</span></code>, since <strong>RuNNer</strong> is called via the pyiron environment. At the moment, the implementation of <strong>RuNNer</strong> to pyiron is on a very early stage, thus no changes are possible for the input.</p>
+<p>In the following we will discuss a subset, but the most important keywords. Beginning with some general keywords of the <code class="docutils literal notranslate"><span class="pre">input.nn</span></code>. I think the first keywords are self-explanatory together with the given comments. The data set splitting in <code class="docutils literal notranslate"><span class="pre">mode</span> <span class="pre">1</span></code> and the initial weights in <code class="docutils literal notranslate"><span class="pre">mode</span> <span class="pre">2</span></code> rely on random numbers. For the reproducibility, a random number seed (keyword <code class="docutils literal notranslate"><span class="pre">random_seed</span></code>) has to be defined, which will give the same results, if the run is repeated later. Together with this, the generator for the random numbers can also be defined (keyword <code class="docutils literal notranslate"><span class="pre">random_number_type</span></code>). The second group of keywords describe the architecture of the NN and the activation functions of the nodes via the keywords <code class="docutils literal notranslate"><span class="pre">global_...</span></code>. Usually, we use 2-3 hidden layers with 10-40 nodes each.</p>
+</div>
+<div class="section" id="pyiron-runner-fit">
+<h1>Pyiron RuNNer Fit<a class="headerlink" href="#pyiron-runner-fit" title="Permalink to this headline">¶</a></h1>
+<p>Here, you will not have the opportunity to explicitly change the <code class="docutils literal notranslate"><span class="pre">input.nn</span></code>, since <strong>RuNNer</strong> is called via the pyiron environment. At the moment, the implementation of <strong>RuNNer</strong> to pyiron is on a very early stage, thus no changes are possible for the input.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pr</span> <span class="o">=</span> <span class="n">Project</span><span class="p">(</span><span class="s2">&quot;runner_fit&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_pr</span><span class="o">.</span><span class="n">job_table</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>status</th>
+      <th>chemicalformula</th>
+      <th>job</th>
+      <th>subjob</th>
+      <th>projectpath</th>
+      <th>project</th>
+      <th>timestart</th>
+      <th>timestop</th>
+      <th>totalcputime</th>
+      <th>computer</th>
+      <th>hamilton</th>
+      <th>hamversion</th>
+      <th>parentid</th>
+      <th>masterid</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>finished</td>
+      <td>None</td>
+      <td>df1_A1_A2_A3_EV_elast_phon</td>
+      <td>/df1_A1_A2_A3_EV_elast_phon</td>
+      <td>/home/pyiron/</td>
+      <td>datasets/Cu_database/</td>
+      <td>2021-02-18 19:49:53.061360</td>
+      <td>None</td>
+      <td>None</td>
+      <td>zora@cmti001#1</td>
+      <td>TrainingContainer</td>
+      <td>0.4</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>finished</td>
+      <td>None</td>
+      <td>df3_10k</td>
+      <td>/df3_10k</td>
+      <td>/home/pyiron/</td>
+      <td>datasets/Cu_database/</td>
+      <td>2021-02-18 19:49:55.496691</td>
+      <td>None</td>
+      <td>None</td>
+      <td>zora@cmti001#1</td>
+      <td>TrainingContainer</td>
+      <td>0.4</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>finished</td>
+      <td>None</td>
+      <td>df2_1k</td>
+      <td>/df2_1k</td>
+      <td>/home/pyiron/</td>
+      <td>datasets/Cu_database/</td>
+      <td>2021-02-18 19:49:56.101883</td>
+      <td>None</td>
+      <td>None</td>
+      <td>zora@cmti001#1</td>
+      <td>TrainingContainer</td>
+      <td>0.4</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>finished</td>
+      <td>None</td>
+      <td>df4_2_5eV_25A3_8K</td>
+      <td>/df4_2_5eV_25A3_8K</td>
+      <td>/home/pyiron/</td>
+      <td>datasets/Cu_database/</td>
+      <td>2021-02-18 19:49:57.547918</td>
+      <td>None</td>
+      <td>None</td>
+      <td>zora@cmti001#1</td>
+      <td>TrainingContainer</td>
+      <td>0.4</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">j</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">create</span><span class="o">.</span><span class="n">job</span><span class="o">.</span><span class="n">RunnerFit</span><span class="p">(</span><span class="s1">&#39;fit&#39;</span><span class="p">,</span> <span class="n">delete_existing_job</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Be aware of fitting a larger data set, since it will run some time, roughly six hours!</span>
+<span class="n">j</span><span class="o">.</span><span class="n">add_job_to_fitting</span><span class="p">(</span><span class="n">data_pr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;df1_A1_A2_A3_EV_elast_phon&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">j</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job fit was saved and received the ID: 68
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">j</span><span class="o">.</span><span class="n">lammps_potential</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Filename</th>
+      <th>Model</th>
+      <th>Species</th>
+      <th>Config</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>RuNNer-Cu</td>
+      <td>[/home/pyiron/day_2/02-runner/runner_fit/fit_hdf5/fit/input.nn, /home/pyiron/day_2/02-runner/runner_fit/fit_hdf5/fit/weights.029.data, /home/pyiron/day_2/02-runner/runner_fit/fit_hdf5/fit/scaling....</td>
+      <td>RuNNer</td>
+      <td>[Cu]</td>
+      <td>[pair_style nnp dir "./" showew no showewsum 0 resetew no maxew 100 cflength 1.8897261328 cfenergy 0.0367493254 emap "1:Cu"\n, pair_coeff * * 12\n]</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The data set, you will fit is a strongly reduced subset of the data shown above. For comparison, the same plot is shown here.</p>
+<p><strong>Be aware of fitting a larger data set, since it will run some time, roughly six hours!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1_job</span> <span class="o">=</span> <span class="n">data_pr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;df1_A1_A2_A3_EV_elast_phon&#39;</span><span class="p">)</span>
+<span class="n">df1</span> <span class="o">=</span> <span class="n">df1_job</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+<span class="n">fig1</span> <span class="o">=</span> <span class="n">fc</span><span class="o">.</span><span class="n">PlotData</span><span class="p">(</span><span class="n">df1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of points in plot: 105
+</pre></div>
+</div>
+<img alt="../../_images/Workflow-RuNNer_17_1.png" src="../../_images/Workflow-RuNNer_17_1.png" />
+</div>
+</div>
+<div class="section" id="runner-mode-1">
+<h2>RuNNer Mode 1<a class="headerlink" href="#runner-mode-1" title="Permalink to this headline">¶</a></h2>
+<p>In <strong>RuNNer</strong>’s mode 1 the following steps are performed:</p>
+<ul class="simple">
+<li><p>calculation of SF values,</p></li>
+<li><p>splitting of data set in train and test data set.</p></li>
+</ul>
+<p>The amount of test structures is defined by the keyword <code class="docutils literal notranslate"><span class="pre">test_fraction</span></code>. Here, <code class="docutils literal notranslate"><span class="pre">test_fraction</span> <span class="pre">0.10</span></code> means 10% of the data set will be used for testing and is not part of the training data. <code class="docutils literal notranslate"><span class="pre">use_short_forces</span></code> keyword states to use also the atomic forces for the fitting process in <code class="docutils literal notranslate"><span class="pre">mode</span> <span class="pre">2</span></code>, but it is recommended to use it also in <code class="docutils literal notranslate"><span class="pre">mode</span> <span class="pre">1</span></code> to create the necessary force files.</p>
+<p>In the next group of keywords, the SFs are defined. There are two different types of SFs: the radial SFs <code class="docutils literal notranslate"><span class="pre">symfunction_short</span> <span class="pre">XX</span> <span class="pre">type</span> <span class="pre">XX</span> <span class="pre">...</span></code> to describe the atomic distances and angular SFs <code class="docutils literal notranslate"><span class="pre">symfunction_short</span> <span class="pre">XX</span> <span class="pre">type</span> <span class="pre">XX</span> <span class="pre">XX</span> <span class="pre">...</span></code> to describe the spatial distribution of the neighboring atoms. <code class="docutils literal notranslate"><span class="pre">cutoff_type</span></code> keyword describes the cutoff function type. All mentioned SF types are shown in the next section.</p>
+<div class="section" id="definition-of-the-symmetry-functions-sfs">
+<h3>Definition of the Symmetry Functions (SFs)<a class="headerlink" href="#definition-of-the-symmetry-functions-sfs" title="Permalink to this headline">¶</a></h3>
+<p>Different types of SFs for the radial and angular SFs are implemented in <strong>RuNNer</strong>, but only the most common types are shown here. SFs provide the input for the NN and describe the local atomic environment of each atom and are rotationally and translationally invariant. So, SFs describe the relative positions of the atoms to each other. In contrast, Cartesian coordinates describe the absolute positions to each other and change with a translation or a rotation. That means the numerical input will change with translation or rotation, but not the energy of the system. However, different numerical inputs belonging to the same energy leads to problems in fitting.</p>
+</div>
+<div class="section" id="the-cutoff-function">
+<h3>The Cutoff Function<a class="headerlink" href="#the-cutoff-function" title="Permalink to this headline">¶</a></h3>
+<p>Another kind of symmetry function is the cutoff function, which is included in the radial and angular SFs. The cutoff radius <span class="math notranslate nohighlight">\(R_\mathrm{c}\)</span> (usually <span class="math notranslate nohighlight">\(12\,\mathrm{bohr}\)</span>) defines how much of the local atomic environment is considered. All SFs will decrease to zero, if the atomic distance is larger than <span class="math notranslate nohighlight">\(R_\mathrm{c}\)</span>. A decrease to exact zero is necessary for numerical reasons. There are several cutoff funtions defined in <strong>RuNNer</strong> and we will use here</p>
+<p>\begin{equation}
+f_{c}(R_{ij}) =
+\begin{cases}
+1&amp; ~ \text{for <span class="math notranslate nohighlight">\(R_{ij} \leq R_{inner,c}\)</span>}\
+0.5 * [cos(\pi x) + 1]&amp; ~ \text{for <span class="math notranslate nohighlight">\(R_{inner,c} \leq R_{ij} \leq R_\mathrm{c}\)</span>},\
+0&amp; ~ \text{for <span class="math notranslate nohighlight">\(R_\mathrm{c} &lt; R_{ij}\)</span>}
+\end{cases}
+\end{equation}</p>
+<p>with the atomic distance <span class="math notranslate nohighlight">\(R_{ij}\)</span>, the cutoff radius <span class="math notranslate nohighlight">\(R_\mathrm{c}\)</span>, the inner cutoff <span class="math notranslate nohighlight">\(R_{inner,c}\)</span> (here <span class="math notranslate nohighlight">\(=0\)</span>) and <span class="math notranslate nohighlight">\(x = \frac{R_{ij} - R_{inner,c}}{R_\mathrm{c} - R_{inner,c}}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distances</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">15.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">cfct</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">fc</span><span class="o">.</span><span class="n">cutofffct</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">distances</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distances</span><span class="p">,</span> <span class="n">cfct</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Workflow-RuNNer_24_0.png" src="../../_images/Workflow-RuNNer_24_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="the-radial-symmetry-functions">
+<h3>The Radial Symmetry Functions<a class="headerlink" href="#the-radial-symmetry-functions" title="Permalink to this headline">¶</a></h3>
+<p>To define the parameters for the radial SFs, it is important to know which are the shortest bonds in your data set. Usually, 5-6 radial SF are used for each element pair, with different <span class="math notranslate nohighlight">\(\eta\)</span> values to increase the resolution for structure description. It is possible to shift the maximum of the radial SF <span class="math notranslate nohighlight">\(G^2\)</span> by <span class="math notranslate nohighlight">\(R_{s}\)</span></p>
+<p>\begin{equation}
+G_{i}^{2} = \sum_{j}^{}e^{\eta (R_{ij} - R_{s})^2} \cdot f_{c}(R_{ij}).
+\end{equation}</p>
+<p>Below, the defintion of a radial SF in <code class="docutils literal notranslate"><span class="pre">input.nn</span></code>, again <code class="docutils literal notranslate"><span class="pre">symfunction_short</span></code> calls to define a SF, <code class="docutils literal notranslate"><span class="pre">Cu</span></code> defines the specific element, <code class="docutils literal notranslate"><span class="pre">2</span></code> the SF type, the second <code class="docutils literal notranslate"><span class="pre">Cu</span></code> defines the neighboring atom, and the last three parameters define <span class="math notranslate nohighlight">\(\eta\)</span>, <span class="math notranslate nohighlight">\(R_{s}\)</span> and <span class="math notranslate nohighlight">\(R_\mathrm{c}\)</span>. The gaussian exponent <span class="math notranslate nohighlight">\(\eta\)</span> for the radial SF are chosen to equally distribute the radial SF turning points, whereas the turning point of radial SF with <span class="math notranslate nohighlight">\(\eta = 0\)</span> is set to the specific minimum bond in your data set. There is no need to define element specific SF, also global SF are possible, which are used for every element combination. It is also possible to define for each SF a different <span class="math notranslate nohighlight">\(R_\mathrm{c}\)</span>, but it is recommended to use only one <span class="math notranslate nohighlight">\(R_\mathrm{c}\)</span> for all SFs.</p>
+<p>Here, different radial parts of radial SFs with different <span class="math notranslate nohighlight">\(\eta\)</span> are plotted. Feel free and play around with the parameters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rsf1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">fc</span><span class="o">.</span><span class="n">radialSF</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">distances</span><span class="p">])</span>
+<span class="n">rsf2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">fc</span><span class="o">.</span><span class="n">radialSF</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">distances</span><span class="p">])</span>
+<span class="n">rsf3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">fc</span><span class="o">.</span><span class="n">radialSF</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mf">0.025</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">distances</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distances</span><span class="p">,</span> <span class="n">rsf1</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distances</span><span class="p">,</span> <span class="n">rsf2</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distances</span><span class="p">,</span> <span class="n">rsf3</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Workflow-RuNNer_28_0.png" src="../../_images/Workflow-RuNNer_28_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="the-angular-symmetry-functions">
+<h3>The Angular Symmetry Functions<a class="headerlink" href="#the-angular-symmetry-functions" title="Permalink to this headline">¶</a></h3>
+<p>For the angular SF it is quite similar as for the radial SF. But here, three atomic positions are included.</p>
+<p>\begin{equation}
+G_{i}^{3} = 2^{\zeta - 1}\sum_{j}^{} \sum_{k}^{} \left[( 1 + \lambda \cdot cos \theta_{ijk})^{\zeta} \cdot e^{\eta (R_{ij}^2 + R_{ik}^2 + R_{jk}^2)} \cdot f_{c}(R_{ij}) \cdot f_{c}(R_{ik}) \cdot f_{c}(R_{jk}) \right],
+\end{equation}</p>
+<p>the angle <span class="math notranslate nohighlight">\(\theta_{ijk} = \frac{\mathbf{R}_{ij} \cdot \mathbf{R}_{ik}}{R_{ij} \cdot R_{ik}}\)</span> is centered at atom <span class="math notranslate nohighlight">\(i\)</span> and the atomic distance vector is defined as <span class="math notranslate nohighlight">\(\mathbf{R}_{ij} = \mathbf{R}_{i} - \mathbf{R}_{j}\)</span>. Mostly used for the angular exponent <span class="math notranslate nohighlight">\(\zeta = 1, 2, 4 ,16\)</span>, gaussian exponent <span class="math notranslate nohighlight">\(\eta = 0\)</span> and for <span class="math notranslate nohighlight">\(\lambda\)</span> only <span class="math notranslate nohighlight">\(+1\)</span> or <span class="math notranslate nohighlight">\(-1\)</span> is possible. If many atoms of each element are present, angular SFs are usually not critical and a default set of SFs can be used.</p>
+<p>Here a definition of an angular SF is given, which is similar to the definition of a radial SF. <code class="docutils literal notranslate"><span class="pre">3</span></code> defines the used type of SF, which needs the following parameters: <code class="docutils literal notranslate"><span class="pre">Cu</span> <span class="pre">Cu</span></code> to describe the neighboring atoms included in the angle, followed by <span class="math notranslate nohighlight">\(\eta\)</span>, <span class="math notranslate nohighlight">\(\lambda\)</span>, <span class="math notranslate nohighlight">\(\zeta\)</span> and <span class="math notranslate nohighlight">\(R_\mathrm{c}\)</span>.</p>
+<p>Below, you find different angular parts for angular SF with different <span class="math notranslate nohighlight">\(\zeta\)</span> and <span class="math notranslate nohighlight">\(\lambda\)</span> values. Fell free and play around.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">angles</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">361</span><span class="p">)</span>
+<span class="n">asf1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">fc</span><span class="o">.</span><span class="n">angularSF</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">angles</span><span class="p">])</span>
+<span class="n">asf2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">fc</span><span class="o">.</span><span class="n">angularSF</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">angles</span><span class="p">])</span>
+<span class="n">asf3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">fc</span><span class="o">.</span><span class="n">angularSF</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">4.0</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">angles</span><span class="p">])</span>
+<span class="n">asf4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">fc</span><span class="o">.</span><span class="n">angularSF</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">angles</span><span class="p">])</span>
+<span class="n">asf5</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">fc</span><span class="o">.</span><span class="n">angularSF</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">angles</span><span class="p">])</span>
+<span class="n">asf6</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">fc</span><span class="o">.</span><span class="n">angularSF</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">4.0</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">angles</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">angles</span><span class="p">,</span> <span class="n">asf1</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">angles</span><span class="p">,</span> <span class="n">asf2</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">angles</span><span class="p">,</span> <span class="n">asf3</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">angles</span><span class="p">,</span> <span class="n">asf4</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">angles</span><span class="p">,</span> <span class="n">asf5</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">angles</span><span class="p">,</span> <span class="n">asf6</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Workflow-RuNNer_32_0.png" src="../../_images/Workflow-RuNNer_32_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="output-mode-1">
+<h3>Output Mode 1<a class="headerlink" href="#output-mode-1" title="Permalink to this headline">¶</a></h3>
+<p>As said, the data set splitting and the calculation of the symmetry function values takes place here. Among general information of your data set and your SFs, you find explicitly how the data set is splitted. As shown in the example below, it is written what happens to each structure (called <code class="docutils literal notranslate"><span class="pre">Point</span></code>) and if it goes to the training or test set and which number it has there. <code class="docutils literal notranslate"><span class="pre">mode</span> <span class="pre">1</span></code> will prepare the necessary files for <code class="docutils literal notranslate"><span class="pre">mode</span> <span class="pre">2</span></code>:</p>
+<ul class="simple">
+<li><p>training data</p></li>
+</ul>
+<ul class="simple">
+<li><p>function.data: SF values for each atom in each structure</p></li>
+<li><p>trainstruct.data: structural information</p></li>
+<li><p>trainforces.data: force information (if force fitting is used)</p></li>
+</ul>
+<ul class="simple">
+<li><p>test data</p></li>
+</ul>
+<ul class="simple">
+<li><p>testing.data: SF values for each atom in each structure</p></li>
+<li><p>teststruct.data: structural information</p></li>
+<li><p>testforces.data: force information (if force fitting is used)</p></li>
+</ul>
+<p><strong>RuNNer</strong> ends without any problems, if at the end of the ouput file the following lines are written:</p>
+</div>
+<div class="section" id="short-quick-example-of-sf-calculation">
+<h3>Short quick example of SF calculation<a class="headerlink" href="#short-quick-example-of-sf-calculation" title="Permalink to this headline">¶</a></h3>
+<p>To clarify how the SFs represent the atomic environment for an atom. Let’s have a look at this simple structure with three Cu atoms below:</p>
+<p>Here we define the atomic positions as vectors, calculate  the distances and angles for the SFs. Finally, we will end up with the SFs vector for the first Cu atom. We use the 13 SFs, which were introduced in the section above “RuNNer Mode 1”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define atomic positions as vectors</span>
+<span class="n">d1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
+<span class="n">d2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">6.72752138</span><span class="p">])</span>
+<span class="n">d3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2.34735543</span><span class="p">,</span> <span class="mf">1.35524733</span><span class="p">,</span> <span class="mf">3.36375974</span><span class="p">])</span>
+
+<span class="c1"># Define distance vectors</span>
+<span class="n">d12</span> <span class="o">=</span> <span class="n">d1</span> <span class="o">-</span> <span class="n">d2</span>
+<span class="n">d13</span> <span class="o">=</span> <span class="n">d1</span> <span class="o">-</span> <span class="n">d3</span>
+<span class="n">d23</span> <span class="o">=</span> <span class="n">d2</span> <span class="o">-</span> <span class="n">d3</span>
+
+<span class="c1"># Define angles</span>
+<span class="n">a123</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">d12</span><span class="p">,</span> <span class="n">d13</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">d12</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">d13</span><span class="p">))</span>
+<span class="n">a213</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">d12</span><span class="p">,</span> <span class="n">d23</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">d12</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">d23</span><span class="p">))</span>
+<span class="n">a312</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">d13</span><span class="p">,</span> <span class="n">d23</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">d13</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">d23</span><span class="p">))</span>
+
+<span class="c1"># Calculate radial symmetry function values</span>
+<span class="k">for</span> <span class="n">eta</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.000</span><span class="p">,</span> <span class="mf">0.006</span><span class="p">,</span> <span class="mf">0.016</span><span class="p">,</span> <span class="mf">0.040</span><span class="p">,</span> <span class="mf">0.109</span><span class="p">]:</span>
+    <span class="n">value_sf</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="p">[</span><span class="n">d12</span><span class="p">,</span> <span class="n">d13</span><span class="p">]:</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+        <span class="n">value_sf</span> <span class="o">+=</span> <span class="n">fc</span><span class="o">.</span><span class="n">radialSF</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">eta</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">value_sf</span><span class="p">)</span>
+
+<span class="c1"># Calculate angular symmetry function values</span>
+<span class="k">for</span> <span class="n">Lambda</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">zeta</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">16</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="p">[</span><span class="n">a123</span><span class="p">]:</span>
+            <span class="n">value_sf</span> <span class="o">=</span> <span class="n">fc</span><span class="o">.</span><span class="n">angularSF</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">d12</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">d13</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">d23</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">Lambda</span><span class="p">,</span> <span class="n">zeta</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">value_sf</span><span class="p">)</span>
+        
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.1182423115740479
+0.9463318326255568
+0.7253600030997174
+0.40425285668735783
+0.09616369636385737
+0.411992195819298
+0.4119731729121053
+0.41193512973271224
+0.41170694441910877
+1.9023785577599554e-05
+8.78384860610243e-10
+1.872667361071411e-18
+1.7583909381106493e-70
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="runner-mode-2">
+<h2>RuNNer Mode 2<a class="headerlink" href="#runner-mode-2" title="Permalink to this headline">¶</a></h2>
+<p>In <code class="docutils literal notranslate"><span class="pre">mode</span> <span class="pre">2</span></code>, the magic happens and your data will be fitted. The part below of the <code class="docutils literal notranslate"><span class="pre">input.nn</span></code> defines how the fitting in <code class="docutils literal notranslate"><span class="pre">mode</span> <span class="pre">2</span></code> has to take place. <code class="docutils literal notranslate"><span class="pre">epochs</span></code> define how often <strong>RuNNer</strong> will loop over the training data to optimize the weights and biases of the NN, <code class="docutils literal notranslate"><span class="pre">fitting_unit</span></code> defines in which unit the output will be presented in <code class="docutils literal notranslate"><span class="pre">mode</span> <span class="pre">2</span></code>, all other files and units will stay in <code class="docutils literal notranslate"><span class="pre">bohr</span></code> and <code class="docutils literal notranslate"><span class="pre">Hartree</span></code>. <code class="docutils literal notranslate"><span class="pre">precondition_weights</span></code> effects the initial weights and biases of the NN. In the second part, there are some parameters for the Kalman-Filter, <code class="docutils literal notranslate"><span class="pre">repeated_energy_update</span></code> repeats the energy update after a force component update, to increase the impact of the energies. This is slower in general, but might be necessary, since there a many more force components than energies. <code class="docutils literal notranslate"><span class="pre">mix_all_points</span></code> mixes the order of the training points for each epoch to improve the training. Often, the ranges of the symmetry functions are rather different in their order of magnitude and thus a rescaling of SFs can be advantageous numerically stated by <code class="docutils literal notranslate"><span class="pre">scale_symmetry_functions</span></code> keyword. Together with that, a centering of the SF average value to zero is performed for numerical reasons, since zero is the non-linear center of most activations  functions. <code class="docutils literal notranslate"><span class="pre">short_force_fraction</span></code> defines how much of the force components is randomly used for training the NN. The last part, defines to write certain files for each epoch, to analyze it in a later stage. There are many other keywords and options to present. However, you got an idea how <strong>RuNNer</strong> works and what to do to fit your first NNP. In the next part, first steps for analyzing the fit are presented.</p>
+<p>During the fitting process of the NN, the error function <span class="math notranslate nohighlight">\(\Gamma\)</span> is minimized, which is defined as
+\begin{equation}
+\Gamma = \frac{1}{N_\mathrm{struct}} \sum_{i}^{N_\mathrm{struct}} (E_{NN}^{i} - E_{Ref}^{i})^2 = RMSE(E),
+\end{equation}
+if only energy fitting is used, which defines simultaneously the root-mean squared error of the energies <span class="math notranslate nohighlight">\(RMSE(E)\)</span>. This defines the differences of the reference data and the NNP predictions. During the epochs, the error decreases as you can see in the part of <code class="docutils literal notranslate"><span class="pre">mode2</span></code> output.</p>
+<p>A first and simple plot to anlyze the progress of the fitting procedure, is to show the RMSEs over the epochs. Here, you can easily identify overfitting, if the training <span class="math notranslate nohighlight">\(RMSE\)</span> is much lower than the test <span class="math notranslate nohighlight">\(RMSE\)</span>, for example.
+Anyhow, the <span class="math notranslate nohighlight">\(RMSE\)</span> is a rather strong reduction of the really complex potential energy surface (PES) and can only be understood as a rule of thumb for the quality of the NNP fit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load here an example fit</span>
+<span class="c1"># Use results of the workshop participants</span>
+<span class="n">fit2</span> <span class="o">=</span> <span class="n">fc</span><span class="o">.</span><span class="n">RuNFit</span><span class="p">(</span><span class="s1">&#39;runner_fit/fit_hdf5/fit&#39;</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="c1">#fit2 = fc.RuNFit(&#39;MH-df4-2&#39;, 7)</span>
+<span class="n">figRMSE</span> <span class="o">=</span> <span class="n">fit2</span><span class="o">.</span><span class="n">plot_rmse</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Workflow-RuNNer_46_0.png" src="../../_images/Workflow-RuNNer_46_0.png" />
+</div>
+</div>
+<p>For a more detailed analyze, you could have a look at the predicted energies and forces per structure. This is quite useful to identify inaccurately described structures. The training data set may has a specific order of different structures (bulk, slab, cluster, …) and you can identify, if some parts of the data set are described inaccurately in general. The second plot shows the atomic energy prediction of the NNP over the reference values. For a perfect fit, all points will be on the blue line, but as we can see this is not the case. In this plot, we can identify, if some energies ranges are not well described in our data set. This is related to our first data set analysis above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figE1</span><span class="p">,</span> <span class="n">figE2</span><span class="p">,</span> <span class="n">figF3</span> <span class="o">=</span> <span class="n">fit2</span><span class="o">.</span><span class="n">plot_points</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Workflow-RuNNer_48_0.png" src="../../_images/Workflow-RuNNer_48_0.png" />
+<img alt="../../_images/Workflow-RuNNer_48_1.png" src="../../_images/Workflow-RuNNer_48_1.png" />
+<img alt="../../_images/Workflow-RuNNer_48_2.png" src="../../_images/Workflow-RuNNer_48_2.png" />
+</div>
+</div>
+<p>The same plot can also be done for the atomic forces.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figF1</span><span class="p">,</span> <span class="n">figF2</span><span class="p">,</span> <span class="n">figF3</span> <span class="o">=</span> <span class="n">fit2</span><span class="o">.</span><span class="n">plot_forces</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Workflow-RuNNer_50_0.png" src="../../_images/Workflow-RuNNer_50_0.png" />
+<img alt="../../_images/Workflow-RuNNer_50_1.png" src="../../_images/Workflow-RuNNer_50_1.png" />
+<img alt="../../_images/Workflow-RuNNer_50_2.png" src="../../_images/Workflow-RuNNer_50_2.png" />
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">mode</span> <span class="pre">2</span></code> output gives further information about the parameters of the fitting procedure, about the fitting data and it gives information about the defined SFs and the SFs ranges. These ranges define the known configuration space of your NNP and are used to identify the already mentioned <code class="docutils literal notranslate"><span class="pre">extrapolations</span></code>. If the NNP is made to predict energies, forces or stress, it first calculates the SF vectors and compares these values to the trainings range shown below. If a SF value occurs, which is not in the range, <strong>RuNNer</strong> will give an <code class="docutils literal notranslate"><span class="pre">extrapolation</span> <span class="pre">warning</span></code> and tell the user, but you will still get your wanted energy, force or stress. Another usage of these ranges is to increase the data set and the known configuration space.</p>
+<p>During <code class="docutils literal notranslate"><span class="pre">mode</span> <span class="pre">2</span></code> several files will be printed by <strong>RuNNer</strong> and some are printed every epoch:</p>
+<ul class="simple">
+<li><p>scaling.data: information about the SFs if <code class="docutils literal notranslate"><span class="pre">scale_symmetry_functions</span></code> is used</p></li>
+<li><p>xxxxxx.XXX.out: weights and biases of the specific epoch xxxxxx for atomic NN of element XXX</p></li>
+<li><p>optweights.XXX.out: weights and biases of the epoch with lowest RMSE defined by <strong>RuNNer</strong> for element XXX</p></li>
+<li><p>trainpoints.xxxxxx.out, testpoints.xxxxxx.out: optional, giving information about training and test energies of epoch xxxxxx</p></li>
+<li><p>trainforces.xxxxxx.out, testforces.xxxxxx.out: optional, giving information about training and test forces of epoch xxxxxx</p></li>
+</ul>
+</div>
+<div class="section" id="runner-mode-3">
+<h2>RuNNer Mode 3<a class="headerlink" href="#runner-mode-3" title="Permalink to this headline">¶</a></h2>
+<p><strong>RuNNer</strong> <code class="docutils literal notranslate"><span class="pre">mode</span> <span class="pre">3</span></code> is the prediction mode and brings the NNP to application. Via N2P2, NNP can also be used in LAMMPS. For <code class="docutils literal notranslate"><span class="pre">mode</span> <span class="pre">3</span></code>, the <code class="docutils literal notranslate"><span class="pre">input.nn</span></code>, <code class="docutils literal notranslate"><span class="pre">scaling.data</span></code> (if scaling is used), <code class="docutils literal notranslate"><span class="pre">weights.XXX.data</span></code> and the <code class="docutils literal notranslate"><span class="pre">input.data</span></code>, contaning the structures to predict, are needed. A first application of the NNP in the Cu case is to predict the correct energy-volume behaviour.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pr_ev</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">create_group</span><span class="p">(</span><span class="s2">&quot;E_V_curve&quot;</span><span class="p">)</span> <span class="c1"># Creating a new sub-project within the main project</span>
+<span class="n">a_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">3.4</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">a_list</span><span class="p">:</span>
+    <span class="n">job_name</span> <span class="o">=</span> <span class="s2">&quot;job_a_</span><span class="si">{:.4}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
+    <span class="n">job</span> <span class="o">=</span> <span class="n">pr_ev</span><span class="o">.</span><span class="n">create</span><span class="o">.</span><span class="n">job</span><span class="o">.</span><span class="n">Lammps</span><span class="p">(</span><span class="n">job_name</span><span class="p">,</span> <span class="n">delete_existing_job</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">job</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">pr_ev</span><span class="o">.</span><span class="n">create_ase_bulk</span><span class="p">(</span><span class="s2">&quot;Cu&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="n">a</span><span class="p">)</span>
+    <span class="c1">#job.potential = &#39;2012--Mendelev-M-I--Cu--LAMMPS--ipr1&#39;</span>
+    <span class="n">job</span><span class="o">.</span><span class="n">potential</span> <span class="o">=</span> <span class="n">j</span><span class="o">.</span><span class="n">lammps_potential</span>
+    <span class="n">job</span><span class="o">.</span><span class="n">calc_minimize</span><span class="p">()</span>
+    <span class="n">job</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job job_a_3_4 was saved and received the ID: 69
+The job job_a_3_5 was saved and received the ID: 70
+The job job_a_3_6 was saved and received the ID: 71
+The job job_a_3_7 was saved and received the ID: 72
+The job job_a_3_8 was saved and received the ID: 73
+The job job_a_3_9 was saved and received the ID: 74
+The job job_a_4_0 was saved and received the ID: 75
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pr_ev</span><span class="o">.</span><span class="n">job_table</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>status</th>
+      <th>chemicalformula</th>
+      <th>job</th>
+      <th>subjob</th>
+      <th>projectpath</th>
+      <th>project</th>
+      <th>timestart</th>
+      <th>timestop</th>
+      <th>totalcputime</th>
+      <th>computer</th>
+      <th>hamilton</th>
+      <th>hamversion</th>
+      <th>parentid</th>
+      <th>masterid</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>69</td>
+      <td>finished</td>
+      <td>Cu</td>
+      <td>job_a_3_4</td>
+      <td>/job_a_3_4</td>
+      <td>/home/pyiron/</td>
+      <td>day_2/02-runner/runner_fit/E_V_curve/</td>
+      <td>2021-03-09 09:12:11.908333</td>
+      <td>2021-03-09 09:12:12.233260</td>
+      <td>0.0</td>
+      <td>pyiron@jupyter-janssen#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>70</td>
+      <td>finished</td>
+      <td>Cu</td>
+      <td>job_a_3_5</td>
+      <td>/job_a_3_5</td>
+      <td>/home/pyiron/</td>
+      <td>day_2/02-runner/runner_fit/E_V_curve/</td>
+      <td>2021-03-09 09:12:12.600059</td>
+      <td>2021-03-09 09:12:12.930932</td>
+      <td>0.0</td>
+      <td>pyiron@jupyter-janssen#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>71</td>
+      <td>finished</td>
+      <td>Cu</td>
+      <td>job_a_3_6</td>
+      <td>/job_a_3_6</td>
+      <td>/home/pyiron/</td>
+      <td>day_2/02-runner/runner_fit/E_V_curve/</td>
+      <td>2021-03-09 09:12:13.308590</td>
+      <td>2021-03-09 09:12:13.628758</td>
+      <td>0.0</td>
+      <td>pyiron@jupyter-janssen#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>72</td>
+      <td>finished</td>
+      <td>Cu</td>
+      <td>job_a_3_7</td>
+      <td>/job_a_3_7</td>
+      <td>/home/pyiron/</td>
+      <td>day_2/02-runner/runner_fit/E_V_curve/</td>
+      <td>2021-03-09 09:12:14.004092</td>
+      <td>2021-03-09 09:12:14.332162</td>
+      <td>0.0</td>
+      <td>pyiron@jupyter-janssen#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>73</td>
+      <td>finished</td>
+      <td>Cu</td>
+      <td>job_a_3_8</td>
+      <td>/job_a_3_8</td>
+      <td>/home/pyiron/</td>
+      <td>day_2/02-runner/runner_fit/E_V_curve/</td>
+      <td>2021-03-09 09:12:14.709127</td>
+      <td>2021-03-09 09:12:15.039564</td>
+      <td>0.0</td>
+      <td>pyiron@jupyter-janssen#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>74</td>
+      <td>finished</td>
+      <td>Cu</td>
+      <td>job_a_3_9</td>
+      <td>/job_a_3_9</td>
+      <td>/home/pyiron/</td>
+      <td>day_2/02-runner/runner_fit/E_V_curve/</td>
+      <td>2021-03-09 09:12:15.413618</td>
+      <td>2021-03-09 09:12:15.737637</td>
+      <td>0.0</td>
+      <td>pyiron@jupyter-janssen#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>75</td>
+      <td>finished</td>
+      <td>Cu</td>
+      <td>job_a_4_0</td>
+      <td>/job_a_4_0</td>
+      <td>/home/pyiron/</td>
+      <td>day_2/02-runner/runner_fit/E_V_curve/</td>
+      <td>2021-03-09 09:12:16.124528</td>
+      <td>2021-03-09 09:12:16.435324</td>
+      <td>0.0</td>
+      <td>pyiron@jupyter-janssen#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_volume</span><span class="p">(</span><span class="n">job</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">job</span><span class="p">[</span><span class="s2">&quot;output/generic/volume&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">def</span> <span class="nf">get_energy</span><span class="p">(</span><span class="n">job</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">job</span><span class="p">[</span><span class="s2">&quot;output/generic/energy_tot&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Analysing the data</span>
+<span class="n">vol_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="n">energy_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">pr</span><span class="p">[</span><span class="s2">&quot;E_V_curve&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iter_jobs</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="s2">&quot;finished&quot;</span><span class="p">):</span>
+    <span class="n">vol_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">get_volume</span><span class="p">(</span><span class="n">job</span><span class="p">))</span>
+    <span class="n">energy_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">get_energy</span><span class="p">(</span><span class="n">job</span><span class="p">))</span>
+
+<span class="n">args</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">vol_list</span><span class="p">)</span>
+<span class="n">vol_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">vol_list</span><span class="p">)</span>
+<span class="n">energy_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">energy_list</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vol_list</span><span class="p">[</span><span class="n">args</span><span class="p">],</span> <span class="n">energy_list</span><span class="p">[</span><span class="n">args</span><span class="p">],</span> <span class="s2">&quot;-x&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Volume [$\mathrm{\AA^3}$]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Energy [eV]&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Workflow-RuNNer_58_0.png" src="../../_images/Workflow-RuNNer_58_0.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./day_2/02-runner"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../01-atomicrex/WorkshopPotentialEAM.html" title="previous page">Fitting an EAM potential</a>
+    <a class='right-next' id="next-link" href="../03-ace/pacemaker-fit-tutorial.html" title="next page">Fitting project</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Jan Janssen<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

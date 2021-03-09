@@ -1,0 +1,1158 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Workflows for atomistic simulations &#8212; Software Tools from Atomistics to Phase Diagrams</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.37f24b989f4638ff9c27c22dc7559d4f.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Day 2 - Parameterization of interatomic potentials" href="../day_2/00-IntroductionDay2.html" />
+    <link rel="prev" title="Workflows for atomistic simulations" href="ex_01_introduction_to_pyiron.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo_dark.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Software Tools from Atomistics to Phase Diagrams</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Potentials Workshop
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ex_01_introduction_to_pyiron.html">
+   <strong>
+    Workflows for atomistic simulations
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   <strong>
+    Workflows for atomistic simulations
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day_2/00-IntroductionDay2.html">
+   Day 2 - Parameterization of interatomic potentials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day_2/00-IntroductionDay2.html#reference-data">
+   Reference data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day_2/01-atomicrex/WorkshopPotentialEAM.html">
+   Fitting an EAM potential
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day_2/02-runner/Workflow-RuNNer.html">
+   Getting started with
+   <strong>
+    RuNNer
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day_2/02-runner/Workflow-RuNNer.html#about-runner">
+   About RuNNer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day_2/02-runner/Workflow-RuNNer.html#getting-the-first-data-set">
+   Getting the First Data Set
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day_2/02-runner/Workflow-RuNNer.html#the-runner-workflow">
+   The RuNNer Workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day_2/02-runner/Workflow-RuNNer.html#pyiron-runner-fit">
+   Pyiron RuNNer Fit
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day_2/03-ace/pacemaker-fit-tutorial.html">
+   Fitting project
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day_2/03-ace/pacemaker-fit-tutorial.html#analyse-the-fitting-results">
+   Analyse the fitting results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day_2/03-ace/pacemaker-fit-tutorial.html#overview-of-the-fitted-potential-internals">
+   Overview of the fitted potential internals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day_2/03-ace/pacemaker-fit-tutorial.html#test-fitted-potential">
+   Test fitted potential
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day_2/03-ace/pacemaker-fit-tutorial.html#advanced-already-trained-potential">
+   Advanced (already trained) potential
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day_3/ex_01_validation.html">
+   <strong>
+    Workflows for atomistic simulations
+   </strong>
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://pyiron.org">pyiron</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/day_1/ex_02_creating_structure_databases.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/pyiron/potentials-workshop-2021/master?urlpath=lab/tree/day_1/ex_02_creating_structure_databases.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#day-1-atomistic-simulations-with-pyiron">
+   <strong>
+    Day 1 - Atomistic simulations with pyiron
+   </strong>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-creating-and-working-with-structure-databases">
+     <strong>
+      Exercise 2: Creating and working with structure databases
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importing-necessary-modules-and-creating-a-project">
+   <strong>
+    Importing necessary modules and creating a project
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-structure-container-from-the-data">
+   Creating a structure “container” from the data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#add-structures-from-the-e-v-curves">
+   <strong>
+    Add structures from the E-V curves
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#add-structures-from-the-md">
+   <strong>
+    Add structures from the MD
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#add-some-defect-structures-vacancies-surfaces-etc">
+   <strong>
+    Add some defect structures (vacancies, surfaces, etc)
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reloading-the-dataset">
+   <strong>
+    Reloading the dataset
+   </strong>
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="workflows-for-atomistic-simulations">
+<h1><a class="reference external" href="http://potentials.rub.de/"><strong>Workflows for atomistic simulations</strong></a><a class="headerlink" href="#workflows-for-atomistic-simulations" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="day-1-atomistic-simulations-with-pyiron">
+<h2><strong>Day 1 - Atomistic simulations with <a class="reference external" href="https://pyiron.org">pyiron</a></strong><a class="headerlink" href="#day-1-atomistic-simulations-with-pyiron" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-2-creating-and-working-with-structure-databases">
+<h3><strong>Exercise 2: Creating and working with structure databases</strong><a class="headerlink" href="#exercise-2-creating-and-working-with-structure-databases" title="Permalink to this headline">¶</a></h3>
+<p>Before the excercise, you should:</p>
+<ul class="simple">
+<li><p>Finish exercise 1</p></li>
+</ul>
+<p>The aim of this exercise is to make you familiar with:</p>
+<ul class="simple">
+<li><p>Creating structure databases and working with them for potential fitting (day 2)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="importing-necessary-modules-and-creating-a-project">
+<h2><strong>Importing necessary modules and creating a project</strong><a class="headerlink" href="#importing-necessary-modules-and-creating-a-project" title="Permalink to this headline">¶</a></h2>
+<p>This is done the same way as shown in the first exercise</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyiron</span> <span class="kn">import</span> <span class="n">Project</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pr</span> <span class="o">=</span> <span class="n">Project</span><span class="p">(</span><span class="s2">&quot;creating_datasets&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="creating-a-structure-container-from-the-data">
+<h2>Creating a structure “container” from the data<a class="headerlink" href="#creating-a-structure-container-from-the-data" title="Permalink to this headline">¶</a></h2>
+<p>We now go over the jobs generated in the first notebook to store structures, energies, and forces into a structure container which will later be used for potential fitting</p>
+<p><strong>Note</strong>: Usually these datasets are created using highly accurate DFT calculations. But for practical reasons, we only demonstrate how to do this using data from LAMMPS calculations (the workflow remain the same)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Access the project created in exercise 1 </span>
+<span class="n">pr_fs</span> <span class="o">=</span> <span class="n">pr</span><span class="p">[</span><span class="s2">&quot;../first_steps&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a TrainingContainer job (to store structures and databases)</span>
+<span class="n">container</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">create</span><span class="o">.</span><span class="n">job</span><span class="o">.</span><span class="n">TrainingContainer</span><span class="p">(</span><span class="s1">&#39;dataset_example&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="add-structures-from-the-e-v-curves">
+<h2><strong>Add structures from the E-V curves</strong><a class="headerlink" href="#add-structures-from-the-e-v-curves" title="Permalink to this headline">¶</a></h2>
+<p>For starters, we append structures from the energy volume curves we calculated earlier</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Iterate over the jobs in this sub-project and append the final structure, potential energy, and forces</span>
+<span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">pr_fs</span><span class="p">[</span><span class="s2">&quot;E_V_curve&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iter_jobs</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="s2">&quot;finished&quot;</span><span class="p">):</span>
+    <span class="n">container</span><span class="o">.</span><span class="n">include_job</span><span class="p">(</span><span class="n">job</span><span class="p">,</span> <span class="n">iteration_step</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can obtain this data as a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> table</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">container</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>atoms</th>
+      <th>energy</th>
+      <th>forces</th>
+      <th>number_of_atoms</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>job_a_3_4</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0))</td>
+      <td>-3.142019</td>
+      <td>[[1.1869253621046177e-16, -1.7429070520896771e-16, -1.397277865277868e-16]]</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>job_a_3_5</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0))</td>
+      <td>-3.338596</td>
+      <td>[[-1.92404082484227e-16, 4.231084758750405e-17, 3.6193775346684653e-17]]</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>job_a_3_6</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0))</td>
+      <td>-3.416929</td>
+      <td>[[-2.9113397169423695e-17, 7.54965057835309e-17, -3.624419431643654e-17]]</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>job_a_3_7</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0))</td>
+      <td>-3.409602</td>
+      <td>[[3.771496125435321e-17, 3.412312546579927e-17, -2.4310047599025677e-17]]</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>job_a_3_8</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0))</td>
+      <td>-3.330215</td>
+      <td>[[-2.0545362501508919e-16, -3.5486130576273854e-17, 3.5486130576273854e-17]]</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>job_a_3_9</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0))</td>
+      <td>-3.195118</td>
+      <td>[[1.6101257219667079e-16, -4.2948421129906387e-17, 4.2948421129906387e-17]]</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>job_a_4_0</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0))</td>
+      <td>-3.035358</td>
+      <td>[[-5.946777565406637e-17, -1.0605082175909553e-16, -1.2946304704347008e-16]]</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="add-structures-from-the-md">
+<h2><strong>Add structures from the MD</strong><a class="headerlink" href="#add-structures-from-the-md" title="Permalink to this headline">¶</a></h2>
+<p>We also add some structures obtained from the MD simulations</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reloading the MD job</span>
+<span class="n">job_md</span> <span class="o">=</span> <span class="n">pr_fs</span><span class="p">[</span><span class="s2">&quot;lammps_job&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Iterate over the MD-trajectory to append structures</span>
+
+<span class="n">traj_length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">job_md</span><span class="p">[</span><span class="s2">&quot;output/generic/positions&quot;</span><span class="p">])</span>
+<span class="n">stride</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># append structures every 10 steps</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">traj_length</span><span class="p">,</span> <span class="n">stride</span><span class="p">):</span>
+    <span class="n">container</span><span class="o">.</span><span class="n">include_job</span><span class="p">(</span><span class="n">job_md</span><span class="p">,</span> <span class="n">iteration_step</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="add-some-defect-structures-vacancies-surfaces-etc">
+<h2><strong>Add some defect structures (vacancies, surfaces, etc)</strong><a class="headerlink" href="#add-some-defect-structures-vacancies-surfaces-etc" title="Permalink to this headline">¶</a></h2>
+<p>It’s necessary to also include some defect structures, and surfaces to the training dataset</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setup a MD calculation for a structure with a vacancy</span>
+<span class="n">job_lammps</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">create</span><span class="o">.</span><span class="n">job</span><span class="o">.</span><span class="n">Lammps</span><span class="p">(</span><span class="s2">&quot;lammps_job_vac&quot;</span><span class="p">)</span>
+<span class="n">job_lammps</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">create_ase_bulk</span><span class="p">(</span><span class="s1">&#39;Cu&#39;</span><span class="p">,</span> <span class="n">cubic</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">3.61</span><span class="p">)</span><span class="o">.</span><span class="n">repeat</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="k">del</span> <span class="n">job_lammps</span><span class="o">.</span><span class="n">structure</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">job_lammps</span><span class="o">.</span><span class="n">potential</span> <span class="o">=</span> <span class="s1">&#39;2012--Mendelev-M-I--Cu--LAMMPS--ipr1&#39;</span>
+<span class="n">job_lammps</span><span class="o">.</span><span class="n">calc_md</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">pressure</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_ionic_steps</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+<span class="n">job_lammps</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job lammps_job_vac was saved and received the ID: 52
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setup a MD calculation for a surface structure</span>
+<span class="n">job_lammps</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">create</span><span class="o">.</span><span class="n">job</span><span class="o">.</span><span class="n">Lammps</span><span class="p">(</span><span class="s2">&quot;lammps_job_surf&quot;</span><span class="p">)</span>
+<span class="n">job_lammps</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">create_surface</span><span class="p">(</span><span class="s2">&quot;Cu&quot;</span><span class="p">,</span> <span class="n">surface_type</span><span class="o">=</span><span class="s2">&quot;fcc111&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">vacuum</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">orthogonal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">job_lammps</span><span class="o">.</span><span class="n">potential</span> <span class="o">=</span> <span class="s1">&#39;2012--Mendelev-M-I--Cu--LAMMPS--ipr1&#39;</span>
+<span class="n">job_lammps</span><span class="o">.</span><span class="n">calc_md</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">pressure</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_ionic_steps</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+<span class="n">job_lammps</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job lammps_job_surf was saved and received the ID: 53
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;groups&#39;: [], &#39;nodes&#39;: [&#39;lammps_job_vac&#39;, &#39;lammps_job_surf&#39;]}
+</pre></div>
+</div>
+</div>
+</div>
+<p>We now add these structures to the dataset</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">job_md</span> <span class="ow">in</span> <span class="n">pr</span><span class="o">.</span><span class="n">iter_jobs</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="s2">&quot;finished&quot;</span><span class="p">):</span>
+    <span class="n">pos</span> <span class="o">=</span> <span class="n">job_md</span><span class="p">[</span><span class="s2">&quot;output/generic/positions&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">pos</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">traj_length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+        <span class="n">stride</span> <span class="o">=</span> <span class="mi">10</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">traj_length</span><span class="p">,</span> <span class="n">stride</span><span class="p">):</span>
+            <span class="n">container</span><span class="o">.</span><span class="n">include_job</span><span class="p">(</span><span class="n">job_md</span><span class="p">,</span> <span class="n">iteration_step</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We run the job sto store this dataset in the pyiron database</span>
+<span class="n">container</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job dataset_example was saved and received the ID: 54
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.8/site-packages/pandas/core/generic.py:2606: PerformanceWarning: 
+your performance may suffer as PyTables will pickle object types that it cannot
+map directly to c-types [inferred_type-&gt;mixed,key-&gt;block1_values] [items-&gt;Index([&#39;name&#39;, &#39;atoms&#39;, &#39;forces&#39;], dtype=&#39;object&#39;)]
+
+  pytables.to_hdf(
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pr</span><span class="o">.</span><span class="n">job_table</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>status</th>
+      <th>chemicalformula</th>
+      <th>job</th>
+      <th>subjob</th>
+      <th>projectpath</th>
+      <th>project</th>
+      <th>timestart</th>
+      <th>timestop</th>
+      <th>totalcputime</th>
+      <th>computer</th>
+      <th>hamilton</th>
+      <th>hamversion</th>
+      <th>parentid</th>
+      <th>masterid</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>52</td>
+      <td>finished</td>
+      <td>Cu107</td>
+      <td>lammps_job_vac</td>
+      <td>/lammps_job_vac</td>
+      <td>/home/pyiron/</td>
+      <td>day_1/creating_datasets/</td>
+      <td>2021-03-09 09:56:52.116789</td>
+      <td>2021-03-09 09:56:56.507766</td>
+      <td>4.0</td>
+      <td>pyiron@jupyter-janssen#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>53</td>
+      <td>finished</td>
+      <td>Cu128</td>
+      <td>lammps_job_surf</td>
+      <td>/lammps_job_surf</td>
+      <td>/home/pyiron/</td>
+      <td>day_1/creating_datasets/</td>
+      <td>2021-03-09 09:56:57.326228</td>
+      <td>2021-03-09 09:57:02.004791</td>
+      <td>4.0</td>
+      <td>pyiron@jupyter-janssen#1</td>
+      <td>Lammps</td>
+      <td>0.1</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>54</td>
+      <td>finished</td>
+      <td>None</td>
+      <td>dataset_example</td>
+      <td>/dataset_example</td>
+      <td>/home/pyiron/</td>
+      <td>day_1/creating_datasets/</td>
+      <td>2021-03-09 09:57:10.376230</td>
+      <td>NaT</td>
+      <td>NaN</td>
+      <td>pyiron@jupyter-janssen#1</td>
+      <td>TrainingContainer</td>
+      <td>0.4</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="reloading-the-dataset">
+<h2><strong>Reloading the dataset</strong><a class="headerlink" href="#reloading-the-dataset" title="Permalink to this headline">¶</a></h2>
+<p>This dataset can ow be reloaded anywhere to use in the potential fitting procedures</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">pr</span><span class="p">[</span><span class="s2">&quot;dataset_example&quot;</span><span class="p">]</span>
+<span class="n">dataset</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>atoms</th>
+      <th>energy</th>
+      <th>forces</th>
+      <th>number_of_atoms</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>job_a_3_4</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0))</td>
+      <td>-3.142019</td>
+      <td>[[1.1869253621046177e-16, -1.7429070520896771e-16, -1.397277865277868e-16]]</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>job_a_3_5</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0))</td>
+      <td>-3.338596</td>
+      <td>[[-1.92404082484227e-16, 4.231084758750405e-17, 3.6193775346684653e-17]]</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>job_a_3_6</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0))</td>
+      <td>-3.416929</td>
+      <td>[[-2.9113397169423695e-17, 7.54965057835309e-17, -3.624419431643654e-17]]</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>job_a_3_7</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0))</td>
+      <td>-3.409602</td>
+      <td>[[3.771496125435321e-17, 3.412312546579927e-17, -2.4310047599025677e-17]]</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>job_a_3_8</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0))</td>
+      <td>-3.330215</td>
+      <td>[[-2.0545362501508919e-16, -3.5486130576273854e-17, 3.5486130576273854e-17]]</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>job_a_3_9</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0))</td>
+      <td>-3.195118</td>
+      <td>[[1.6101257219667079e-16, -4.2948421129906387e-17, 4.2948421129906387e-17]]</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>job_a_4_0</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0))</td>
+      <td>-3.035358</td>
+      <td>[[-5.946777565406637e-17, -1.0605082175909553e-16, -1.2946304704347008e-16]]</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>lammps_job</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0), Atom('Cu', [0.0, 1.804999999999592, 1.804999999999592], index=1), Atom('Cu', [1.804999999999592, 1.1052437362302367e-16, 1.804999999999592], index=2), Atom('...</td>
+      <td>-369.311743</td>
+      <td>[[-1.2656542480726799e-14, -1.46965772884755e-14, -1.61017033040167e-14], [-1.3905543383430098e-14, 4.5310977192514186e-15, 4.8333732849403796e-15], [4.9682480351975795e-15, -1.4072076837123899e-1...</td>
+      <td>108.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>lammps_job</td>
+      <td>(Atom('Cu', [0.140426153531212, 11.00934611760493, 10.96820769600138], index=0), Atom('Cu', [10.983357200359302, 1.779939365335074, 1.7146804782560903], index=1), Atom('Cu', [2.1228644677344763, 0...</td>
+      <td>-360.190839</td>
+      <td>[[-0.21910202935187897, -0.37573419410584397, 0.43392575377979187], [0.16208168404695897, -0.00671505675904709, 1.03458554920361], [-1.2001630139266497, -0.40207322348963503, -0.45620473735655703]...</td>
+      <td>108.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>lammps_job</td>
+      <td>(Atom('Cu', [0.1407579358923329, 11.020287239626356, 10.855878337455094], index=0), Atom('Cu', [0.29542104007972325, 1.6514729828183248, 1.7760939949715], index=1), Atom('Cu', [1.9957825818756145,...</td>
+      <td>-356.403521</td>
+      <td>[[-0.023031834879864897, 0.04284143869144259, 0.5899774836434099], [-0.5418151518758109, 0.6754733604037649, -0.5582999589285099], [-0.6011411771363389, -0.355590065330048, -0.003590198630652358],...</td>
+      <td>108.0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>lammps_job</td>
+      <td>(Atom('Cu', [0.046752778326835207, 10.951786003502875, 0.20014601215416555], index=0), Atom('Cu', [0.08453269827616121, 1.8072189743037306, 1.7664733621606052], index=1), Atom('Cu', [1.95973571233...</td>
+      <td>-358.245754</td>
+      <td>[[-0.32237334386617594, 0.43406651671772695, -0.5886238546573999], [-0.6295919499999019, 0.07530471384292876, -0.12687342568255203], [-0.06506588733974998, 0.8782024477947719, -0.12243680387296693...</td>
+      <td>108.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>lammps_job</td>
+      <td>(Atom('Cu', [10.99133278089223, 11.027168829788456, 0.17044757336885], index=0), Atom('Cu', [10.869778028731703, 1.9053524080340212, 1.7569642307109046], index=1), Atom('Cu', [1.8902712829055568, ...</td>
+      <td>-356.564325</td>
+      <td>[[0.45078377546780296, -0.7167806257868728, -0.320969733281809], [0.5707773027839779, -0.5494069530720159, 0.510256621543522], [-0.36439749359319995, 0.17709586752113193, 0.23127352998529296], [0....</td>
+      <td>108.0</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>lammps_job</td>
+      <td>(Atom('Cu', [10.958070767873476, 0.05270018288526145, 11.015795828313692], index=0), Atom('Cu', [0.045409705041259525, 2.078051985469034, 1.8353871076995325], index=1), Atom('Cu', [1.8285627799498...</td>
+      <td>-357.011799</td>
+      <td>[[-0.38409855462373593, 0.12077975249587695, 0.02446577119927368], [-0.6560764999470009, -1.05845756801682, -0.658182913092867], [-0.5103420261931418, -0.356562711546522, 0.7090309519858399], [-0....</td>
+      <td>108.0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>lammps_job</td>
+      <td>(Atom('Cu', [10.903697402270652, 10.843249424146602, 0.09574490333936027], index=0), Atom('Cu', [10.59491891666766, 1.7187193807026324, 1.9573011135302476], index=1), Atom('Cu', [1.676074002401891...</td>
+      <td>-357.856759</td>
+      <td>[[0.22044015996419397, -0.26072783887691897, -0.38550323222201893], [0.7754186544628359, -0.04652340102588245, -0.2623216499598349], [0.4314779287479719, -0.9840256256937749, 0.34987911571166197],...</td>
+      <td>108.0</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>lammps_job</td>
+      <td>(Atom('Cu', [0.258411989603464, 0.0706344931649224, 10.912283030397811], index=0), Atom('Cu', [0.1964902001455455, 1.7891621064461172, 1.8031814864809468], index=1), Atom('Cu', [1.7493171890021084...</td>
+      <td>-358.316140</td>
+      <td>[[-0.5020206209738959, 0.007307596546447969, 0.24586848662953095], [-1.1645196400318298, 0.14762851807991492, 0.6168850904682569], [0.7183114431738189, -0.5420093170980669, -0.06687387962120929], ...</td>
+      <td>108.0</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>lammps_job</td>
+      <td>(Atom('Cu', [0.004994793782076363, 10.985055637641707, 10.904222762435255], index=0), Atom('Cu', [10.9417296640056, 1.886861412294462, 1.8147512571859394], index=1), Atom('Cu', [1.8438031255436442...</td>
+      <td>-356.847816</td>
+      <td>[[0.04806202890911529, 0.4896972435411299, 1.29371057618316], [0.5538169933312109, -0.7855310261686719, -0.033081946439222513], [0.34832740608971496, 0.9937361742507679, 0.30650548838579206], [-0....</td>
+      <td>108.0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>lammps_job</td>
+      <td>(Atom('Cu', [0.03645923831331586, 10.8560106939291, 10.97057299019823], index=0), Atom('Cu', [10.913522535013476, 1.816191438106623, 1.5447581077438086], index=1), Atom('Cu', [1.7758393302091413, ...</td>
+      <td>-358.626624</td>
+      <td>[[0.24033044872932896, 1.5305792676779497, -0.6791236163998687], [0.05903491330127059, 0.148151392634253, 0.542468964385662], [0.07921843405774338, 0.145966157230826, 0.7342269239659519], [0.77503...</td>
+      <td>108.0</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>lammps_job</td>
+      <td>(Atom('Cu', [0.00976718182041884, 0.007186523165377699, 11.008902399259645], index=0), Atom('Cu', [10.89374596607187, 1.9969194212527828, 1.5955788370755422], index=1), Atom('Cu', [2.0544219291027...</td>
+      <td>-356.796173</td>
+      <td>[[-0.13926025200196399, -0.0920021630565197, 0.21001691279918497], [0.6767944835632749, -1.1148612202170798, 1.7165284720013199], [-0.7950973844667609, 0.2356681335380539, 0.13328556065954994], [0...</td>
+      <td>108.0</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>lammps_job_vac</td>
+      <td>(Atom('Cu', [0.0, 1.804999999999592, 1.804999999999592], index=0), Atom('Cu', [1.804999999999592, 1.1052437362302367e-16, 1.804999999999592], index=1), Atom('Cu', [1.804999999999592, 1.80499999999...</td>
+      <td>-364.828772</td>
+      <td>[[-1.3933298959045699e-14, -0.10827842091784899, -0.108278420917849], [-0.10827842091784899, -1.3877479054990188e-14, -0.108278420917849], [-0.10827842091784899, -0.108278420917849, -1.38424758326...</td>
+      <td>107.0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>lammps_job_vac</td>
+      <td>(Atom('Cu', [0.10390109091492468, 1.9580560553035562, 1.7791885607676787], index=0), Atom('Cu', [1.3868099266682057, 10.93717630776338, 1.6017909487813904], index=1), Atom('Cu', [1.718398788940990...</td>
+      <td>-353.817356</td>
+      <td>[[-0.45079778130212095, 0.19236747741186794, 0.23614131969518395], [1.2984317307785798, 0.047515689332818876, 0.0054434255778954815], [0.48875760189529993, -0.5765163470127389, -0.5531364786691438...</td>
+      <td>107.0</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>lammps_job_vac</td>
+      <td>(Atom('Cu', [0.222323479300276, 1.6999920633404162, 1.7623980235259142], index=0), Atom('Cu', [2.1228826608790445, 0.1862423842302597, 2.0308086839888815], index=1), Atom('Cu', [1.733468948470044,...</td>
+      <td>-353.115830</td>
+      <td>[[-0.6920262907037699, 0.3986975029534239, 0.10738641941633598], [-1.2097205794551897, -2.2142354302088, -0.8363385508175151], [-0.36839592956672496, 0.3591989390425319, 0.09738195090699889], [2.1...</td>
+      <td>107.0</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>lammps_job_vac</td>
+      <td>(Atom('Cu', [10.839434974930233, 1.9008464900018414, 1.6867963294684114], index=0), Atom('Cu', [1.587659858135841, 0.1544755711878935, 1.7152999948177818], index=1), Atom('Cu', [2.148606011735478,...</td>
+      <td>-352.375089</td>
+      <td>[[0.5607305368014349, 0.07454461225798582, 0.17092757180355503], [0.7460358156722969, -0.9693709228667519, -0.357775642489466], [-1.4982109077379697, 1.0695224870646098, 0.17016025464195195], [1.1...</td>
+      <td>107.0</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>lammps_job_vac</td>
+      <td>(Atom('Cu', [10.827044041158409, 1.8148855201981695, 2.124190925175089], index=0), Atom('Cu', [1.6679142700199683, 0.11062408070456453, 1.6294014594257846], index=1), Atom('Cu', [1.294186866136013...</td>
+      <td>-352.774500</td>
+      <td>[[0.7768634672242999, 0.615614277463985, -0.6520778674493769], [0.5196497874591279, -0.7614150189291738, 0.33452284258293197], [1.0185593798557397, 0.11349094339204105, -1.1138567887771997], [0.39...</td>
+      <td>107.0</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>lammps_job_vac</td>
+      <td>(Atom('Cu', [0.18579648603934987, 1.6025971043768155, 1.8725196193702205], index=0), Atom('Cu', [2.048083516582408, 0.05523851059960332, 2.2588410942434316], index=1), Atom('Cu', [1.84234468412923...</td>
+      <td>-352.466296</td>
+      <td>[[-1.2511641504900297, 0.045660252979352216, 0.3942699933548249], [-0.49238478619866294, -0.676187288648693, -1.38021677052805], [-0.12072100498243699, 0.5666924914313989, -0.8825937576412469], [0...</td>
+      <td>107.0</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>lammps_job_vac</td>
+      <td>(Atom('Cu', [10.902653792488254, 1.9016481867624628, 1.7123868009764087], index=0), Atom('Cu', [1.684365629566867, 0.20454959543267073, 1.4940727709048371], index=1), Atom('Cu', [1.628967729292809...</td>
+      <td>-353.659518</td>
+      <td>[[0.5080309295530009, -0.4875222168854389, 0.46898176419400794], [0.11031309245877298, -0.7243436015235899, 1.2808414835860897], [0.6855285827566528, 0.576817447011234, 0.31599931467165404], [0.50...</td>
+      <td>107.0</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>lammps_job_vac</td>
+      <td>(Atom('Cu', [0.22025110375749696, 1.5872348575731654, 1.7623998700921586], index=0), Atom('Cu', [1.8386689358494586, 10.988833155464064, 1.8571406735076377], index=1), Atom('Cu', [1.97639089167179...</td>
+      <td>-352.032412</td>
+      <td>[[-0.6923371397932379, 0.9615117891395759, 0.396261839405581], [0.18083100479582398, -0.47103552318232994, 0.5072798015385259], [-0.22735248852514198, 0.3701117760834369, -1.1740345739673297], [0....</td>
+      <td>107.0</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>lammps_job_vac</td>
+      <td>(Atom('Cu', [10.746144724792629, 1.6561216261325158, 1.6676063346541934], index=0), Atom('Cu', [1.8697696007010116, 0.2956610204486699, 1.9071090181785917], index=1), Atom('Cu', [1.820130883905895...</td>
+      <td>-352.885609</td>
+      <td>[[0.4694017239681809, 0.557542533620799, 0.861383405389437], [-0.16043498520491098, -1.0997839630796997, -0.013974118048379877], [-0.13554483753545396, 0.6363641150344139, 0.153788969504449], [1.0...</td>
+      <td>107.0</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>lammps_job_vac</td>
+      <td>(Atom('Cu', [0.17063059334564, 1.853418797177199, 1.7423748774412284], index=0), Atom('Cu', [1.8595651381460672, 10.905723229638589, 1.810598025743776], index=1), Atom('Cu', [1.9346512242265819, 1...</td>
+      <td>-352.295316</td>
+      <td>[[-1.1653987878668197, -0.07515193358861387, -0.13414295175130306], [0.17707911415253696, 0.37588361844850293, 0.10312993216846503], [0.6003632668071709, 0.386969577632806, 0.03431754138154845], [...</td>
+      <td>107.0</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>lammps_job_vac</td>
+      <td>(Atom('Cu', [10.866365841890905, 1.8491297824671196, 2.0932441820713352], index=0), Atom('Cu', [1.7536272327257443, 10.898985480280807, 1.8241252899027136], index=1), Atom('Cu', [1.994555229954278...</td>
+      <td>-353.959714</td>
+      <td>[[0.4281914688318719, -1.3404674992878498, -0.840042998895605], [0.4782285361793289, -0.07949121879472046, -0.36737406210665396], [-0.9172013000957939, 0.3239785884620919, -0.013009379648141535], ...</td>
+      <td>107.0</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>lammps_job_surf</td>
+      <td>(Atom('Cu', [0.0, 1.47377632857406, 9.024277317236802e-17], index=0), Atom('Cu', [2.5526554800834376, 1.4737763285740602, 2.4654784132287465e-16], index=1), Atom('Cu', [5.105310960166875, 1.473776...</td>
+      <td>-426.377084</td>
+      <td>[[-8.770761894538741e-15, 1.15657750043852e-09, 0.109956784695642], [-1.0824674490095302e-15, 1.15657515335765e-09, 0.10995678469564], [2.4308896909297503e-15, 1.1565748914144101e-09, 0.1099567846...</td>
+      <td>128.0</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>lammps_job_surf</td>
+      <td>(Atom('Cu', [0.4126496185424086, 0.9553642998076769, 0.12158924761653131], index=0), Atom('Cu', [2.831118842513476, 1.070015821634989, 25.91692230427277], index=1), Atom('Cu', [5.314789299948389, ...</td>
+      <td>-412.725659</td>
+      <td>[[-0.570999988178138, 1.09833300989088, -0.566585257198733], [-0.0492000252908119, 0.59741650677863, 0.966635869516026], [-0.0024866801464869, -0.0674126479000064, 0.2546322145358], [0.22890858859...</td>
+      <td>128.0</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>lammps_job_surf</td>
+      <td>(Atom('Cu', [10.151562776611796, 1.6587733567107221, 26.430359388947146], index=0), Atom('Cu', [2.521282881985372, 1.9070842851152827, 26.3620394009805], index=1), Atom('Cu', [4.715098279444533, 1...</td>
+      <td>-412.248744</td>
+      <td>[[-0.555658749547297, 0.42566314828364293, 0.466167261187242], [-1.39449792316991, -0.5017985009363141, 0.44565311708876987], [1.25410857633047, -0.33111996310053693, -0.24658722383835793], [0.391...</td>
+      <td>128.0</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>lammps_job_surf</td>
+      <td>(Atom('Cu', [0.19573901040814495, 1.051460534941852, 26.530022925039262], index=0), Atom('Cu', [2.9957269566314313, 1.1546751485293134, -0.001778040455061588], index=1), Atom('Cu', [5.923947432763...</td>
+      <td>-408.987597</td>
+      <td>[[0.550884754551255, 0.33865983742361505, 0.12042096866994706], [0.189727589275785, -0.524367356684469, -0.17886090450817402], [-1.6758650723095, -0.3103026148332811, 0.6946509585210929], [0.44535...</td>
+      <td>128.0</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>lammps_job_surf</td>
+      <td>(Atom('Cu', [9.88837962589013, 1.4968159202602165, 26.58551059472219], index=0), Atom('Cu', [2.2075440570158325, 1.2900742458621188, 26.685466830384563], index=1), Atom('Cu', [4.939145903748459, 1...</td>
+      <td>-410.603331</td>
+      <td>[[0.235449441283078, 0.601163461328045, 0.047374581092271446], [0.337344266120139, 0.664857294034072, 0.37768738132641905], [-0.171831038532397, -0.11286098092806901, -0.07415135874388401], [-0.19...</td>
+      <td>128.0</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>lammps_job_surf</td>
+      <td>(Atom('Cu', [0.34293262903884986, 1.5170285327525375, 0.1489631508684563], index=0), Atom('Cu', [3.1293458688620657, 1.4951029648602612, 0.016078486508459836], index=1), Atom('Cu', [5.714332108259...</td>
+      <td>-412.068287</td>
+      <td>[[1.15453322332514, 0.04603660924936107, -1.21282260886917], [-0.40339091367313, -0.18969536874822704, 0.030526533197075965], [-0.683024325118812, -0.967333273080052, 0.4114320467711059], [-0.8675...</td>
+      <td>128.0</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>lammps_job_surf</td>
+      <td>(Atom('Cu', [9.95801241508353, 1.4359511579323643, 26.639342243648876], index=0), Atom('Cu', [2.2681416259097977, 1.7861270127584556, 0.004193644623918503], index=1), Atom('Cu', [5.074253116948597...</td>
+      <td>-410.426591</td>
+      <td>[[0.742004122720721, 0.22577315892753805, 0.12298868178080906], [0.771069504023197, -0.90014541932296, -0.660403448735684], [-0.462456173471762, 1.24796716627208, -0.41920103505081097], [0.0821911...</td>
+      <td>128.0</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>lammps_job_surf</td>
+      <td>(Atom('Cu', [10.225027496778678, 1.7848555655263902, 26.42388292769736], index=0), Atom('Cu', [2.491486993862084, 1.8611191751030531, 26.648267715418335], index=1), Atom('Cu', [4.968442272628866, ...</td>
+      <td>-413.081270</td>
+      <td>[[0.552749731039339, -0.46087407706439093, 0.177277816520108], [0.340079509796374, 0.23574679643604202, 0.26784307872275903], [0.38829857840138, 0.331969932800717, 0.34399524631836903], [-0.598269...</td>
+      <td>128.0</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>lammps_job_surf</td>
+      <td>(Atom('Cu', [10.18811670169521, 1.3482529143794337, 26.353847647583958], index=0), Atom('Cu', [2.4559442807083434, 1.4757747059783504, 26.573792820255626], index=1), Atom('Cu', [5.077086561123885,...</td>
+      <td>-411.270168</td>
+      <td>[[0.570532228170616, 0.17193739346638104, 0.796311675023456], [0.672970110578221, -0.817732243959863, 0.207420342553793], [0.391385096556072, -0.862073619432422, 0.597813478903035], [-0.2704527267...</td>
+      <td>128.0</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>lammps_job_surf</td>
+      <td>(Atom('Cu', [10.165259029717141, 1.7122531597864588, 26.335638965282506], index=0), Atom('Cu', [2.351333086964575, 1.5487334167881261, 26.342581162362286], index=1), Atom('Cu', [4.955731381487939,...</td>
+      <td>-410.951862</td>
+      <td>[[-1.11093024775332, -0.6986058375434832, 0.4467412161766239], [0.0416051560885089, -0.0424634968511256, -0.0874515614131588], [-0.135122617107614, -0.778975629931571, -1.04402814517475], [0.84425...</td>
+      <td>128.0</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>lammps_job_surf</td>
+      <td>(Atom('Cu', [0.3689378411745667, 1.4818319280204475, 26.535047009582307], index=0), Atom('Cu', [2.6965712182140265, 1.4888124298358478, 26.730123523791978], index=1), Atom('Cu', [5.668661293887029...</td>
+      <td>-411.163952</td>
+      <td>[[-0.645092069842764, 0.049201221165188956, 0.21081031392484997], [1.14893686212593, -0.6114894802487358, -0.40665475714370897], [-0.287092610235497, 0.292443460035198, -0.801010315713759], [-0.18...</td>
+      <td>128.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can now inspect the data in this dataset quite easily</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">struct</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">structures</span><span class="p">,</span> <span class="n">energies</span><span class="p">,</span> <span class="n">forces</span><span class="p">,</span> <span class="n">num_atoms</span>  <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The datasets used in the potential fitting procedure for day 2 (obtained from accurate DFT calculations) will be accessed in the same way</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./day_1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="ex_01_introduction_to_pyiron.html" title="previous page"><strong>Workflows for atomistic simulations</strong></a>
+    <a class='right-next' id="next-link" href="../day_2/00-IntroductionDay2.html" title="next page">Day 2 - Parameterization of interatomic potentials</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Jan Janssen<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

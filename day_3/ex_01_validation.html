@@ -1,0 +1,1971 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Workflows for atomistic simulations &#8212; Software Tools from Atomistics to Phase Diagrams</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.37f24b989f4638ff9c27c22dc7559d4f.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Fitting project" href="../day_2/03-ace/pacemaker-fit-tutorial.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo_dark.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Software Tools from Atomistics to Phase Diagrams</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Potentials Workshop
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day_1/ex_01_introduction_to_pyiron.html">
+   <strong>
+    Workflows for atomistic simulations
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day_1/ex_02_creating_structure_databases.html">
+   <strong>
+    Workflows for atomistic simulations
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day_2/00-IntroductionDay2.html">
+   Day 2 - Parameterization of interatomic potentials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day_2/00-IntroductionDay2.html#reference-data">
+   Reference data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day_2/01-atomicrex/WorkshopPotentialEAM.html">
+   Fitting an EAM potential
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day_2/02-runner/Workflow-RuNNer.html">
+   Getting started with
+   <strong>
+    RuNNer
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day_2/02-runner/Workflow-RuNNer.html#about-runner">
+   About RuNNer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day_2/02-runner/Workflow-RuNNer.html#getting-the-first-data-set">
+   Getting the First Data Set
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day_2/02-runner/Workflow-RuNNer.html#the-runner-workflow">
+   The RuNNer Workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day_2/02-runner/Workflow-RuNNer.html#pyiron-runner-fit">
+   Pyiron RuNNer Fit
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day_2/03-ace/pacemaker-fit-tutorial.html">
+   Fitting project
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day_2/03-ace/pacemaker-fit-tutorial.html#analyse-the-fitting-results">
+   Analyse the fitting results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day_2/03-ace/pacemaker-fit-tutorial.html#overview-of-the-fitted-potential-internals">
+   Overview of the fitted potential internals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day_2/03-ace/pacemaker-fit-tutorial.html#test-fitted-potential">
+   Test fitted potential
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day_2/03-ace/pacemaker-fit-tutorial.html#advanced-already-trained-potential">
+   Advanced (already trained) potential
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   <strong>
+    Workflows for atomistic simulations
+   </strong>
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://pyiron.org">pyiron</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/day_3/ex_01_validation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/pyiron/potentials-workshop-2021/master?urlpath=lab/tree/day_3/ex_01_validation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#day-3-validation-of-various-potentials">
+   <strong>
+    Day 3 - Validation of various potentials
+   </strong>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1-validation-of-generated-potentials-using-pyiron-based-workflows">
+     <strong>
+      Exercise 1: Validation of generated potentials using pyiron based workflows
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importing-the-modules-and-creating-the-project">
+   <strong>
+    Importing the modules and creating the project
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1-get-the-equilibrium-cu-lattice-constant-determined-by-the-potentials">
+   <strong>
+    Step 1: Get the equilibrium Cu lattice constant determined by the potentials
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compute-elastic-constants">
+   <strong>
+    Compute elastic constants
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compare-computed-elastic-constants-with-that-from-dft-calculations">
+   <strong>
+    Compare computed elastic constants with that from DFT calculations
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculation-of-surface-energies">
+   <strong>
+    Calculation of surface energies
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#finite-temperature-thermodynamics-harmonic-approximation">
+   <strong>
+    Finite temperature thermodynamics (Harmonic approximation)
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#validating-against-original-dataset">
+   <strong>
+    Validating against original dataset
+   </strong>
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="workflows-for-atomistic-simulations">
+<h1><a class="reference external" href="http://potentials.rub.de/"><strong>Workflows for atomistic simulations</strong></a><a class="headerlink" href="#workflows-for-atomistic-simulations" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="day-3-validation-of-various-potentials">
+<h2><strong>Day 3 - Validation of various potentials</strong><a class="headerlink" href="#day-3-validation-of-various-potentials" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-1-validation-of-generated-potentials-using-pyiron-based-workflows">
+<h3><strong>Exercise 1: Validation of generated potentials using pyiron based workflows</strong><a class="headerlink" href="#exercise-1-validation-of-generated-potentials-using-pyiron-based-workflows" title="Permalink to this headline">¶</a></h3>
+<p>Before the excercise, you should:</p>
+<ul class="simple">
+<li><p>Have run the notebooks from day 1 and day2</p></li>
+<li><p>Be familiar with working with pyiron and the basics of potential fitting</p></li>
+</ul>
+<p>The aim of this exercise is to make you familiar with:</p>
+<ul class="simple">
+<li><p>Potential validation workflows</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="importing-the-modules-and-creating-the-project">
+<h2><strong>Importing the modules and creating the project</strong><a class="headerlink" href="#importing-the-modules-and-creating-the-project" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyiron</span> <span class="kn">import</span> <span class="n">Project</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pr</span> <span class="o">=</span> <span class="n">Project</span><span class="p">(</span><span class="s2">&quot;validation&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Potentials from fit the previous day</span>
+<span class="n">potential_list</span>  <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;df1_cut5_pyace&#39;</span><span class="p">,</span> <span class="s1">&#39;EAM&#39;</span><span class="p">,</span> <span class="s1">&#39;RuNNer-Cu&#39;</span><span class="p">]</span>
+
+<span class="c1">#  Typical EAM and well fit potentials</span>
+<span class="n">potential_list</span>  <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;2012--Mendelev-M-I--Cu--LAMMPS--ipr1&#39;</span><span class="p">,</span> <span class="s1">&#39;2004--Zhou-X-W--Cu-Ag-Au--LAMMPS--ipr2&#39;</span><span class="p">,</span> 
+                   <span class="s1">&#39;Cu-ace&#39;</span><span class="p">,</span> <span class="s1">&#39;Cu-runner-df4&#39;</span><span class="p">,</span> <span class="s1">&#39;Cu-atomicrex-df1-107-25&#39;</span><span class="p">]</span> <span class="c1">#, &#39;Cu-runner-df1&#39;, &#39;Cu-atomicrex-df1-0-13&#39;]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function to return appropriate potentials generated yesterday</span>
+
+<span class="k">def</span> <span class="nf">get_pyiron_potential</span><span class="p">(</span><span class="n">potential</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">potential</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;df1_cut5_pyace&quot;</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="n">pr</span><span class="p">[</span><span class="s2">&quot;../../day_2/03-ace/pacemaker_fit/df1_cut5_pyace&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">get_lammps_potential</span><span class="p">()</span>
+    
+    <span class="k">if</span> <span class="n">potential</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;EAM&quot;</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="n">pr</span><span class="p">[</span><span class="s2">&quot;../../day_2/01-atomicrex/WorkshopPotential/PotentialDF1&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">lammps_potential</span>
+    
+    <span class="k">elif</span> <span class="n">potential</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;RuNNer-Cu&quot;</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="n">pr</span><span class="p">[</span><span class="s2">&quot;../../day_2/02-runner/runner_fit/fit&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">lammps_potential</span>
+    <span class="c1"># to returns potentials already in DB</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">potential</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-1-get-the-equilibrium-cu-lattice-constant-determined-by-the-potentials">
+<h2><strong>Step 1: Get the equilibrium Cu lattice constant determined by the potentials</strong><a class="headerlink" href="#step-1-get-the-equilibrium-cu-lattice-constant-determined-by-the-potentials" title="Permalink to this headline">¶</a></h2>
+<p>First we compute energy-volume curves to get the equilibrium lattice constants determined by each potential</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Necessary to remove wierd characters in the potential name</span>
+<span class="k">def</span> <span class="nf">clean_project_name</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">pot</span> <span class="ow">in</span> <span class="n">potential_list</span><span class="p">:</span>
+    <span class="n">group_name</span> <span class="o">=</span> <span class="n">clean_project_name</span><span class="p">(</span><span class="n">pot</span><span class="p">)</span>
+    <span class="n">pr_pot</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">create_group</span><span class="p">(</span><span class="n">pot</span><span class="p">)</span>
+    <span class="n">job_ref</span> <span class="o">=</span> <span class="n">pr_pot</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span><span class="n">pr_pot</span><span class="o">.</span><span class="n">job_type</span><span class="o">.</span><span class="n">Lammps</span><span class="p">,</span> <span class="s2">&quot;ref_job&quot;</span><span class="p">)</span>
+    <span class="n">job_ref</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">pr_pot</span><span class="o">.</span><span class="n">create_ase_bulk</span><span class="p">(</span><span class="s2">&quot;Cu&quot;</span><span class="p">)</span>
+    <span class="n">job_ref</span><span class="o">.</span><span class="n">potential</span> <span class="o">=</span> <span class="n">get_pyiron_potential</span><span class="p">(</span><span class="n">pot</span><span class="p">)</span>
+    <span class="n">job_ref</span><span class="o">.</span><span class="n">calc_minimize</span><span class="p">()</span>
+    <span class="n">murn_job</span> <span class="o">=</span> <span class="n">job_ref</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span><span class="n">pr_pot</span><span class="o">.</span><span class="n">job_type</span><span class="o">.</span><span class="n">Murnaghan</span><span class="p">,</span> <span class="s2">&quot;murn_job&quot;</span><span class="p">)</span>
+    <span class="n">murn_job</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Potential: &quot;</span><span class="p">,</span> <span class="n">pot</span><span class="p">)</span>
+    <span class="n">murn_job</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job murn_job was saved and received the ID: 90
+The job strain_0_9 was saved and received the ID: 91
+The job strain_0_92 was saved and received the ID: 92
+The job strain_0_94 was saved and received the ID: 93
+The job strain_0_96 was saved and received the ID: 94
+The job strain_0_98 was saved and received the ID: 95
+The job strain_1_0 was saved and received the ID: 96
+The job strain_1_02 was saved and received the ID: 97
+The job strain_1_04 was saved and received the ID: 98
+The job strain_1_06 was saved and received the ID: 99
+The job strain_1_08 was saved and received the ID: 100
+The job strain_1_1 was saved and received the ID: 101
+job_id:  91 finished
+job_id:  92 finished
+job_id:  93 finished
+job_id:  94 finished
+job_id:  95 finished
+job_id:  96 finished
+job_id:  97 finished
+job_id:  98 finished
+job_id:  99 finished
+job_id:  100 finished
+job_id:  101 finished
+Potential:  2012--Mendelev-M-I--Cu--LAMMPS--ipr1
+</pre></div>
+</div>
+<img alt="../_images/ex_01_validation_10_1.png" src="../_images/ex_01_validation_10_1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job murn_job was saved and received the ID: 102
+The job strain_0_9 was saved and received the ID: 103
+The job strain_0_92 was saved and received the ID: 104
+The job strain_0_94 was saved and received the ID: 105
+The job strain_0_96 was saved and received the ID: 106
+The job strain_0_98 was saved and received the ID: 107
+The job strain_1_0 was saved and received the ID: 108
+The job strain_1_02 was saved and received the ID: 109
+The job strain_1_04 was saved and received the ID: 110
+The job strain_1_06 was saved and received the ID: 111
+The job strain_1_08 was saved and received the ID: 112
+The job strain_1_1 was saved and received the ID: 113
+job_id:  103 finished
+job_id:  104 finished
+job_id:  105 finished
+job_id:  106 finished
+job_id:  107 finished
+job_id:  108 finished
+job_id:  109 finished
+job_id:  110 finished
+job_id:  111 finished
+job_id:  112 finished
+job_id:  113 finished
+Potential:  2004--Zhou-X-W--Cu-Ag-Au--LAMMPS--ipr2
+</pre></div>
+</div>
+<img alt="../_images/ex_01_validation_10_3.png" src="../_images/ex_01_validation_10_3.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job murn_job was saved and received the ID: 114
+The job strain_0_9 was saved and received the ID: 115
+The job strain_0_92 was saved and received the ID: 116
+The job strain_0_94 was saved and received the ID: 117
+The job strain_0_96 was saved and received the ID: 118
+The job strain_0_98 was saved and received the ID: 119
+The job strain_1_0 was saved and received the ID: 120
+The job strain_1_02 was saved and received the ID: 121
+The job strain_1_04 was saved and received the ID: 122
+The job strain_1_06 was saved and received the ID: 123
+The job strain_1_08 was saved and received the ID: 124
+The job strain_1_1 was saved and received the ID: 125
+job_id:  115 finished
+job_id:  116 finished
+job_id:  117 finished
+job_id:  118 finished
+job_id:  119 finished
+job_id:  120 finished
+job_id:  121 finished
+job_id:  122 finished
+job_id:  123 finished
+job_id:  124 finished
+job_id:  125 finished
+Potential:  Cu-ace
+</pre></div>
+</div>
+<img alt="../_images/ex_01_validation_10_5.png" src="../_images/ex_01_validation_10_5.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job murn_job was saved and received the ID: 126
+The job strain_0_9 was saved and received the ID: 127
+The job strain_0_92 was saved and received the ID: 128
+The job strain_0_94 was saved and received the ID: 129
+The job strain_0_96 was saved and received the ID: 130
+The job strain_0_98 was saved and received the ID: 131
+The job strain_1_0 was saved and received the ID: 132
+The job strain_1_02 was saved and received the ID: 133
+The job strain_1_04 was saved and received the ID: 134
+The job strain_1_06 was saved and received the ID: 135
+The job strain_1_08 was saved and received the ID: 136
+The job strain_1_1 was saved and received the ID: 137
+job_id:  127 finished
+job_id:  128 finished
+job_id:  129 finished
+job_id:  130 finished
+job_id:  131 finished
+job_id:  132 finished
+job_id:  133 finished
+job_id:  134 finished
+job_id:  135 finished
+job_id:  136 finished
+job_id:  137 finished
+Potential:  Cu-runner-df4
+</pre></div>
+</div>
+<img alt="../_images/ex_01_validation_10_7.png" src="../_images/ex_01_validation_10_7.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job murn_job was saved and received the ID: 138
+The job strain_0_9 was saved and received the ID: 139
+The job strain_0_92 was saved and received the ID: 140
+The job strain_0_94 was saved and received the ID: 141
+The job strain_0_96 was saved and received the ID: 142
+The job strain_0_98 was saved and received the ID: 143
+The job strain_1_0 was saved and received the ID: 144
+The job strain_1_02 was saved and received the ID: 145
+The job strain_1_04 was saved and received the ID: 146
+The job strain_1_06 was saved and received the ID: 147
+The job strain_1_08 was saved and received the ID: 148
+The job strain_1_1 was saved and received the ID: 149
+job_id:  139 finished
+job_id:  140 finished
+job_id:  141 finished
+job_id:  142 finished
+job_id:  143 finished
+job_id:  144 finished
+job_id:  145 finished
+job_id:  146 finished
+job_id:  147 finished
+job_id:  148 finished
+job_id:  149 finished
+Potential:  Cu-atomicrex-df1-107-25
+</pre></div>
+</div>
+<img alt="../_images/ex_01_validation_10_9.png" src="../_images/ex_01_validation_10_9.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">murn_job</span><span class="p">[</span><span class="s2">&quot;output/equilibrium_energy&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-3.716480589399012
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define functions to get data</span>
+
+<span class="c1"># Only work with Murnaghan jobs</span>
+<span class="k">def</span> <span class="nf">get_only_murn</span><span class="p">(</span><span class="n">job_table</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">job_table</span><span class="o">.</span><span class="n">hamilton</span> <span class="o">==</span> <span class="s2">&quot;Murnaghan&quot;</span>
+
+<span class="k">def</span> <span class="nf">get_eq_vol</span><span class="p">(</span><span class="n">job_path</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">job_path</span><span class="p">[</span><span class="s2">&quot;output/equilibrium_volume&quot;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">get_eq_lp</span><span class="p">(</span><span class="n">job_path</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">job_path</span><span class="p">[</span><span class="s2">&quot;output/structure/cell/cell&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">get_eq_bm</span><span class="p">(</span><span class="n">job_path</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">job_path</span><span class="p">[</span><span class="s2">&quot;output/equilibrium_bulk_modulus&quot;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">get_potential</span><span class="p">(</span><span class="n">job_path</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">job_path</span><span class="p">[</span><span class="s2">&quot;ref_job/input/potential/Name&quot;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">get_eq_energy</span><span class="p">(</span><span class="n">job_path</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">job_path</span><span class="p">[</span><span class="s2">&quot;output/equilibrium_energy&quot;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">get_n_atoms</span><span class="p">(</span><span class="n">job_path</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">job_path</span><span class="p">[</span><span class="s2">&quot;output/structure/positions&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compile data using pyiron tables</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">create_table</span><span class="p">(</span><span class="s2">&quot;table_murn&quot;</span><span class="p">,</span> <span class="n">delete_existing_job</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="n">db_filter_function</span> <span class="o">=</span> <span class="n">get_only_murn</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add</span><span class="p">[</span><span class="s2">&quot;potential&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_potential</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_eq_lp</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add</span><span class="p">[</span><span class="s2">&quot;eq_vol&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_eq_vol</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add</span><span class="p">[</span><span class="s2">&quot;eq_bm&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_eq_bm</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add</span><span class="p">[</span><span class="s2">&quot;eq_energy&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_eq_energy</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add</span><span class="p">[</span><span class="s2">&quot;n_atoms&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_n_atoms</span>
+<span class="n">table</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">data_murn</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">get_dataframe</span><span class="p">()</span>
+<span class="n">data_murn</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 5/5 [00:00&lt;00:00, 997.41it/s]
+100%|██████████| 5/5 [00:00&lt;00:00, 43.30it/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job table_murn was saved and received the ID: 150
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>job_id</th>
+      <th>potential</th>
+      <th>a</th>
+      <th>eq_vol</th>
+      <th>eq_bm</th>
+      <th>eq_energy</th>
+      <th>n_atoms</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>90</td>
+      <td>2012--Mendelev-M-I--Cu--LAMMPS--ipr1</td>
+      <td>3.637410</td>
+      <td>12.031420</td>
+      <td>151.879230</td>
+      <td>-3.422980</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>102</td>
+      <td>2004--Zhou-X-W--Cu-Ag-Au--LAMMPS--ipr2</td>
+      <td>3.614942</td>
+      <td>11.809844</td>
+      <td>135.774799</td>
+      <td>-3.539942</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>114</td>
+      <td>Cu-ace</td>
+      <td>3.629863</td>
+      <td>11.956678</td>
+      <td>146.220099</td>
+      <td>-3.698781</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>126</td>
+      <td>Cu-runner-df4</td>
+      <td>3.618770</td>
+      <td>11.847397</td>
+      <td>145.857176</td>
+      <td>-3.694889</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>138</td>
+      <td>Cu-atomicrex-df1-107-25</td>
+      <td>3.659051</td>
+      <td>12.247445</td>
+      <td>156.948283</td>
+      <td>-3.716481</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="compute-elastic-constants">
+<h2><strong>Compute elastic constants</strong><a class="headerlink" href="#compute-elastic-constants" title="Permalink to this headline">¶</a></h2>
+<p>Using the equilibrium lattice constant, compute the elastic constant matrix using the automated workflow</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">pot</span> <span class="ow">in</span> <span class="n">data_murn</span><span class="o">.</span><span class="n">potential</span><span class="o">.</span><span class="n">to_list</span><span class="p">():</span>
+    <span class="n">group_name</span> <span class="o">=</span> <span class="n">clean_project_name</span><span class="p">(</span><span class="n">pot</span><span class="p">)</span>
+    <span class="n">pr_pot</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">create_group</span><span class="p">(</span><span class="n">pot</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pot</span><span class="p">)</span>
+    <span class="n">job_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">data_murn</span><span class="p">[</span><span class="n">data_murn</span><span class="o">.</span><span class="n">potential</span><span class="o">==</span><span class="n">pot</span><span class="p">]</span><span class="o">.</span><span class="n">job_id</span><span class="p">)</span>
+    <span class="n">job_ref</span> <span class="o">=</span> <span class="n">pr_pot</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span><span class="n">pr_pot</span><span class="o">.</span><span class="n">job_type</span><span class="o">.</span><span class="n">Lammps</span><span class="p">,</span> <span class="s2">&quot;ref_job&quot;</span><span class="p">)</span>
+    <span class="n">job_ref</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">pr_pot</span><span class="o">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">job_id</span><span class="p">)[</span><span class="s2">&quot;output/structure&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_object</span><span class="p">()</span>
+    <span class="n">job_ref</span><span class="o">.</span><span class="n">potential</span> <span class="o">=</span> <span class="n">get_pyiron_potential</span><span class="p">(</span><span class="n">pot</span><span class="p">)</span>
+    <span class="n">job_ref</span><span class="o">.</span><span class="n">calc_minimize</span><span class="p">()</span>
+    <span class="n">elastic_job</span> <span class="o">=</span> <span class="n">job_ref</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span><span class="n">pr_pot</span><span class="o">.</span><span class="n">job_type</span><span class="o">.</span><span class="n">ElasticMatrixJob</span><span class="p">,</span> <span class="s2">&quot;elastic_job&quot;</span><span class="p">)</span>
+    <span class="n">elastic_job</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="s2">&quot;eps_range&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.05</span>
+    <span class="n">elastic_job</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2012--Mendelev-M-I--Cu--LAMMPS--ipr1
+The job elastic_job was saved and received the ID: 151
+The job s_e_0 was saved and received the ID: 152
+The job s_01_e_m0_05000 was saved and received the ID: 153
+The job s_01_e_m0_02500 was saved and received the ID: 154
+The job s_01_e_0_02500 was saved and received the ID: 155
+The job s_01_e_0_05000 was saved and received the ID: 156
+The job s_08_e_m0_05000 was saved and received the ID: 157
+The job s_08_e_m0_02500 was saved and received the ID: 158
+The job s_08_e_0_02500 was saved and received the ID: 159
+The job s_08_e_0_05000 was saved and received the ID: 160
+The job s_23_e_m0_05000 was saved and received the ID: 161
+The job s_23_e_m0_02500 was saved and received the ID: 162
+The job s_23_e_0_02500 was saved and received the ID: 163
+The job s_23_e_0_05000 was saved and received the ID: 164
+2004--Zhou-X-W--Cu-Ag-Au--LAMMPS--ipr2
+The job elastic_job was saved and received the ID: 165
+The job s_e_0 was saved and received the ID: 166
+The job s_01_e_m0_05000 was saved and received the ID: 167
+The job s_01_e_m0_02500 was saved and received the ID: 168
+The job s_01_e_0_02500 was saved and received the ID: 169
+The job s_01_e_0_05000 was saved and received the ID: 170
+The job s_08_e_m0_05000 was saved and received the ID: 171
+The job s_08_e_m0_02500 was saved and received the ID: 172
+The job s_08_e_0_02500 was saved and received the ID: 173
+The job s_08_e_0_05000 was saved and received the ID: 174
+The job s_23_e_m0_05000 was saved and received the ID: 175
+The job s_23_e_m0_02500 was saved and received the ID: 176
+The job s_23_e_0_02500 was saved and received the ID: 177
+The job s_23_e_0_05000 was saved and received the ID: 178
+Cu-ace
+The job elastic_job was saved and received the ID: 179
+The job s_e_0 was saved and received the ID: 180
+The job s_01_e_m0_05000 was saved and received the ID: 181
+The job s_01_e_m0_02500 was saved and received the ID: 182
+The job s_01_e_0_02500 was saved and received the ID: 183
+The job s_01_e_0_05000 was saved and received the ID: 184
+The job s_08_e_m0_05000 was saved and received the ID: 185
+The job s_08_e_m0_02500 was saved and received the ID: 186
+The job s_08_e_0_02500 was saved and received the ID: 187
+The job s_08_e_0_05000 was saved and received the ID: 188
+The job s_23_e_m0_05000 was saved and received the ID: 189
+The job s_23_e_m0_02500 was saved and received the ID: 190
+The job s_23_e_0_02500 was saved and received the ID: 191
+The job s_23_e_0_05000 was saved and received the ID: 192
+Cu-runner-df4
+The job elastic_job was saved and received the ID: 193
+The job s_e_0 was saved and received the ID: 194
+The job s_01_e_m0_05000 was saved and received the ID: 195
+The job s_01_e_m0_02500 was saved and received the ID: 196
+The job s_01_e_0_02500 was saved and received the ID: 197
+The job s_01_e_0_05000 was saved and received the ID: 198
+The job s_08_e_m0_05000 was saved and received the ID: 199
+The job s_08_e_m0_02500 was saved and received the ID: 200
+The job s_08_e_0_02500 was saved and received the ID: 201
+The job s_08_e_0_05000 was saved and received the ID: 202
+The job s_23_e_m0_05000 was saved and received the ID: 203
+The job s_23_e_m0_02500 was saved and received the ID: 204
+The job s_23_e_0_02500 was saved and received the ID: 205
+The job s_23_e_0_05000 was saved and received the ID: 206
+Cu-atomicrex-df1-107-25
+The job elastic_job was saved and received the ID: 207
+The job s_e_0 was saved and received the ID: 208
+The job s_01_e_m0_05000 was saved and received the ID: 209
+The job s_01_e_m0_02500 was saved and received the ID: 210
+The job s_01_e_0_02500 was saved and received the ID: 211
+The job s_01_e_0_05000 was saved and received the ID: 212
+The job s_08_e_m0_05000 was saved and received the ID: 213
+The job s_08_e_m0_02500 was saved and received the ID: 214
+The job s_08_e_0_02500 was saved and received the ID: 215
+The job s_08_e_0_05000 was saved and received the ID: 216
+The job s_23_e_m0_05000 was saved and received the ID: 217
+The job s_23_e_m0_02500 was saved and received the ID: 218
+The job s_23_e_0_02500 was saved and received the ID: 219
+The job s_23_e_0_05000 was saved and received the ID: 220
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inspecting the elastic matrix</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">elastic_job</span><span class="p">[</span><span class="s2">&quot;output/elasticmatrix&quot;</span><span class="p">][</span><span class="s2">&quot;C&quot;</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ex_01_validation_16_0.png" src="../_images/ex_01_validation_16_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define functions to compute them in a table</span>
+
+<span class="c1"># Only operate on ElasticMatrix jobs</span>
+<span class="k">def</span> <span class="nf">filter_elastic</span><span class="p">(</span><span class="n">job_table</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">job_table</span><span class="o">.</span><span class="n">hamilton</span> <span class="o">==</span> <span class="s2">&quot;ElasticMatrixJob&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">job_table</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s2">&quot;finished&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get corresponding lattice constants</span>
+<span class="k">def</span> <span class="nf">get_c11</span><span class="p">(</span><span class="n">job_path</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">job_path</span><span class="p">[</span><span class="s2">&quot;output/elasticmatrix&quot;</span><span class="p">][</span><span class="s2">&quot;C&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">get_c12</span><span class="p">(</span><span class="n">job_path</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">job_path</span><span class="p">[</span><span class="s2">&quot;output/elasticmatrix&quot;</span><span class="p">][</span><span class="s2">&quot;C&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">get_c44</span><span class="p">(</span><span class="n">job_path</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">job_path</span><span class="p">[</span><span class="s2">&quot;output/elasticmatrix&quot;</span><span class="p">][</span><span class="s2">&quot;C&quot;</span><span class="p">][</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">create_table</span><span class="p">(</span><span class="s2">&quot;table_elastic&quot;</span><span class="p">,</span> <span class="n">delete_existing_job</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="n">db_filter_function</span> <span class="o">=</span> <span class="n">filter_elastic</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add</span><span class="p">[</span><span class="s2">&quot;potential&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_potential</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add</span><span class="p">[</span><span class="s2">&quot;C11&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_c11</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add</span><span class="p">[</span><span class="s2">&quot;C12&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_c12</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add</span><span class="p">[</span><span class="s2">&quot;C44&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_c44</span>
+
+<span class="n">table</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">data_elastic</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">get_dataframe</span><span class="p">()</span>
+<span class="n">data_elastic</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 5/5 [00:00&lt;00:00, 993.02it/s]
+ 20%|██        | 1/5 [00:00&lt;00:00,  7.41it/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job table_elastic was saved and received the ID: 221
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 5/5 [00:00&lt;00:00,  7.61it/s]
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>job_id</th>
+      <th>potential</th>
+      <th>C11</th>
+      <th>C12</th>
+      <th>C44</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>151</td>
+      <td>2012--Mendelev-M-I--Cu--LAMMPS--ipr1</td>
+      <td>178.311163</td>
+      <td>157.392048</td>
+      <td>89.559784</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>165</td>
+      <td>2004--Zhou-X-W--Cu-Ag-Au--LAMMPS--ipr2</td>
+      <td>168.530421</td>
+      <td>122.591406</td>
+      <td>84.710381</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>179</td>
+      <td>Cu-ace</td>
+      <td>182.054447</td>
+      <td>132.575877</td>
+      <td>81.049351</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>193</td>
+      <td>Cu-runner-df4</td>
+      <td>143.473893</td>
+      <td>170.027784</td>
+      <td>100.953889</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>207</td>
+      <td>Cu-atomicrex-df1-107-25</td>
+      <td>201.538410</td>
+      <td>131.169225</td>
+      <td>70.714601</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="compare-computed-elastic-constants-with-that-from-dft-calculations">
+<h2><strong>Compare computed elastic constants with that from DFT calculations</strong><a class="headerlink" href="#compare-computed-elastic-constants-with-that-from-dft-calculations" title="Permalink to this headline">¶</a></h2>
+<p>Comparing the computing elastic constant values with DFT benchmarks from the <a class="reference external" href="http://atomistictools.org/">http://atomistictools.org/</a> database</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Querying the database http://atomistictools.org/ from using the API interface</span>
+
+<span class="kn">from</span> <span class="nn">structdbrest</span> <span class="kn">import</span> <span class="n">StructDBLightRester</span>
+<span class="n">rest</span> <span class="o">=</span> <span class="n">StructDBLightRester</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s2">&quot;workshop2021&quot;</span><span class="p">)</span>
+
+<span class="c1"># Querying calculations done using the FHI-AIMS (https://aimsclub.fhi-berlin.mpg.de/) DFT code</span>
+<span class="n">fhi_calc</span> <span class="o">=</span> <span class="n">rest</span><span class="o">.</span><span class="n">query_calculator_types</span><span class="p">(</span><span class="s2">&quot;FHI</span><span class="si">%a</span><span class="s2">ims%&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Querying for elastic properties</span>
+<span class="n">dft_elast_prop</span> <span class="o">=</span> <span class="n">rest</span><span class="o">.</span><span class="n">query_properties</span><span class="p">(</span><span class="n">rest</span><span class="o">.</span><span class="n">PropertyTypes</span><span class="o">.</span><span class="n">ELASTIC_MATRIX</span><span class="p">,</span> <span class="n">composition</span><span class="o">=</span><span class="s2">&quot;Cu-%&quot;</span><span class="p">,</span> <span class="n">strukturbericht</span><span class="o">=</span><span class="s2">&quot;A1&quot;</span><span class="p">,</span> 
+                      <span class="n">calculator_name</span><span class="o">=</span><span class="n">fhi_calc</span><span class="o">.</span><span class="n">NAME</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Querying for phonon properties</span>
+<span class="n">dft_phon_prop</span> <span class="o">=</span> <span class="n">rest</span><span class="o">.</span><span class="n">query_properties</span><span class="p">(</span><span class="n">rest</span><span class="o">.</span><span class="n">PropertyTypes</span><span class="o">.</span><span class="n">PHONONS</span><span class="p">,</span> <span class="n">composition</span><span class="o">=</span><span class="s2">&quot;Cu-%&quot;</span><span class="p">,</span> <span class="n">strukturbericht</span><span class="o">=</span><span class="s2">&quot;A1&quot;</span><span class="p">,</span> 
+                      <span class="n">calculator_name</span><span class="o">=</span><span class="n">fhi_calc</span><span class="o">.</span><span class="n">NAME</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Querying...done
+Response successful, size = 7.20 kB, time = 0.04 s
+1  entries received
+Querying...done
+Response successful, size = 37.78 kB, time = 0.36 s
+1  entries received
+Querying...done
+Response successful, size = 22.50 kB, time = 1.13 s
+1  entries received
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C_dft</span> <span class="o">=</span> <span class="n">dft_elast_prop</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="s2">&quot;C&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DFT C11=</span><span class="si">{:.1f}</span><span class="s2"> GPa&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">C_dft</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DFT C12=</span><span class="si">{:.1f}</span><span class="s2"> GPa&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">C_dft</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DFT C44=</span><span class="si">{:.1f}</span><span class="s2"> GPa&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">C_dft</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">3</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DFT C11=176.9 GPa
+DFT C12=131.7 GPa
+DFT C44=82.5 GPa
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="calculation-of-surface-energies">
+<h2><strong>Calculation of surface energies</strong><a class="headerlink" href="#calculation-of-surface-energies" title="Permalink to this headline">¶</a></h2>
+<p>We can also use the potentials to calculate the surface energies of the Cu (111), (110), and (100) surfaces</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">surface_type_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;fcc111&quot;</span><span class="p">,</span> <span class="s2">&quot;fcc110&quot;</span><span class="p">,</span> <span class="s2">&quot;fcc100&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">pot</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data_murn</span><span class="o">.</span><span class="n">potential</span><span class="o">.</span><span class="n">to_list</span><span class="p">()):</span>
+    <span class="n">group_name</span> <span class="o">=</span> <span class="n">clean_project_name</span><span class="p">(</span><span class="n">pot</span><span class="p">)</span>
+    <span class="n">pr_pot</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">create_group</span><span class="p">(</span><span class="n">group_name</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">data_murn</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">to_list</span><span class="p">()[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">surface_type</span> <span class="ow">in</span> <span class="n">surface_type_list</span><span class="p">:</span>
+        <span class="n">surface</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">create_surface</span><span class="p">(</span><span class="s2">&quot;Cu&quot;</span><span class="p">,</span> <span class="n">surface_type</span><span class="o">=</span><span class="n">surface_type</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">a</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">orthogonal</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">vacuum</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+        <span class="n">job_lammps</span> <span class="o">=</span> <span class="n">pr_pot</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span><span class="n">pr_pot</span><span class="o">.</span><span class="n">job_type</span><span class="o">.</span><span class="n">Lammps</span><span class="p">,</span> <span class="s2">&quot;surf_</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">surface_type</span><span class="p">))</span>
+        <span class="n">job_lammps</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">surface</span>
+        <span class="n">job_lammps</span><span class="o">.</span><span class="n">potential</span> <span class="o">=</span> <span class="n">get_pyiron_potential</span><span class="p">(</span><span class="n">pot</span><span class="p">)</span>
+        <span class="n">job_lammps</span><span class="o">.</span><span class="n">calc_minimize</span><span class="p">()</span>
+        <span class="n">job_lammps</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job surf_fcc111 was saved and received the ID: 222
+The job surf_fcc110 was saved and received the ID: 223
+The job surf_fcc100 was saved and received the ID: 224
+The job surf_fcc111 was saved and received the ID: 225
+The job surf_fcc110 was saved and received the ID: 226
+The job surf_fcc100 was saved and received the ID: 227
+The job surf_fcc111 was saved and received the ID: 228
+The job surf_fcc110 was saved and received the ID: 229
+The job surf_fcc100 was saved and received the ID: 230
+The job surf_fcc111 was saved and received the ID: 231
+The job surf_fcc110 was saved and received the ID: 232
+The job surf_fcc100 was saved and received the ID: 233
+The job surf_fcc111 was saved and received the ID: 234
+The job surf_fcc110 was saved and received the ID: 235
+The job surf_fcc100 was saved and received the ID: 236
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function to filter only surface calculations</span>
+<span class="k">def</span> <span class="nf">is_a_surface</span><span class="p">(</span><span class="n">job_table</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">job_table</span><span class="o">.</span><span class="n">hamilton</span> <span class="o">==</span> <span class="s2">&quot;Lammps&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">job_table</span><span class="o">.</span><span class="n">job</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;fcc&quot;</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">job_table</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s2">&quot;finished&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">get_potential_lammps_job</span><span class="p">(</span><span class="n">job_path</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">job_path</span><span class="p">[</span><span class="s2">&quot;input/potential/Name&quot;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">get_surface_type</span><span class="p">(</span><span class="n">job_path</span><span class="p">):</span>
+    <span class="n">surf_list</span> <span class="o">=</span>  <span class="p">[</span><span class="s2">&quot;fcc111&quot;</span><span class="p">,</span> <span class="s2">&quot;fcc110&quot;</span><span class="p">,</span> <span class="s2">&quot;fcc100&quot;</span><span class="p">]</span>
+    <span class="n">conditions</span> <span class="o">=</span> <span class="p">[</span><span class="n">val</span> <span class="ow">in</span> <span class="n">job_path</span><span class="o">.</span><span class="n">job_name</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">surf_list</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">surf_list</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">conditions</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[</span><span class="mi">0</span><span class="p">]]</span>
+
+<span class="k">def</span> <span class="nf">get_area</span><span class="p">(</span><span class="n">job_path</span><span class="p">):</span>
+    <span class="n">cell</span> <span class="o">=</span> <span class="n">job_path</span><span class="p">[</span><span class="s2">&quot;output/structure/cell/cell&quot;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">cell</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">cell</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">create_table</span><span class="p">(</span><span class="s2">&quot;table_surface&quot;</span><span class="p">,</span> <span class="n">delete_existing_job</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="n">db_filter_function</span> <span class="o">=</span> <span class="n">is_a_surface</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add</span><span class="p">[</span><span class="s2">&quot;potential&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_potential_lammps_job</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add</span><span class="p">[</span><span class="s2">&quot;surface_type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_surface_type</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add</span><span class="p">[</span><span class="s2">&quot;surface_area&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_area</span>
+<span class="n">table</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">get_total_number_of_atoms</span>
+
+<span class="n">table</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">get_energy_tot</span>
+<span class="n">table</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">data_surf</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">get_dataframe</span><span class="p">()</span>
+<span class="n">data_surf</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 15/15 [00:00&lt;00:00, 1154.69it/s]
+ 60%|██████    | 9/15 [00:00&lt;00:00, 80.53it/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job table_surface was saved and received the ID: 237
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 15/15 [00:00&lt;00:00, 79.62it/s]
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Number_of_atoms</th>
+      <th>job_id</th>
+      <th>energy_tot</th>
+      <th>potential</th>
+      <th>surface_type</th>
+      <th>surface_area</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>512</td>
+      <td>222</td>
+      <td>-1705.746713</td>
+      <td>2012--Mendelev-M-I--Cu--LAMMPS--ipr1</td>
+      <td>fcc111</td>
+      <td>366.661398</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>512</td>
+      <td>223</td>
+      <td>-1657.007374</td>
+      <td>2012--Mendelev-M-I--Cu--LAMMPS--ipr1</td>
+      <td>fcc110</td>
+      <td>598.755556</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>512</td>
+      <td>224</td>
+      <td>-1689.102779</td>
+      <td>2012--Mendelev-M-I--Cu--LAMMPS--ipr1</td>
+      <td>fcc100</td>
+      <td>423.384114</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>512</td>
+      <td>225</td>
+      <td>-1744.607843</td>
+      <td>2004--Zhou-X-W--Cu-Ag-Au--LAMMPS--ipr2</td>
+      <td>fcc111</td>
+      <td>362.145737</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>512</td>
+      <td>226</td>
+      <td>-1683.836637</td>
+      <td>2004--Zhou-X-W--Cu-Ag-Au--LAMMPS--ipr2</td>
+      <td>fcc110</td>
+      <td>591.381512</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>512</td>
+      <td>227</td>
+      <td>-1730.881227</td>
+      <td>2004--Zhou-X-W--Cu-Ag-Au--LAMMPS--ipr2</td>
+      <td>fcc100</td>
+      <td>418.169878</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>512</td>
+      <td>228</td>
+      <td>-1834.286336</td>
+      <td>Cu-ace</td>
+      <td>fcc111</td>
+      <td>365.141308</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>512</td>
+      <td>229</td>
+      <td>-1775.620101</td>
+      <td>Cu-ace</td>
+      <td>fcc110</td>
+      <td>596.273259</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>512</td>
+      <td>230</td>
+      <td>-1814.469585</td>
+      <td>Cu-ace</td>
+      <td>fcc100</td>
+      <td>421.628865</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>512</td>
+      <td>231</td>
+      <td>-1835.853699</td>
+      <td>Cu-runner-df4</td>
+      <td>fcc111</td>
+      <td>362.913030</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>512</td>
+      <td>232</td>
+      <td>-1786.742960</td>
+      <td>Cu-runner-df4</td>
+      <td>fcc110</td>
+      <td>592.634496</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>512</td>
+      <td>233</td>
+      <td>-1816.715931</td>
+      <td>Cu-runner-df4</td>
+      <td>fcc100</td>
+      <td>419.055871</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>512</td>
+      <td>234</td>
+      <td>-1830.588920</td>
+      <td>Cu-atomicrex-df1-107-25</td>
+      <td>fcc111</td>
+      <td>371.037336</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>512</td>
+      <td>235</td>
+      <td>-1765.956124</td>
+      <td>Cu-atomicrex-df1-107-25</td>
+      <td>fcc110</td>
+      <td>605.901433</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>512</td>
+      <td>236</td>
+      <td>-1812.502127</td>
+      <td>Cu-atomicrex-df1-107-25</td>
+      <td>fcc100</td>
+      <td>428.437012</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Compute surface energies using data from the bulk fcc crystal</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">data_surf</span><span class="p">,</span> <span class="n">data_murn</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;potential&quot;</span><span class="p">)</span>
+<span class="n">data_merged</span><span class="p">[</span><span class="s2">&quot;surface_energy&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_merged</span><span class="o">.</span><span class="n">energy_tot</span> <span class="o">-</span> <span class="p">(</span><span class="n">data_merged</span><span class="o">.</span><span class="n">eq_energy</span> <span class="o">*</span> <span class="n">data_merged</span><span class="o">.</span><span class="n">Number_of_atoms</span><span class="p">)</span>
+<span class="n">data_merged</span><span class="p">[</span><span class="s2">&quot;surface_energy_in_mJ_per_sq_m&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_merged</span><span class="o">.</span><span class="n">surface_energy</span> <span class="o">/</span> <span class="n">data_merged</span><span class="o">.</span><span class="n">surface_area</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="mf">16.0219</span> <span class="o">*</span> <span class="mf">1e3</span>
+<span class="n">data_merged</span><span class="p">[[</span><span class="s2">&quot;potential&quot;</span><span class="p">,</span> <span class="s2">&quot;surface_type&quot;</span><span class="p">,</span> <span class="s2">&quot;surface_energy_in_mJ_per_sq_m&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>potential</th>
+      <th>surface_type</th>
+      <th>surface_energy_in_mJ_per_sq_m</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2012--Mendelev-M-I--Cu--LAMMPS--ipr1</td>
+      <td>fcc111</td>
+      <td>1022.919566</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2012--Mendelev-M-I--Cu--LAMMPS--ipr1</td>
+      <td>fcc110</td>
+      <td>1278.507591</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2012--Mendelev-M-I--Cu--LAMMPS--ipr1</td>
+      <td>fcc100</td>
+      <td>1200.798101</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2004--Zhou-X-W--Cu-Ag-Au--LAMMPS--ipr2</td>
+      <td>fcc111</td>
+      <td>1500.729057</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2004--Zhou-X-W--Cu-Ag-Au--LAMMPS--ipr2</td>
+      <td>fcc110</td>
+      <td>1742.221732</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2004--Zhou-X-W--Cu-Ag-Au--LAMMPS--ipr2</td>
+      <td>fcc100</td>
+      <td>1562.632546</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Cu-ace</td>
+      <td>fcc111</td>
+      <td>1305.155196</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Cu-ace</td>
+      <td>fcc110</td>
+      <td>1587.423774</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Cu-ace</td>
+      <td>fcc100</td>
+      <td>1506.815901</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Cu-runner-df4</td>
+      <td>fcc111</td>
+      <td>1234.585883</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Cu-runner-df4</td>
+      <td>fcc110</td>
+      <td>1419.881876</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Cu-runner-df4</td>
+      <td>fcc100</td>
+      <td>1435.033014</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Cu-atomicrex-df1-107-25</td>
+      <td>fcc111</td>
+      <td>1559.908417</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Cu-atomicrex-df1-107-25</td>
+      <td>fcc110</td>
+      <td>1809.790013</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Cu-atomicrex-df1-107-25</td>
+      <td>fcc100</td>
+      <td>1689.108640</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="finite-temperature-thermodynamics-harmonic-approximation">
+<h2><strong>Finite temperature thermodynamics (Harmonic approximation)</strong><a class="headerlink" href="#finite-temperature-thermodynamics-harmonic-approximation" title="Permalink to this headline">¶</a></h2>
+<p>We can also compute free energies and other finite temperature thermodynamic properties within the Harmonic approximation using phonopy (<a class="reference external" href="http://phonopy.github.io">http://phonopy.github.io</a>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">pot</span> <span class="ow">in</span> <span class="n">data_murn</span><span class="o">.</span><span class="n">potential</span><span class="o">.</span><span class="n">to_list</span><span class="p">():</span>
+    <span class="n">group_name</span> <span class="o">=</span> <span class="n">clean_project_name</span><span class="p">(</span><span class="n">pot</span><span class="p">)</span>
+    <span class="n">pr_pot</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">create_group</span><span class="p">(</span><span class="n">group_name</span><span class="p">)</span>
+    <span class="n">job_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">data_murn</span><span class="p">[</span><span class="n">data_murn</span><span class="o">.</span><span class="n">potential</span><span class="o">==</span><span class="n">pot</span><span class="p">]</span><span class="o">.</span><span class="n">job_id</span><span class="p">)</span>
+    <span class="n">job_ref</span> <span class="o">=</span> <span class="n">pr_pot</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span><span class="n">pr_pot</span><span class="o">.</span><span class="n">job_type</span><span class="o">.</span><span class="n">Lammps</span><span class="p">,</span> <span class="s2">&quot;ref_job&quot;</span><span class="p">)</span>
+    <span class="n">job_ref</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">pr_pot</span><span class="o">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">job_id</span><span class="p">)[</span><span class="s2">&quot;output/structure&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_object</span><span class="p">()</span>
+    <span class="n">job_ref</span><span class="o">.</span><span class="n">potential</span> <span class="o">=</span> <span class="n">get_pyiron_potential</span><span class="p">(</span><span class="n">pot</span><span class="p">)</span>
+    <span class="n">job_ref</span><span class="o">.</span><span class="n">calc_static</span><span class="p">()</span>
+    <span class="n">phonopy_job</span> <span class="o">=</span> <span class="n">job_ref</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span><span class="n">pr_pot</span><span class="o">.</span><span class="n">job_type</span><span class="o">.</span><span class="n">PhonopyJob</span><span class="p">,</span> <span class="s2">&quot;phonopy_job&quot;</span><span class="p">)</span>
+    <span class="n">phonopy_job</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job phonopy_job was saved and received the ID: 238
+The job ref_job_0 was saved and received the ID: 239
+The job phonopy_job was saved and received the ID: 240
+The job ref_job_0 was saved and received the ID: 241
+The job phonopy_job was saved and received the ID: 242
+The job ref_job_0 was saved and received the ID: 243
+The job phonopy_job was saved and received the ID: 244
+The job ref_job_0 was saved and received the ID: 245
+The job phonopy_job was saved and received the ID: 246
+The job ref_job_0 was saved and received the ID: 247
+</pre></div>
+</div>
+</div>
+</div>
+<p>Plotting the thermodynamic properties using phonopy</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax_list</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="s2">&quot;row&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_figwidth</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="c1">#fig.set_figheight(20)</span>
+
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">pot</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">potential_list</span><span class="p">):</span>
+    <span class="n">group_name</span> <span class="o">=</span> <span class="n">clean_project_name</span><span class="p">(</span><span class="n">pot</span><span class="p">)</span>
+    <span class="n">phonopy_job</span> <span class="o">=</span> <span class="n">pr</span><span class="p">[</span><span class="n">group_name</span><span class="o">+</span><span class="s2">&quot;/phonopy_job&quot;</span><span class="p">]</span>
+    <span class="n">thermo</span> <span class="o">=</span> <span class="n">phonopy_job</span><span class="o">.</span><span class="n">get_thermal_properties</span><span class="p">(</span><span class="n">t_min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_max</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
+    
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">ax_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">thermo</span><span class="o">.</span><span class="n">temperatures</span><span class="p">,</span> <span class="n">thermo</span><span class="o">.</span><span class="n">free_energies</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">pot</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Temperatures [K]&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Free energies [eV]&quot;</span><span class="p">)</span>
+    
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">ax_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">thermo</span><span class="o">.</span><span class="n">temperatures</span><span class="p">,</span> <span class="n">thermo</span><span class="o">.</span><span class="n">entropy</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">pot</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Temperatures [K]&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Entropy [eV/K]&quot;</span><span class="p">)</span>
+    
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">ax_list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">thermo</span><span class="o">.</span><span class="n">temperatures</span><span class="p">,</span> <span class="n">thermo</span><span class="o">.</span><span class="n">cv</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">pot</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Temperatures [K]&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Heat capacity (C$_\mathrm</span><span class="si">{V}</span><span class="s2">$) [eV/K]&quot;</span><span class="p">)</span>
+    
+<span class="n">ax_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax_list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span><span class="o">=</span><span class="mf">0.2</span><span class="p">);</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ex_01_validation_31_0.png" src="../_images/ex_01_validation_31_0.png" />
+</div>
+</div>
+<p>We can also compute the phonon density of states and compare with that from benchmarked DFT calculations</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="s2">&quot;row&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">pot</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">potential_list</span><span class="p">):</span>
+    <span class="n">group_name</span> <span class="o">=</span> <span class="n">clean_project_name</span><span class="p">(</span><span class="n">pot</span><span class="p">)</span>
+    <span class="n">phonopy_job</span> <span class="o">=</span> <span class="n">pr</span><span class="p">[</span><span class="n">group_name</span><span class="o">+</span><span class="s2">&quot;/phonopy_job&quot;</span><span class="p">]</span>
+    <span class="n">thermo</span> <span class="o">=</span> <span class="n">phonopy_job</span><span class="o">.</span><span class="n">get_thermal_properties</span><span class="p">(</span><span class="n">t_min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_max</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
+    <span class="n">phonopy_job</span><span class="o">.</span><span class="n">plot_dos</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="n">pot</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dft_phon_prop</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="s2">&quot;dos_energies&quot;</span><span class="p">],</span>  <span class="n">dft_phon_prop</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="s2">&quot;dos_total&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;DFT&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ex_01_validation_33_0.png" src="../_images/ex_01_validation_33_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="validating-against-original-dataset">
+<h2><strong>Validating against original dataset</strong><a class="headerlink" href="#validating-against-original-dataset" title="Permalink to this headline">¶</a></h2>
+<p>Finally we see how well the potentials reproduce the energies and forces from the dataset they are fit on</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pr_import</span> <span class="o">=</span> <span class="n">Project</span><span class="p">(</span><span class="s2">&quot;../datasets&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pr_import</span><span class="o">.</span><span class="n">job_table</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">pr_import</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s2">&quot;Cu_training_archive&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pr_import</span><span class="o">.</span><span class="n">job_table</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>status</th>
+      <th>chemicalformula</th>
+      <th>job</th>
+      <th>subjob</th>
+      <th>projectpath</th>
+      <th>project</th>
+      <th>timestart</th>
+      <th>timestop</th>
+      <th>totalcputime</th>
+      <th>computer</th>
+      <th>hamilton</th>
+      <th>hamversion</th>
+      <th>parentid</th>
+      <th>masterid</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>finished</td>
+      <td>None</td>
+      <td>df1_A1_A2_A3_EV_elast_phon</td>
+      <td>/df1_A1_A2_A3_EV_elast_phon</td>
+      <td>/home/pyiron/</td>
+      <td>datasets/Cu_database/</td>
+      <td>2021-02-18 19:49:53.061360</td>
+      <td>None</td>
+      <td>None</td>
+      <td>zora@cmti001#1</td>
+      <td>TrainingContainer</td>
+      <td>0.4</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>finished</td>
+      <td>None</td>
+      <td>df3_10k</td>
+      <td>/df3_10k</td>
+      <td>/home/pyiron/</td>
+      <td>datasets/Cu_database/</td>
+      <td>2021-02-18 19:49:55.496691</td>
+      <td>None</td>
+      <td>None</td>
+      <td>zora@cmti001#1</td>
+      <td>TrainingContainer</td>
+      <td>0.4</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>finished</td>
+      <td>None</td>
+      <td>df2_1k</td>
+      <td>/df2_1k</td>
+      <td>/home/pyiron/</td>
+      <td>datasets/Cu_database/</td>
+      <td>2021-02-18 19:49:56.101883</td>
+      <td>None</td>
+      <td>None</td>
+      <td>zora@cmti001#1</td>
+      <td>TrainingContainer</td>
+      <td>0.4</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>finished</td>
+      <td>None</td>
+      <td>df4_2_5eV_25A3_8K</td>
+      <td>/df4_2_5eV_25A3_8K</td>
+      <td>/home/pyiron/</td>
+      <td>datasets/Cu_database/</td>
+      <td>2021-02-18 19:49:57.547918</td>
+      <td>None</td>
+      <td>None</td>
+      <td>zora@cmti001#1</td>
+      <td>TrainingContainer</td>
+      <td>0.4</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">container</span> <span class="o">=</span> <span class="n">pr_import</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;df1_A1_A2_A3_EV_elast_phon&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">container</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>atoms</th>
+      <th>energy</th>
+      <th>forces</th>
+      <th>number_of_atoms</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>A1:FHI-aims/PBE/tight:elastic:s_e_0</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0))</td>
+      <td>-3.699843</td>
+      <td>[[0.0, 0.0, 0.0]]</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>A1:FHI-aims/PBE/tight:murnaghan:strain_1_0</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0))</td>
+      <td>-3.699841</td>
+      <td>[[0.0, 0.0, 0.0]]</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>A1:FHI-aims/PBE/tight:phonon:supercell_phonon_0</td>
+      <td>(Atom('Cu', [4.3368086899420173e-19, 0.007070999999999999, 0.007070999999999999], index=0), Atom('Cu', [3.3306690738754696e-16, 1.81563, 1.8156300000000005], index=1), Atom('Cu', [7.262518, 10.893...</td>
+      <td>-236.789603</td>
+      <td>[[-1.13852957740976e-06, -0.0464638907314277, -0.0464636807741622], [-3.86335457040412e-06, 0.0124851330231607, 0.0124792943417333], [-1.94300535086066e-06, 6.63943441884098e-05, 6.92790474109119e...</td>
+      <td>64.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>A1:FHI-aims/PBE/tight:murnaghan:strain_1_02</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0))</td>
+      <td>-3.697932</td>
+      <td>[[0.0, 0.0, 0.0]]</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>A1:FHI-aims/PBE/tight:murnaghan:strain_0_98</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0))</td>
+      <td>-3.697559</td>
+      <td>[[0.0, 0.0, 0.0]]</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>A2:FHI-aims/PBE/tight:elastic:s_01_e_0_05000</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0))</td>
+      <td>-3.573436</td>
+      <td>[[0.0, 0.0, 0.0]]</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>A1:FHI-aims/PBE/tight:elastic:s_01_e_m0_05000</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0))</td>
+      <td>-3.546222</td>
+      <td>[[0.0, 0.0, 0.0]]</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>102</th>
+      <td>A3:FHI-aims/PBE/tight:elastic:s_01_e_m0_05000</td>
+      <td>(Atom('Cu', [1.2150849, 0.70152958, 0.9998186400000001], index=0), Atom('Cu', [0.0, 1.40305917, 2.99945593], index=1))</td>
+      <td>-7.079448</td>
+      <td>[[-3.5446112180968e-23, -1.13427558979097e-22, 0.0], [3.5446112180968e-23, 1.13427558979097e-22, 0.0]]</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>103</th>
+      <td>A2:FHI-aims/PBE/tight:elastic:s_01_e_m0_05000</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0))</td>
+      <td>-3.513068</td>
+      <td>[[0.0, 0.0, 0.0]]</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>104</th>
+      <td>A2:FHI-aims/PBE/tight:elastic:s_23_e_m0_05000</td>
+      <td>(Atom('Cu', [0.0, 0.0, 0.0], index=0))</td>
+      <td>-3.494427</td>
+      <td>[[0.0, 0.0, 0.0]]</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>105 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p>Now we iterate over the structures in the dataset and compute the energies and forces for comparison</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">structure_list</span><span class="p">,</span> <span class="n">energy_list</span><span class="p">,</span> <span class="n">force_list</span><span class="p">,</span> <span class="n">num_atoms_list</span> <span class="o">=</span>  <span class="n">container</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+
+<span class="n">energy_per_atom_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">energy_list</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">num_atoms_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energy_pred_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">force_pred_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">pot</span> <span class="ow">in</span> <span class="n">potential_list</span><span class="p">:</span>
+    <span class="n">group_name</span> <span class="o">=</span> <span class="n">clean_project_name</span><span class="p">(</span><span class="n">pot</span><span class="p">)</span>
+    <span class="n">pr_pot</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">create_group</span><span class="p">(</span><span class="n">pot</span><span class="p">)</span>
+    <span class="n">energy_pred_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="n">force_pred_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    
+    <span class="n">stride</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">struct</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">structure_list</span><span class="p">[::</span><span class="n">stride</span><span class="p">]):</span>
+        <span class="n">job</span> <span class="o">=</span> <span class="n">pr_pot</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span><span class="n">pr</span><span class="o">.</span><span class="n">job_type</span><span class="o">.</span><span class="n">Lammps</span><span class="p">,</span> <span class="s2">&quot;lammps_struct_</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+        <span class="n">job</span><span class="o">.</span><span class="n">potential</span> <span class="o">=</span> <span class="n">get_pyiron_potential</span><span class="p">(</span><span class="n">pot</span><span class="p">)</span>
+        <span class="n">job</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">struct</span>
+        <span class="n">job</span><span class="o">.</span><span class="n">calc_static</span><span class="p">()</span>
+        <span class="n">job</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+        <span class="n">energy_pred_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">job</span><span class="p">[</span><span class="s2">&quot;output/generic/energy_tot&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">struct</span><span class="p">))</span>
+        <span class="n">force_pred_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">job</span><span class="p">[</span><span class="s2">&quot;output/generic/forces&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">job_box</span> <span class="o">=</span> <span class="n">pr_pot</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span><span class="n">pr</span><span class="o">.</span><span class="n">job_type</span><span class="o">.</span><span class="n">Lammps</span><span class="p">,</span> <span class="s2">&quot;lammps_box&quot;</span><span class="p">)</span>
+    <span class="n">job_box</span><span class="o">.</span><span class="n">potential</span> <span class="o">=</span> <span class="n">get_pyiron_potential</span><span class="p">(</span><span class="n">pot</span><span class="p">)</span>
+    <span class="n">job_box</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">pr_pot</span><span class="o">.</span><span class="n">create_atoms</span><span class="p">(</span><span class="s2">&quot;Cu&quot;</span><span class="p">,</span> <span class="n">scaled_positions</span><span class="o">=</span><span class="p">[[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]],</span> <span class="n">cell</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span> <span class="n">pbc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">job_box</span><span class="o">.</span><span class="n">calc_static</span><span class="p">()</span>
+    <span class="n">job_box</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+    <span class="k">if</span> <span class="s2">&quot;runner&quot;</span> <span class="ow">in</span> <span class="n">pot</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+        <span class="n">energy_pred_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">energy_pred_list</span><span class="p">)</span>
+        
+    <span class="c1"># correct for energy of isolated atom (no need for NN potentials)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">energy_pred_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">energy_pred_list</span><span class="p">)</span> <span class="o">-</span> <span class="n">job_box</span><span class="p">[</span><span class="s2">&quot;output/generic/energy_tot&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        
+    <span class="n">energy_pred_dict</span><span class="p">[</span><span class="n">pot</span><span class="p">]</span> <span class="o">=</span> <span class="n">energy_pred_list</span>
+    <span class="n">force_pred_dict</span><span class="p">[</span><span class="n">pot</span><span class="p">]</span> <span class="o">=</span> <span class="n">force_pred_list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job lammps_struct_0 was saved and received the ID: 248
+The job lammps_struct_1 was saved and received the ID: 249
+The job lammps_struct_2 was saved and received the ID: 250
+The job lammps_struct_3 was saved and received the ID: 251
+The job lammps_struct_4 was saved and received the ID: 252
+The job lammps_struct_5 was saved and received the ID: 253
+The job lammps_struct_6 was saved and received the ID: 254
+The job lammps_struct_7 was saved and received the ID: 255
+The job lammps_struct_8 was saved and received the ID: 256
+The job lammps_struct_9 was saved and received the ID: 257
+The job lammps_struct_10 was saved and received the ID: 258
+The job lammps_box was saved and received the ID: 259
+The job lammps_struct_0 was saved and received the ID: 260
+The job lammps_struct_1 was saved and received the ID: 261
+The job lammps_struct_2 was saved and received the ID: 262
+The job lammps_struct_3 was saved and received the ID: 263
+The job lammps_struct_4 was saved and received the ID: 264
+The job lammps_struct_5 was saved and received the ID: 265
+The job lammps_struct_6 was saved and received the ID: 266
+The job lammps_struct_7 was saved and received the ID: 267
+The job lammps_struct_8 was saved and received the ID: 268
+The job lammps_struct_9 was saved and received the ID: 269
+The job lammps_struct_10 was saved and received the ID: 270
+The job lammps_box was saved and received the ID: 271
+The job lammps_struct_0 was saved and received the ID: 272
+The job lammps_struct_1 was saved and received the ID: 273
+The job lammps_struct_2 was saved and received the ID: 274
+The job lammps_struct_3 was saved and received the ID: 275
+The job lammps_struct_4 was saved and received the ID: 276
+The job lammps_struct_5 was saved and received the ID: 277
+The job lammps_struct_6 was saved and received the ID: 278
+The job lammps_struct_7 was saved and received the ID: 279
+The job lammps_struct_8 was saved and received the ID: 280
+The job lammps_struct_9 was saved and received the ID: 281
+The job lammps_struct_10 was saved and received the ID: 282
+The job lammps_box was saved and received the ID: 283
+The job lammps_struct_0 was saved and received the ID: 284
+The job lammps_struct_1 was saved and received the ID: 285
+The job lammps_struct_2 was saved and received the ID: 286
+The job lammps_struct_3 was saved and received the ID: 287
+The job lammps_struct_4 was saved and received the ID: 288
+The job lammps_struct_5 was saved and received the ID: 289
+The job lammps_struct_6 was saved and received the ID: 290
+The job lammps_struct_7 was saved and received the ID: 291
+The job lammps_struct_8 was saved and received the ID: 292
+The job lammps_struct_9 was saved and received the ID: 293
+The job lammps_struct_10 was saved and received the ID: 294
+The job lammps_box was saved and received the ID: 295
+The job lammps_struct_0 was saved and received the ID: 296
+The job lammps_struct_1 was saved and received the ID: 297
+The job lammps_struct_2 was saved and received the ID: 298
+The job lammps_struct_3 was saved and received the ID: 299
+The job lammps_struct_4 was saved and received the ID: 300
+The job lammps_struct_5 was saved and received the ID: 301
+The job lammps_struct_6 was saved and received the ID: 302
+The job lammps_struct_7 was saved and received the ID: 303
+The job lammps_struct_8 was saved and received the ID: 304
+The job lammps_struct_9 was saved and received the ID: 305
+The job lammps_struct_10 was saved and received the ID: 306
+The job lammps_box was saved and received the ID: 307
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax_list</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">potential_list</span><span class="p">),</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="s2">&quot;row&quot;</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="s2">&quot;row&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_figwidth</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_figheight</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">pot</span><span class="p">,</span> <span class="n">energy_pred</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">energy_pred_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+    
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">ax_list</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">energy_per_atom_list</span><span class="p">[::</span><span class="n">stride</span><span class="p">],</span> <span class="n">energy_pred</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">energy_per_atom_list</span><span class="p">[::</span><span class="n">stride</span><span class="p">],</span> <span class="n">energy_per_atom_list</span><span class="p">[::</span><span class="n">stride</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">pot</span> <span class="o">+</span> <span class="s2">&quot; (Energies)&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Energy DFT [eV]&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Energy pred [eV]&quot;</span><span class="p">)</span>
+    
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">ax_list</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">force_orig</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">f</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">force_list</span><span class="p">[::</span><span class="n">stride</span><span class="p">]])</span>
+    <span class="n">force_pred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">f</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">force_pred_dict</span><span class="p">[</span><span class="n">pot</span><span class="p">]])</span>
+    
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">force_orig</span><span class="p">,</span> <span class="n">force_pred</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">force_orig</span><span class="p">,</span> <span class="n">force_orig</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Force DFT [eV/$\mathrm{\AA}$]&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Force pred [eV/$\mathrm{\AA}$]&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">pot</span> <span class="o">+</span> <span class="s2">&quot; (Forces)&quot;</span><span class="p">)</span>
+    
+<span class="n">fig</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ex_01_validation_42_0.png" src="../_images/ex_01_validation_42_0.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./day_3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../day_2/03-ace/pacemaker-fit-tutorial.html" title="previous page">Fitting project</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Jan Janssen<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
