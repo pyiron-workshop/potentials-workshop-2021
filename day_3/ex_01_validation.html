@@ -322,6 +322,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compare-to-dft-reference-data-queried-from-atomistictools-org">
+   Compare to DFT reference data queried from atomistictools.org
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#finite-temperature-thermodynamics-harmonic-approximation">
    <strong>
     Finite temperature thermodynamics (Harmonic approximation)
@@ -995,13 +1000,13 @@ The job s_23_e_0_05000 was saved and received the ID: 220
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Querying...done
-Response successful, size = 7.20 kB, time = 0.04 s
+Response successful, size = 7.20 kB, time = 0.07 s
 1  entries received
 Querying...done
-Response successful, size = 37.78 kB, time = 0.36 s
+Response successful, size = 37.78 kB, time = 0.27 s
 1  entries received
 Querying...done
-Response successful, size = 22.50 kB, time = 1.13 s
+Response successful, size = 22.50 kB, time = 0.13 s
 1  entries received
 </pre></div>
 </div>
@@ -1283,9 +1288,16 @@ The job surf_fcc100 was saved and received the ID: 236
 <p>Compute surface energies using data from the bulk fcc crystal</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eV_A2_to_mJ_m2_factor</span> <span class="o">=</span> <span class="mf">16.0219</span> <span class="o">*</span> <span class="mf">1e3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">data_surf</span><span class="p">,</span> <span class="n">data_murn</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;potential&quot;</span><span class="p">)</span>
 <span class="n">data_merged</span><span class="p">[</span><span class="s2">&quot;surface_energy&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_merged</span><span class="o">.</span><span class="n">energy_tot</span> <span class="o">-</span> <span class="p">(</span><span class="n">data_merged</span><span class="o">.</span><span class="n">eq_energy</span> <span class="o">*</span> <span class="n">data_merged</span><span class="o">.</span><span class="n">Number_of_atoms</span><span class="p">)</span>
-<span class="n">data_merged</span><span class="p">[</span><span class="s2">&quot;surface_energy_in_mJ_per_sq_m&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_merged</span><span class="o">.</span><span class="n">surface_energy</span> <span class="o">/</span> <span class="n">data_merged</span><span class="o">.</span><span class="n">surface_area</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="mf">16.0219</span> <span class="o">*</span> <span class="mf">1e3</span>
+<span class="n">data_merged</span><span class="p">[</span><span class="s2">&quot;surface_energy_in_mJ_per_sq_m&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_merged</span><span class="o">.</span><span class="n">surface_energy</span> <span class="o">/</span> <span class="n">data_merged</span><span class="o">.</span><span class="n">surface_area</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">eV_A2_to_mJ_m2_factor</span>
 <span class="n">data_merged</span><span class="p">[[</span><span class="s2">&quot;potential&quot;</span><span class="p">,</span> <span class="s2">&quot;surface_type&quot;</span><span class="p">,</span> <span class="s2">&quot;surface_energy_in_mJ_per_sq_m&quot;</span><span class="p">]]</span>
 </pre></div>
 </div>
@@ -1410,6 +1422,128 @@ The job surf_fcc100 was saved and received the ID: 236
 </div></div></div>
 </div>
 </div>
+<div class="section" id="compare-to-dft-reference-data-queried-from-atomistictools-org">
+<h2>Compare to DFT reference data queried from <a class="reference external" href="http://atomistictools.org">atomistictools.org</a><a class="headerlink" href="#compare-to-dft-reference-data-queried-from-atomistictools-org" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">surface_props</span> <span class="o">=</span> <span class="n">rest</span><span class="o">.</span><span class="n">query_properties</span><span class="p">(</span><span class="n">rest</span><span class="o">.</span><span class="n">PropertyTypes</span><span class="o">.</span><span class="n">SURFACE_ENERGY</span><span class="p">,</span> 
+                                      <span class="n">composition</span><span class="o">=</span><span class="s2">&quot;Cu-%&quot;</span><span class="p">,</span> 
+                                      <span class="n">strukturbericht</span><span class="o">=</span><span class="s2">&quot;A1&quot;</span><span class="p">,</span>
+                                      <span class="n">calculator_name</span><span class="o">=</span><span class="n">fhi_calc</span><span class="o">.</span><span class="n">NAME</span>
+                     <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Querying...done
+Response successful, size = 56.26 kB, time = 0.36 s
+9  entries received
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">surf_dft_data</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">surf_prop</span> <span class="ow">in</span> <span class="n">surface_props</span><span class="p">:</span>
+    <span class="n">surf_dft_data</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">surf_prop</span><span class="o">.</span><span class="n">VALUE</span><span class="p">[</span><span class="s2">&quot;surface_orientation&quot;</span><span class="p">],</span> <span class="n">surf_prop</span><span class="o">.</span><span class="n">VALUE</span><span class="p">[</span><span class="s2">&quot;number_of_atoms&quot;</span><span class="p">],</span> <span class="n">surf_prop</span><span class="o">.</span><span class="n">VALUE</span><span class="p">[</span><span class="s2">&quot;surface_energy&quot;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">surf_dft_df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">surf_dft_data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;surface_type&quot;</span><span class="p">,</span><span class="s2">&quot;number_of_atoms&quot;</span><span class="p">,</span><span class="s2">&quot;surface_energy(eV/A^2)&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">surf_dft_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;surface_type&quot;</span><span class="p">,</span> <span class="s2">&quot;number_of_atoms&quot;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">surf_dft_df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">([</span><span class="s2">&quot;surface_type&quot;</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="s2">&quot;first&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">surf_dft_df</span><span class="p">[</span><span class="s2">&quot;surface_type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;fcc&quot;</span> <span class="o">+</span> <span class="n">surf_dft_df</span><span class="p">[</span><span class="s2">&quot;surface_type&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">surf_dft_df</span><span class="p">[</span><span class="s2">&quot;surface_energy_in_mJ_per_sq_m&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">surf_dft_df</span><span class="p">[</span><span class="s2">&quot;surface_energy(eV/A^2)&quot;</span><span class="p">]</span><span class="o">*</span><span class="n">eV_A2_to_mJ_m2_factor</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">surf_dft_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>surface_type</th>
+      <th>number_of_atoms</th>
+      <th>surface_energy(eV/A^2)</th>
+      <th>surface_energy_in_mJ_per_sq_m</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>7</th>
+      <td>fcc111</td>
+      <td>14</td>
+      <td>0.085074</td>
+      <td>1363.054065</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>fcc110</td>
+      <td>9</td>
+      <td>0.098272</td>
+      <td>1574.504220</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>fcc100</td>
+      <td>10</td>
+      <td>0.092586</td>
+      <td>1483.399754</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
 <div class="section" id="finite-temperature-thermodynamics-harmonic-approximation">
 <h2><strong>Finite temperature thermodynamics (Harmonic approximation)</strong><a class="headerlink" href="#finite-temperature-thermodynamics-harmonic-approximation" title="Permalink to this headline">¶</a></h2>
 <p>We can also compute free energies and other finite temperature thermodynamic properties within the Harmonic approximation using phonopy (<a class="reference external" href="http://phonopy.github.io">http://phonopy.github.io</a>)</p>
@@ -1480,7 +1614,7 @@ The job ref_job_0 was saved and received the ID: 247
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ex_01_validation_31_0.png" src="../_images/ex_01_validation_31_0.png" />
+<img alt="../_images/ex_01_validation_41_0.png" src="../_images/ex_01_validation_41_0.png" />
 </div>
 </div>
 <p>We can also compute the phonon density of states and compare with that from benchmarked DFT calculations</p>
@@ -1499,7 +1633,7 @@ The job ref_job_0 was saved and received the ID: 247
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ex_01_validation_33_0.png" src="../_images/ex_01_validation_33_0.png" />
+<img alt="../_images/ex_01_validation_43_0.png" src="../_images/ex_01_validation_43_0.png" />
 </div>
 </div>
 </div>
@@ -1909,7 +2043,7 @@ The job lammps_box was saved and received the ID: 307
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ex_01_validation_42_0.png" src="../_images/ex_01_validation_42_0.png" />
+<img alt="../_images/ex_01_validation_52_0.png" src="../_images/ex_01_validation_52_0.png" />
 </div>
 </div>
 </div>
