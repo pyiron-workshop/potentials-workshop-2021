@@ -1,5 +1,5 @@
 # Potentials Workshop
-The workshop - [workflows for atomistic simulation (10 - 12 March 2021)](http://potentials.rub.de) is organized by the [Interdisciplinary Centre for Advanced Materials Simulation (ICAMS)](http://www.icams.de/) and the [Max-Planck-Institut für Eisenforschung (MPIE)](https://www.mpie.de/2702079/computational_materials_design). 
+The workshop - [workflows for atomistic simulation (10 - 12 March 2021)](http://potentials.rub.de) is organized by the [Interdisciplinary Centre for Advanced Materials Simulation (ICAMS)](http://www.icams.de/content/departments/atomistic-modelling-and-simulation/) and the [Max-Planck-Institut für Eisenforschung (MPIE)](https://www.mpie.de/2702079/computational_materials_design) in collaboration with the [Technische Universität Darmstadt](https://www.mawi.tu-darmstadt.de/mm/home_mm/index.de.jsp) and the [Georg-August-Universität Göttingen](https://www.uni-goettingen.de/de/556198.html). 
 
 ## Cloud environment
 During the workshop we use the pyiron workshop infrastructure - [workshop.pyiron.org](https://workshop.pyiron.org/). 
