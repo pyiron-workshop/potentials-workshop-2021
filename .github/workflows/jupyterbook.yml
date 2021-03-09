@@ -20,7 +20,7 @@ jobs:
         python-version: 3.8
         environment-file: .ci_support/environment.yml
         auto-activate-base: false
-    - run: rm README.md CODE_OF_CONDUCT.md
+    - run: rm CODE_OF_CONDUCT.md datasets/ImportDatabase.ipynb
     - name: Install Jupyterbook
       shell: bash -l {0}
       run: |
