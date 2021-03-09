@@ -4,6 +4,8 @@ The workshop - [workflows for atomistic simulation (10 - 12 March 2021)](http://
 ## Cloud environment
 During the workshop we use the pyiron workshop infrastructure - [workshop.pyiron.org](https://workshop.pyiron.org/). 
 
+![Preview](workshop-pyiron-org.gif)
+
 Alternatively you can use 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/pyiron/pyiron_potentialfit/HEAD)
 
