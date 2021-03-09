@@ -20,8 +20,11 @@ jobs:
         environment-file: .ci_support/environment.yml
         auto-activate-base: false
     - run: rm README.md CODE_OF_CONDUCT.md
-    - run: pip install git+https://github.com/ExecutableBookProject/jupyter-book
-    - run: jupyter-book build . --path-output public
+    - name: Install Jupyterbook
+      shell: bash -l {0}
+      run: |
+        pip install git+https://github.com/ExecutableBookProject/jupyter-book
+        jupyter-book build . --path-output public
     - run: mv public/_build/html public_html
     - run: touch public_html/.nojekyll
     - name: Deploy 🚀
