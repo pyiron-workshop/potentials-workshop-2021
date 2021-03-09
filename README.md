@@ -7,7 +7,7 @@ During the workshop we use the pyiron workshop infrastructure - [workshop.pyiron
 ![Preview](workshop-pyiron-org.gif)
 
 Alternatively you can use 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/pyiron/pyiron_potentialfit/HEAD)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/pyiron/potentials-workshop-2021/HEAD)
 
 ## Local installation
 Besides the cloud infrastructure used during the workshop, the same notebooks can also be executed on any Linux workstation. To setup the conda environment for the workshop, the environment file is loaded:
